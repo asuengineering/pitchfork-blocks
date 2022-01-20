@@ -1,0 +1,39 @@
+{
+	"name": "asuengineering/pitchfork-blocks",
+	"description": "Pitchfork blocks plugin for the Pitchfork theme",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-only",
+	"minimum-stability": "stable",
+	"keywords": [
+		"wordpress",
+		"theme",
+		"bootstrap"
+	],
+	"homepage": "https://github.com/asuengineering/pitchfork-blocks",
+	"require": {
+		"composer/installers": "^1.9",
+		"php": ">=5.6"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-master",
+		"wp-coding-standards/wpcs": "^2.3",
+		"wptrt/wpthemereview": "*",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+		"php-parallel-lint/php-parallel-lint": "^1.2"
+	},
+	"scripts": {
+		"check:cs": ["@php ./vendor/squizlabs/php_codesniffer/bin/phpcs *.php --runtime-set testVersion 5.6-"],
+		"fix:cs": ["@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"],
+		"lint:php": ["@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor . --exclude src ."]
+	},
+	"support": {
+		"issues": "https://github.com/asu-ke-web-services/uds-wordpress-theme/issues",
+		"source": "https://github.com/asu-ke-web-services/uds-wordpress-theme"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
