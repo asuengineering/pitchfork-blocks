@@ -19,13 +19,17 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+// Variable for root directory of this plugin.
+define( 'PITCHFORK_BLOCKS_BASE_PATH', plugin_dir_path( __FILE__ ) );
+
 // Function: Activate
 // Function: Deactivate
 // Function: Execute plugin
 
 // TGM Plugin Activation Script. Checks for Advanced Custom Fields.
-require_once dirname( __FILE__ ) . '/tgmpa/class-tgm-plugin-activation.php';
-require_once dirname( __FILE__ ) . '/tgmpa/dependency-check.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/class-tgm-plugin-activation.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/dependency-check.php';
 
 // ACF configurations.
-require_once dirname( __FILE__ ) . '/inc/acf-config.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-config.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-register-blocks.php';

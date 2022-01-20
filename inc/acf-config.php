@@ -7,14 +7,14 @@
 // Register a new save point for the Local JSON feature for this plugin.
 add_filter( 'acf/settings/save_json', 'pitchfork_blocks_acf_json_save_point' );
 function pitchfork_blocks_acf_json_save_point( $path ) {
-	$path = dirname( __FILE__ ) . '/acf-json';
+	$path = PITCHFORK_BLOCKS_BASE_PATH . '/acf-json';
 	return $path;
 }
 
 // It needs to load as well.
 add_filter( 'acf/settings/load_json', 'pitchfork_blocks_acf_json_load_point' );
 function pitchfork_blocks_acf_json_load_point( $paths ) {
-	$paths[] = dirname( __FILE__ ) . '/acf-json';
+	$paths[] = PITCHFORK_BLOCKS_BASE_PATH . '/acf-json';
 	return $paths;
 }
 
