@@ -22,9 +22,9 @@ if ( ! defined( 'WPINC' ) ) {
 // Variable for root directory of this plugin.
 define( 'PITCHFORK_BLOCKS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
-// Function: Activate
-// Function: Deactivate
-// Function: Execute plugin
+// Function: Activate.
+// Function: Deactivate.
+// Function: Execute plugin.
 
 // TGM Plugin Activation Script. Checks for Advanced Custom Fields.
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/class-tgm-plugin-activation.php';
