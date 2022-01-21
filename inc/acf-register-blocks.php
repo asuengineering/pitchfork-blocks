@@ -25,7 +25,7 @@ if ( ! function_exists( 'pitchfork_blocks_custom_category' ) ) {
 			$categories,
 			array(
 				array(
-					'slug' => 'pitchfork-blocks',
+					'slug'  => 'pitchfork-blocks',
 					'title' => __( 'Pitchfork Blocks', 'pitchfork-blocks' ),
 				),
 			)

@@ -1,8 +1,8 @@
 <?php
 /**
- * ACF Configurations. 
+ * ACF Configurations.
  * - Add save/load points for JSON feature.
- * 
+ *
  * @package pitchfork-blocks
  */
 

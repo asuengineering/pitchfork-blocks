@@ -8,9 +8,9 @@
  * Text Domain:     pitchfork-blocks
  * Domain Path:     /languages
  * Version:         0.1.0
- * 
+ *
  * @package         Pitchfork_Blocks
- * 
+ *
  * GitHub Plugin URI: http://github.com/ASU-Engineering/Pitchfork-Blocks
  */
 

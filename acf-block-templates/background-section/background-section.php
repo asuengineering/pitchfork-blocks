@@ -5,16 +5,16 @@
  * @package UDS WordPress Theme
  */
 
-$choice = get_field( 'uds_background_section_choice' );
-$pattern = get_field( 'uds_background_section_pattern' );
-$preset = get_field( 'uds_background_section_preset' );
-$color = get_field( 'uds_background_section_color' );
-$innertext = get_field( 'uds_background_section_text' );
-$upload = get_field( 'uds_background_section_upload_url' );
+$choice     = get_field( 'uds_background_section_choice' );
+$pattern    = get_field( 'uds_background_section_pattern' );
+$preset     = get_field( 'uds_background_section_preset' );
+$color      = get_field( 'uds_background_section_color' );
+$innertext  = get_field( 'uds_background_section_text' );
+$upload     = get_field( 'uds_background_section_upload_url' );
 $innercolor = get_field( 'uds_background_inner_color' );
-$repeat = get_field( 'uds_background_image_repeat' );
-$position = get_field( 'uds_background_image_position' );
-$size = get_field( 'uds_background_image_size' );
+$repeat     = get_field( 'uds_background_image_repeat' );
+$position   = get_field( 'uds_background_image_position' );
+$size       = get_field( 'uds_background_image_size' );
 
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
@@ -43,12 +43,12 @@ if ( $choice ) {
 			// Background colors via utility BS4 classes.
 			echo '<section class="uds-section bg-color ' . $preset . ' ' . $additional_classes . '" >';
 		}
-	} else if ( 'pattern' === $choice ) {
+	} elseif ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
 		echo '<section class="uds-section bg ' . $pattern . ' ' . $additional_classes . '" >';
 
-	} else if ( 'upload' === $choice ) {
+	} elseif ( 'upload' === $choice ) {
 
 		// Build the inline style rule.
 		$inline_style = 'background: url(' . $upload . ') ' . $position . ' / ' . $size . ' ' . $repeat . ';';
@@ -61,7 +61,7 @@ if ( $choice ) {
 
 	// Sets InnerBlocks with a Bootstrap blocks container as default content.
 	$allowed_blocks = array( 'wp-bootstrap-blocks/container', 'core/html' );
-	$template = array(
+	$template       = array(
 		array(
 			'wp-bootstrap-blocks/container',
 			array( 'marginAfter' => 'mb-0' ),
@@ -82,4 +82,4 @@ if ( $choice ) {
 	echo '</section>';
 }
 
-?>
+

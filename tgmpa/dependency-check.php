@@ -1,7 +1,7 @@
 <?php
 /**
  * TGMPA Registration script.
- * 
+ *
  * @package pitchfork-blocks
  */
 
