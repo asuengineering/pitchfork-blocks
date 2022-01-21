@@ -1,4 +1,10 @@
 <?php
+/**
+ * TGMPA Registration script.
+ * 
+ * @package pitchfork-blocks
+ */
+
 add_action( 'tgmpa_register', 'pitchfork_blocks_register_required_plugins' );
 
 /**

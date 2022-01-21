@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile -- This is a third party class, provided as-is.
 /**
  * Plugin installation and activation for WordPress themes.
  *
