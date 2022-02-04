@@ -27,8 +27,13 @@ if ( 'text-white' === $innertext ) {
 	$additional_classes = 'text-white ' . $additional_classes;
 }
 
-// Add inner text color modifier to code if the text should be white.
+// Generate the default alignwide or alignfull classes based on toolbar settings.
+$block_alignment = '';
+if ( ! empty( $block['align'] ) ) {
+	$block_alignment = "align" . $block['align'];
+}
 
+// Add inner text color modifier to code if the text should be white.
 
 if ( $choice ) {
 
@@ -38,15 +43,15 @@ if ( $choice ) {
 
 		if ( 'custom' === $preset ) {
 			// We're doing a custom background color.
-			echo '<section class="uds-section bg-color ' . $additional_classes . '" style="background-color: ' . $color . ';" >';
+			echo '<section class="uds-section bg-color ' . $block_alignment . ' ' . $additional_classes . '" style="background-color: ' . $color . ';" >';
 		} else {
 			// Background colors via utility BS4 classes.
-			echo '<section class="uds-section bg-color ' . $preset . ' ' . $additional_classes . '" >';
+			echo '<section class="uds-section bg-color ' . $block_alignment . ' ' . $preset . ' ' . $additional_classes . '" >';
 		}
 	} elseif ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
-		echo '<section class="uds-section bg ' . $pattern . ' ' . $additional_classes . '" >';
+		echo '<section class="uds-section bg ' . $block_alignment . ' ' . $pattern . ' ' . $additional_classes . '" >';
 
 	} elseif ( 'upload' === $choice ) {
 
@@ -55,28 +60,15 @@ if ( $choice ) {
 
 		// Set the basic utility class + inner bg color as classes.
 
-		echo '<section class="uds-section media-file ' . $innercolor . ' ' . $additional_classes . '" style="' . $inline_style . '" >';
+		echo '<section class="uds-section media-file ' . $block_alignment . ' ' . $innercolor . ' ' . $additional_classes . '" style="' . $inline_style . '" >';
 
 	}
 
 	// Sets InnerBlocks with a Bootstrap blocks container as default content.
-	$allowed_blocks = array( 'wp-bootstrap-blocks/container', 'core/html' );
+	$allowed_blocks = array( 'core/columns', 'core/html' );
 	$template       = array(
-		array(
-			'wp-bootstrap-blocks/container',
-			array( 'marginAfter' => 'mb-0' ),
-			array(
-
-				array(
-					'core/group',
-					array(),
-				),
-
-			),
-		),
+		array( 'core/columns', array() ),
 	);
-
-
 
 	echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 	echo '</section>';

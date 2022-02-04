@@ -159,7 +159,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_60381d8c3ba87",
@@ -347,6 +349,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Field for creating a background <code><section><\/code> as a wrapper for other elements.",
-    "modified": 1628804093
+    "description": "Field for creating a background <section> as a wrapper for other elements.",
+    "show_in_rest": 0,
+    "modified": 1642805143
 }

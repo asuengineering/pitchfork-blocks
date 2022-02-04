@@ -30,6 +30,9 @@ define( 'PITCHFORK_BLOCKS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/class-tgm-plugin-activation.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/dependency-check.php';
 
+// Enqueue scripts.
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/enqueue-scripts.php';
+
 // ACF configurations.
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-config.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-register-blocks.php';
