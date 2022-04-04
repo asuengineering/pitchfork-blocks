@@ -1,0 +1,94 @@
+{
+    "key": "group_6114252e73759",
+    "title": "UDS Block: Hero",
+    "fields": [
+        {
+            "key": "field_611425a016b0e",
+            "label": "Hero Size",
+            "name": "uds_hero_size",
+            "type": "select",
+            "instructions": "Choose",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "uds-hero-sm": "Small (1920x256)",
+                "uds-hero-md": "Medium (1920x512)",
+                "uds-hero-lg": "Large (1920x684)"
+            },
+            "default_value": "medium",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6114269916b0f",
+            "label": "Hero Background",
+            "name": "uds_hero_image",
+            "type": "image",
+            "instructions": "Large images can be cropped using the <a href=\"https:\/\/wordpress.org\/support\/article\/edit-media\/\" target=\"_blank\">edit media<\/a> screen within the Media Library.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium_large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_611aa5d4d076a",
+            "label": "Display hero content on mobile?",
+            "name": "uds_hero_content_on_mobile",
+            "type": "true_false",
+            "instructions": "Content presented within the hero wrapper will usually appear immediately below the background image on mobile. Toggle this control to prevent that behavior.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1648492145
+}

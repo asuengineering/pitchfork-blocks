@@ -6,14 +6,18 @@
 
  wp.domReady( () => {
     
-    // Add .lead to core/paragraph block.
-    wp.blocks.registerBlockStyle(
-        'core/paragraph', [{
-            name: 'lead',
-            label: 'Lead',
-            isDefault: false,
-        }]
-    );
-
 });
+    // Useful technique...
+    // // Our filter function
+    // function setBlockCustomClassName( className, blockName ) {
+    //     console.log('Got here!');
+    //     return blockName === 'core/button' ? 'btn' : className;
+    // }
+    
+    // // Adding the filter
+    // wp.hooks.addFilter(
+    //     'blocks.getBlockDefaultClassName',
+    //     'pitchfork-blocks/set-block-custom-class-name',
+    //     setBlockCustomClassName
+    // );
 

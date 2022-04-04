@@ -53,6 +53,7 @@ function pitchfork_blocks_acf_blocks_init() {
 		$block_includes = array(
 			// '/alert',
 			'/background-section', // UDS Background section.
+			'/hero',				  // UDS Hero block, v2
 			// '/banner',             // UDS banner block.
 			// '/blockquote',         // Combination of UDS block quote and testimonial.
 			// '/button',             // Button block for UDS theme.
