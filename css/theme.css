@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+# Theme SASS
+- Contains additional rules for blocks in the editor.
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# _hero.scss
+- Reworks UDS-Hero component foor use with the WP block editor.
+
+2. Hero, Mobile
+3. Hero, Tablet
+4. Hero, Desktop
+--------------------------------------------------------------*/
+div[class^='uds-hero'] .wp-block-buttons { grid-column: 2; grid-row: 4; margin-bottom: 1rem; z-index: 30; }
+
+div[class^='uds-hero'].has-btn-row .wp-block-buttons { grid-row: 3; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+@media (min-width: calc(768px)) { div[class^='uds-hero'] .wp-block-buttons { grid-column: 2; max-width: 700px; z-index: 30; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+  div[class^='uds-hero'].has-btn-row .wp-block-buttons { grid-row: 5; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; } }
+
+@media (min-width: calc(992px)) { div[class^='uds-hero'] .wp-block-buttons { max-width: calc(940px - 34%); } }
+
+@media (min-width: calc(1224px)) { div[class^='uds-hero'] .wp-block-buttons { max-width: calc(1200px - 34%); } }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGhlbWUuY3NzIiwic291cmNlcyI6WyJ0aGVtZS5zY3NzIiwiLi4vc3JjL3Nhc3MvZGVzaWduLXRva2Vucy9fdmFyaWFibGVzLnNjc3MiLCJibG9ja3MvX2hlcm8uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O2dFQUdnRTtBQUtoRTs7O2dFQUdnRTtBRVhoRTs7Ozs7OztnRUFPZ0U7QUFHaEUsQUFHQyxHQUhFLENBQUEsQUFBQSxLQUFDLEVBQU8sVUFBVSxBQUFqQixFQUdILGlCQUFpQixDQUFDLEVBQ2pCLFdBQVcsRUFBRSxDQUFDLEVBQ2QsUUFBUSxFQUFFLENBQUMsRUFDWCxhQUFhLEVENkZNLElBQUksRUM1RnZCLE9BQU8sRUFBRSxFQUFFLEdBQ1g7O0FBUkYsQUFZRSxHQVpDLENBQUEsQUFBQSxLQUFDLEVBQU8sVUFBVSxBQUFqQixDQVdGLFlBQVksQ0FDWixpQkFBaUIsQ0FBQyxFQUNqQixRQUFRLEVBQUUsQ0FBQyxFQUNYLE9BQU8sRUFBRSxJQUFJLEVBQ2IsY0FBYyxFQUFFLE1BQU0sR0FDdEI7O0FGSEMsTUFBTSxFQUFFLFNBQVMsRUFBRSxJQUFXLENBQUQsS0FBQyxLRVNqQyxBQUdPLEdBSEosQ0FBQSxBQUFBLEtBQUMsRUFBTyxVQUFVLEFBQWpCLEVBR0csaUJBQWlCLENBQUMsRUFDdkIsV0FBVyxFQUFFLENBQUMsRUFDZCxTQUFTLEVBQUUsS0FBSyxFQUNoQixPQUFPLEVBQUUsRUFBRSxFQUNGLFdBQVcsRUFBRSxNQUFNLEdBQ3RCO0VBUlIsQUFZVyxHQVpSLENBQUEsQUFBQSxLQUFDLEVBQU8sVUFBVSxBQUFqQixDQVdGLFlBQVksQ0FDSCxpQkFBaUIsQ0FBQyxFQUMxQixRQUFRLEVBQUUsQ0FBQyxFQUNYLGNBQWMsRUFBRSxHQUFHLEdBQ1Y7O0FGeEJULE1BQU0sRUFBRSxTQUFTLEVBQUUsSUFBVyxDQUFELEtBQUMsS0UrQmpDLEFBQ0MsR0FERSxDQUFBLEFBQUEsS0FBQyxFQUFPLFVBQVUsQUFBakIsRUFDSCxpQkFBaUIsQ0FBQyxFQUNqQixTQUFTLEVBQUUsaUJBQWlCLEdBQzVCOztBRmxDQyxNQUFNLEVBQUUsU0FBUyxFQUFFLElBQVksQ0FBRCxNQUFDLEtFdUNsQyxBQUNDLEdBREUsQ0FBQSxBQUFBLEtBQUMsRUFBTyxVQUFVLEFBQWpCLEVBQ0gsaUJBQWlCLENBQUMsRUFDakIsU0FBUyxFQUFFLGtCQUFrQixHQUM3QiJ9 */
+
+/*# sourceMappingURL=theme.css.map */

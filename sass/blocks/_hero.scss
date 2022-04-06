@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+# _hero.scss
+- Reworks UDS-Hero component foor use with the WP block editor.
+
+2. Hero, Mobile
+3. Hero, Tablet
+4. Hero, Desktop
+--------------------------------------------------------------*/
+
+// 2. Hero, Mobile
+div[class^='uds-hero'] {
+
+	// Alignment of core/buttons block.
+	.wp-block-buttons {
+		grid-column: 2;
+		grid-row: 4;
+		margin-bottom: $uds-size-spacing-2;
+		z-index: 30;
+	}
+
+    // Base class modifier: .has-btn-row
+	&.has-btn-row {
+		.wp-block-buttons {
+			grid-row: 3;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+// 3. Hero, Tablet
+@include media-breakpoint-up($md) {
+	div[class^='uds-hero'] {
+
+        // Alignment of core/buttons block.
+        .wp-block-buttons {
+			grid-column: 2;
+			max-width: 700px;
+			z-index: 30;
+            align-items: center;
+        }
+
+        // Base class modifier: .has-btn-row
+		&.has-btn-row {
+            .wp-block-buttons {
+				grid-row: 5;
+				flex-direction: row;
+            }
+        }
+    }
+}
+
+// 4. Hero, Desktop
+@include media-breakpoint-up($lg) {
+	div[class^='uds-hero'] {
+		.wp-block-buttons {
+			max-width: calc(940px - 34%);
+		}
+	}
+}
+
+@include media-breakpoint-up($xl) {
+	div[class^='uds-hero'] {
+		.wp-block-buttons {
+			max-width: calc(1200px - 34%);
+		}
+	}
+}

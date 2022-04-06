@@ -1,0 +1,7 @@
+div[class^='uds-hero'] .wp-block-buttons{grid-column:2;grid-row:4;margin-bottom:1rem;z-index:30}
+div[class^='uds-hero'].has-btn-row .wp-block-buttons{grid-row:3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+@media(min-width:calc(768px)){div[class^='uds-hero'] .wp-block-buttons{grid-column:2;max-width:700px;z-index:30;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+div[class^='uds-hero'].has-btn-row .wp-block-buttons{grid-row:5;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+}@media(min-width:calc(992px)) { div[class^='uds-hero'] .wp-block-buttons { max-width: calc(940px - 34%)}
+}@media(min-width:calc(1224px)) { div[class^='uds-hero'] .wp-block-buttons { max-width: calc(1200px - 34%)}
+}
