@@ -1,0 +1,10 @@
+/*--------------------------------------------------------------
+# Admin SASS
+- Contains additional rules for blocks in the editor.
+--------------------------------------------------------------*/
+
+@import "../src/sass/design-tokens/variables";
+@import 'media-queries';
+
+// Additional block markup.
+@import 'editor/hero';

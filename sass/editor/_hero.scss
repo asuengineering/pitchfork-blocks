@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------
+# _hero.scss
+
+Styling to allow normal use of the hero within the block editor.
+
+2. Hero, Mobile
+3. Hero, Tablet
+4. Hero, Desktop
+--------------------------------------------------------------*/
+// 2. Hero, Mobile
+.acf-block-preview div[class^='uds-hero'] {
+
+    .block-editor-inner-blocks {
+        display:contents;
+
+        > .block-editor-block-list__layout {
+            display:contents;
+        }
+    }
+
+}
+
+// 3. Hero, Tablet
+@include media-breakpoint-up($md) {
+	.acf-block-preview div[class^='uds-hero'] {
+        .wp-block-button__link {
+            margin-top: $uds-size-spacing-3;
+        }
+    }
+}
+
+// 4. Hero, Desktop
+@include media-breakpoint-up($lg) {
+    .acf-block-preview div[class^='uds-hero'] {}
+}
+
+@include media-breakpoint-up($xl) {
+    .acf-block-preview div[class^='uds-hero'] {}
+}

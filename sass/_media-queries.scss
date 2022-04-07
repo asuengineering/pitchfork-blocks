@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------
+Media queries modeled on those found in Bootstrap 4.
+--------------------------------------------------------------*/
+
+$sm: $uds-grid-container-max-width-sm; // 540px - BS4 default value
+$md: $uds-grid-container-max-width-md; // 768px - BS4 default value
+$lg: $uds-grid-container-max-width-lg; // 992px - BS4 default value
+$xl: $uds-grid-container-max-width-xl; // 1224p - 1200px max + 12px gutter on either side.
+
+@mixin media-breakpoint-down($breakpoint) {
+    @media (max-width: calc(#{$breakpoint} - .02px)) { @content };
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+    @media (min-width: calc(#{$breakpoint})) { @content };
+}
+
+@mixin media-breakpoint-between($breakpoint-small, $breakpoint-big) {
+    @media (min-width: $breakpointsmall) and (max-width: calc(#{$breakpoint} - .02px)) { @content };
+}
+
