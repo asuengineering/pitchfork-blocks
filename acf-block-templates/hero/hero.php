@@ -7,8 +7,9 @@
  * @package UDS WordPress Theme
  */
 
-$size     = get_field( 'uds_hero_size' );
-$image    = get_field( 'uds_hero_image' );
+$size     			= get_field( 'uds_hero_size' );
+$image    			= get_field( 'uds_hero_image' );
+$mobile_content   	= get_field( 'uds_hero_content_on_mobile' );
 
 do_action('qm/debug', $block);
 
@@ -24,8 +25,14 @@ if ( ! empty( $block['align'] ) ) {
 	$alignment = ' alignfull';
 }
 
-// Sets InnerBlocks with a default content.
-$allowed_blocks = array( 'core/html', 'core/heading', 'core/paragraph', 'core/group', 'core/buttons');
+// Retrieve hide-content setting from ACF
+$hidecontent = '';
+if ( ! $mobile_content ) {
+	$hidecontent = ' hide-content';
+}
+
+// Sets InnerBlocks with default content and default block arrangement.
+$allowed_blocks = array( 'core/html', 'core/heading', 'core/group', 'core/buttons');
 $template       = array(
 	array(
 		'core/heading', array(
@@ -48,17 +55,17 @@ $template       = array(
 		'core/buttons', array(), array(
 			array(
 				'core/button', array(
-					'className' => 'is-style-uds-lg'
+					'className' => 'is-style-'
 				)
 			)
 		)
 	)
 );
 
-echo '<div class="' . $size . $alignment . ' has-btn-row">';
+// Block output.
+echo '<div class="' . $size . $alignment . $hidecontent . ' has-btn-row">';
 if( $image ) {
 	echo wp_get_attachment_image( $image, $size, '', array('class'=>'hero'));
 }
-
 echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 echo '</div>';
