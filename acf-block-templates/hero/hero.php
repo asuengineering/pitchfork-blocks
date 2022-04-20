@@ -4,7 +4,7 @@
  * 
  * - encoded to deliver the UDS Hero v2 (CSS Grid-based)
  *
- * @package UDS WordPress Theme
+ * @package Pitchfork_Blocks
  */
 
 $size     			= get_field( 'uds_hero_size' );

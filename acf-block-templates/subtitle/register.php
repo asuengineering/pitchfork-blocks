@@ -6,7 +6,7 @@
  * Author: Steve Ryan
  * Version: 0.2
  *
- * @package UDS WordPress Theme
+ * @package Pitchfork_Blocks
  *
  * Notes: A block designed to deliver the v2 CSS Grid based version of the header. 
  * Uses an ACF wrapper to quickly enable/disable a couple of options that are otherwise hard to deliver.

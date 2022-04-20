@@ -2,7 +2,7 @@
 /**
  * UDS Background Section
  *
- * @package UDS WordPress Theme
+ * @package Pitchfork_Blocks
  */
 
 $choice     = get_field( 'uds_background_section_choice' );

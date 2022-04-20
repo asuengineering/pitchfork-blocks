@@ -6,7 +6,7 @@
  * Author: Steve Ryan
  * Version: 0.1
  *
- * @package UDS WordPress Theme
+ * @package Pitchfork_Blocks
  *
  * Notes: A block indicated by the UDS design document as a necessary "wrapper" for the application
  * of a background texture or color to a standard Bootstrap container. This does not have a direct correlation to
