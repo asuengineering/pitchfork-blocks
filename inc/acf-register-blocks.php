@@ -52,8 +52,9 @@ function pitchfork_blocks_acf_blocks_init() {
 		// Array of block folders to use. Each must have a 'register.php' file.
 		$block_includes = array(
 			// '/alert',
-			'/background-section', // UDS Background section.
-			'/hero',				  // UDS Hero block, v2
+			'/background-section', 		// UDS Background section.
+			'/hero',				  	// UDS Hero block, v2
+			'/subtitle',				// Subtitle block, for use within the hero.
 			// '/banner',             // UDS banner block.
 			// '/blockquote',         // Combination of UDS block quote and testimonial.
 			// '/button',             // Button block for UDS theme.

@@ -33,6 +33,10 @@ div[class^='uds-hero'] {
 	// Base class modifier: .has-btn-row
 	&.has-btn-row {
 
+		[role='doc-subtitle'] {
+			grid-row: 1;
+		}
+
 		.wp-block-buttons {
 			grid-row: 3;
 			display: flex;

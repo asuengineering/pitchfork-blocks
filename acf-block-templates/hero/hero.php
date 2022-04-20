@@ -32,8 +32,14 @@ if ( ! $mobile_content ) {
 }
 
 // Sets InnerBlocks with default content and default block arrangement.
-$allowed_blocks = array( 'core/html', 'core/heading', 'core/group', 'core/buttons');
+$allowed_blocks = array( 'core/html', 'core/heading', 'core/group', 'core/buttons', 'acf/subtitle');
 $template       = array(
+	array(
+		'acf/subtitle', array(
+			'uds_subtitle_text' => 'Example subtitle',
+			'uds_subtitle_highlight_color' => 'highlight-black'
+		)
+	),
 	array(
 		'core/heading', array(
 			'level' => 1,

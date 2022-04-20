@@ -1,0 +1,71 @@
+{
+    "key": "group_6250abdba7d2c",
+    "title": "UDS Block: Subtitle",
+    "fields": [
+        {
+            "key": "field_6250abe44b020",
+            "label": "Subtitle text",
+            "name": "uds_subtitle_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Subtitle text. 50 character max.",
+            "prepend": "",
+            "append": "",
+            "maxlength": 50
+        },
+        {
+            "key": "field_6250ac5e4b021",
+            "label": "Highlight color?",
+            "name": "uds_subtitle_highlight_color",
+            "type": "select",
+            "instructions": "ASU brand standards call for the entire text of the subtitle to be highlighted if a highlight is present.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "highlight-black": "White text \/ Black BG",
+                "highlight-white": "Black text \/ White BG",
+                "highlight-gold": "Black text \/ Gold BG"
+            },
+            "default_value": "none",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/subtitle"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "The subtitle block is used exclusively within the hero block.",
+    "show_in_rest": 0,
+    "modified": 1649712679
+}

@@ -18,6 +18,11 @@ Styling to allow normal use of the hero within the block editor.
         }
     }
 
+    .wp-block-acf-subtitle {
+        grid-row: 1;
+        grid-column: 2;
+        z-index: 30;
+    }
 }
 
 // 3. Hero, Tablet

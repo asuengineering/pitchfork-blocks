@@ -24,11 +24,11 @@ acf_register_block_type(
 		'category'        => 'uds',
 		'keywords'        => array( 'hero', 'cover', 'image' ),
 		'align'			  => 'full',
-		// 'enqueue_script'    => get_template_directory_uri() . '/templates-blocks/background-section/background-section.js',
 		'supports'        => array(
 			'jsx'   => true,
 			'classname' => false,
 			'align' => array( 'full' ),
+			'multiple' => false,
 		),
 		'mode'            => 'edit',
 		// 'example'         => array(
