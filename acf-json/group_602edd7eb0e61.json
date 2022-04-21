@@ -542,6 +542,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Fields for creating static, but customizable, versions of all UDS card types: standard, story, degree, and event.",
-    "show_in_rest": false,
-    "modified": 1650475831
+    "show_in_rest": 0,
+    "modified": 1650477569
 }

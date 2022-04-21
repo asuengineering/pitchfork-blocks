@@ -57,8 +57,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			'/subtitle',				// Subtitle block, for use within the hero.
 			// '/banner',             // UDS banner block.
 			// '/blockquote',         // Combination of UDS block quote and testimonial.
-			// '/button',             // Button block for UDS theme.
-			// '/cards',              // UDS Cards.
+			'/card',               		// UDS Cards.
 			// '/content-sections',   // Miscellaneous content sections.
 			// '/foldable-card',      // UDS Foldable card block.
 			// '/grid-links',         // UDS Grid Links.

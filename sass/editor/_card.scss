@@ -1,0 +1,4 @@
+// Fixes an edtior-specific problem with the native WP element card "card" and the UDS version.
+.acf-block-preview .card.card-horizontal {
+    max-width:none;
+}

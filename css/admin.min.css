@@ -1,5 +1,6 @@
 .acf-block-preview div[class^='uds-hero'] .block-editor-inner-blocks{display:contents}
 .acf-block-preview div[class^='uds-hero'] .block-editor-inner-blocks>.block-editor-block-list__layout{display:contents}
 .acf-block-preview div[class^='uds-hero'] .wp-block-acf-subtitle{grid-row:1;grid-column:2;z-index:30}
+.acf-block-preview .card.card-horizontal{max-width:none}
 @media(min-width:calc(768px)){.acf-block-preview div[class^='uds-hero'] .wp-block-button__link{margin-top:1.5rem}
 }
