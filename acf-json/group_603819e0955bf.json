@@ -45,30 +45,6 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_607f30538c20f",
-            "label": "Select the inner text color",
-            "name": "uds_background_section_text",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "default": "Default",
-                "text-white": "White"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "default",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_60381aa3114aa",
             "label": "Select a background pattern",
             "name": "uds_background_section_pattern",
@@ -221,33 +197,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_60387e57ea953",
-            "label": "Select inner color",
-            "name": "uds_background_inner_color",
-            "type": "radio",
-            "instructions": "When placing text over a background texture or photo within the UDS system, you may be required to provide a measure of color contrast between the visible text and the inner container to assist with readability and accessibility. Choose from the following options.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "inner-bg-gray-7": "UDS Gray 7",
-                "inner-bg-gray-2": "UDS Gray 2",
-                "inner-bg-gray-1": "UDS Gray 1",
-                "inner-bg-white": "UDS White",
-                "inner-bg-none": "No background color"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "inner-bg-white",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_606e31f365933",
             "label": "Background Repeat",
             "name": "uds_background_image_repeat",
@@ -351,5 +300,5 @@
     "active": true,
     "description": "Field for creating a background <section> as a wrapper for other elements.",
     "show_in_rest": 0,
-    "modified": 1642805143
+    "modified": 1650663025
 }

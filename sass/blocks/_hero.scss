@@ -26,8 +26,9 @@ div[class^='uds-hero'] {
 	}
 
 	.wp-block-group {
-		margin-top: $uds-size-spacing-3;
 		grid-row: 6;
+		font-size: $uds-size-font-large;
+		font-weight: $uds-font-weight-bold;
 	}
 
 	// Base class modifier: .has-btn-row
@@ -84,6 +85,7 @@ div[class^='uds-hero'] {
 		}
 
 		.wp-block-group {
+			margin-top: $uds-size-spacing-3;
 			grid-row: 4;
 			font-size: $uds-size-font-xl;
 			font-weight: $uds-font-weight-bold;
@@ -135,6 +137,26 @@ div[class^='uds-hero'] {
 		.wp-block-group,
 		.wp-block-buttons {
 			max-width: calc(1200px - 34%);
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+4. Default spacing for hero
+--------------------------------------------------------------*/
+main div[class^='uds-hero'] {
+	
+	// Apply top margin to any block immediatly following the hero block.
+	// Except if the block is the background section block.
+	& + *:not(.uds-section) {
+		margin-top: $uds-size-spacing-6;
+	}
+}
+
+@include media-breakpoint-up($lg) {
+	main div[class^='uds-hero'] {
+		& + *:not(.uds-section) {
+			margin-top: $uds-size-spacing-12;
 		}
 	}
 }

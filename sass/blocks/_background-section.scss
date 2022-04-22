@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+# UDS Background Section
+
+1. General styles
+2. Desktop
+3. Additional styles for Gutenberg
+4. Background shapes
+--------------------------------------------------------------*/
+
+// Padding and margins.
+.uds-section {
+	padding-top: $uds-size-spacing-6;
+	padding-bottom: $uds-size-spacing-6;
+}
+
+// Inner block columns don't come with an option to set a width.
+.uds-section .wp-block-columns {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Dealing with custom background textures.
+.uds-section.media-file {
+
+	background-position:center;
+	background-repeat: repeat;
+}
+
+/* ------------------------------------------------------------------
+2. Desktop, large
+------------------------------------------------------------------- */
+@include media-breakpoint-up($md) {
+
+	.uds-section {
+		padding-top: $uds-size-spacing-12;
+		padding-bottom: $uds-size-spacing-12;
+	}
+
+}

@@ -23,12 +23,13 @@ acf_register_block_type(
 		'render_template' => PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/background-section/background-section.php',
 		'category'        => 'uds',
 		'keywords'        => array( 'background', 'section', 'image' ),
-		// 'enqueue_script'    => get_template_directory_uri() . '/templates-blocks/background-section/background-section.js',
+		'align'			  => 'full',
+		'mode'            => 'preview',
 		'supports'        => array(
-			'align' => array('wide', 'full'),
 			'jsx'   => true,
+			'classname' => false,
+			'align' => 'full',
 		),
-		'mode'            => 'edit',
 		'example'         => array(
 			'attributes' => array(
 				'mode' => 'preview',

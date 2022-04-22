@@ -11,8 +11,6 @@ $size     			= get_field( 'uds_hero_size' );
 $image    			= get_field( 'uds_hero_image' );
 $mobile_content   	= get_field( 'uds_hero_content_on_mobile' );
 
-do_action('qm/debug', $block);
-
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
 if ( ! empty( $block['className'] ) ) {

@@ -30,15 +30,6 @@ acf_register_block_type(
 			'align' => array( 'full' ),
 			'multiple' => false,
 		),
-		'mode'            => 'edit',
-		// 'example'         => array(
-		// 	'attributes' => array(
-		// 		'mode' => 'preview',
-		// 		'data' => array(
-		// 			'uds_background_section_choice'  => 'pattern',
-		// 			'uds_background_section_pattern' => 'network-white',
-		// 		),
-		// 	),
-		// ),
+		'mode'            => 'edit'
 	)
 );

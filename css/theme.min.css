@@ -1,18 +1,24 @@
 div[class^='uds-hero'] .wp-block-group,div[class^='uds-hero'] .wp-block-buttons{grid-column:2;z-index:30}
 div[class^='uds-hero'] .wp-block-buttons{grid-row:4;margin-bottom:.5rem}
-div[class^='uds-hero'] .wp-block-group{margin-top:1.5rem;grid-row:6}
+div[class^='uds-hero'] .wp-block-group{grid-row:6;font-size:1.25rem;font-weight:700}
 div[class^='uds-hero'].has-btn-row [role='doc-subtitle']{grid-row:1}
 div[class^='uds-hero'].has-btn-row .wp-block-buttons{grid-row:3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 div[class^='uds-hero'].has-btn-row .wp-block-group{grid-row:5}
 div[class^='uds-hero'].hide-content .wp-block-group{display:none}
+main div[class^='uds-hero']+*:not(.uds-section){margin-top:3rem}
+.uds-section{padding-top:3rem;padding-bottom:3rem}
+.uds-section .wp-block-columns{max-width:1200px;margin-left:auto;margin-right:auto}
+.uds-section.media-file{background-position:center;background-repeat:repeat}
 @media(min-width:calc(768px)){div[class^='uds-hero'] .wp-block-group,div[class^='uds-hero'] .wp-block-buttons{grid-column:2;max-width:700px;z-index:30}
 div[class^='uds-hero'] .wp-block-buttons{-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-div[class^='uds-hero'] .wp-block-group{grid-row:4;font-size:1.5rem;font-weight:700;line-height:1.5}
+div[class^='uds-hero'] .wp-block-group{margin-top:1.5rem;grid-row:4;font-size:1.5rem;font-weight:700;line-height:1.5}
 div[class^='uds-hero'] .wp-block-group p:last-child{margin-bottom:0}
 div[class^='uds-hero'].has-btn-row .wp-block-group{grid-row:4}
 div[class^='uds-hero'].has-btn-row .wp-block-buttons{grid-row:5;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 div[class^='uds-hero'].hide-content .wp-block-group{display:block}
+.uds-section{padding-top:6rem;padding-bottom:6rem}
 }@media(min-width:calc(992px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(940px - 34%)}
+main div[class^='uds-hero']+*:not(.uds-section){margin-top:6rem}
 }@media(min-width:calc(1224px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(1200px - 34%)}
 }@media(max-width:calc(540px - .02px)){div[class^='uds-hero'] .wp-block-group>.has-white-color{color:#191919 !important}
 }
