@@ -448,27 +448,3 @@ gulp.task(
 
 	done();
 });
-
-/**
- * Copy Hybrid Breadcrumbs assets from /vendor
- * 
- * Does the following:
- * 1. Copies files from /vendor/justintadlock/hybrid-breadcrumbs to /src
- *
- */
-
- gulp.task("copy-breadcrumbs", function (done) {
-
-	var paths = {
-		"composer": "./vendor/justintadlock",
-		"dev": "./src/hybrid-breadcrumbs",
-	}
-
-	// Copy UDS image files to /img at root level.
-	// Accomodates default setting for image paths from shipped Bootstrap CSS.
-	gulp
-		.src(paths.composer + "/hybrid-breadcrumbs/**/*")
-		.pipe(gulp.dest(paths.dev));
-
-	done();
-});

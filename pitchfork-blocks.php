@@ -22,6 +22,11 @@ if ( ! defined( 'WPINC' ) ) {
 // Variable for root directory of this plugin.
 define( 'PITCHFORK_BLOCKS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
+// Composer vendor autoload
+if ( file_exists( PITCHFORK_DOCS_BASE_PATH . 'vendor/autoload.php' ) ) {
+	require_once PITCHFORK_DOCS_BASE_PATH . 'vendor/autoload.php';
+}
+
 // Function: Activate.
 // Function: Deactivate.
 // Function: Execute plugin.
