@@ -409,18 +409,12 @@ gulp.task(
 );
 
 
-
-// Run:
-// gulp copy-assets.
-// Copy all needed dependency assets files from node_modules to theme's /js, /scss and /fonts folder.
-// Run this task after npm update
-
 /**
- * Copy Assets from node_modules.
+ * Copy UDS-Bootstrap-4 assets from node_modules.
+ * Run: gulp upboot
  * 
  * Does the following:
  * 1. Copies files from bootstrap4-theme to /src
- * 2. Copies files from cookie-consent to /src
  *
  */
 
@@ -428,7 +422,7 @@ gulp.task(
 
 	var paths = {
 		"node": "./node_modules",
-		"dev": "./src",
+		"dev": "./src/bootstrap4-theme",
 	}
 
 	// Copy UDS image files to /img at root level.
@@ -452,15 +446,29 @@ gulp.task(
 		.src(paths.node + "/@asu-design-system/bootstrap4-theme/src/scss/**/*.scss")
 		.pipe(gulp.dest(paths.dev + "/sass"));
 
-	// Copy Preact files from NPM
-	gulp
-		.src(paths.node + "/preact/dist/*.js")
-		.pipe(gulp.dest(paths.dev + "/preact/js"));
+	done();
+});
 
-	// Copy UDS cookie-consent JS files
+/**
+ * Copy Hybrid Breadcrumbs assets from /vendor
+ * 
+ * Does the following:
+ * 1. Copies files from /vendor/justintadlock/hybrid-breadcrumbs to /src
+ *
+ */
+
+ gulp.task("copy-breadcrumbs", function (done) {
+
+	var paths = {
+		"composer": "./vendor/justintadlock",
+		"dev": "./src/hybrid-breadcrumbs",
+	}
+
+	// Copy UDS image files to /img at root level.
+	// Accomodates default setting for image paths from shipped Bootstrap CSS.
 	gulp
-		.src(paths.node + "/@asu-design-system/cookie-consent/dist/*.js")
-		.pipe(gulp.dest(paths.dev + "/cookie-consent/js"));
+		.src(paths.composer + "/hybrid-breadcrumbs/**/*")
+		.pipe(gulp.dest(paths.dev));
 
 	done();
 });
