@@ -57,6 +57,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			'/subtitle',				// Subtitle block, for use within the hero.
 			// '/banner',             // UDS banner block.
 			// '/blockquote',         // Combination of UDS block quote and testimonial.
+			'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 			'/card',               		// UDS Cards.
 			// '/content-sections',   // Miscellaneous content sections.
 			// '/foldable-card',      // UDS Foldable card block.
