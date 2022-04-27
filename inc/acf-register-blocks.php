@@ -56,16 +56,14 @@ function pitchfork_blocks_acf_blocks_init() {
 			'/hero',				  	// UDS Hero block, v2
 			'/subtitle',				// Subtitle block, for use within the hero.
 			// '/banner',             // UDS banner block.
-			// '/blockquote',         // Combination of UDS block quote and testimonial.
 			'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 			'/card',               		// UDS Cards.
+			'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
 			// '/content-sections',   // Miscellaneous content sections.
 			// '/foldable-card',      // UDS Foldable card block.
 			// '/grid-links',         // UDS Grid Links.
-			// '/headings',           // A UDS Headings block.
 			// '/image',              // UDS Image block with caption and shadow options.
 			// '/modals',             // UDS windows modal block.
-			// '/overlay-card',       // UDS Program Cards.
 			// '/profile',            // Individual person profile (non-iSearch).
 			// '/show-more',          // Show more button.
 			// '/tabbed-panels',      // UDS Tabbed panels block.
