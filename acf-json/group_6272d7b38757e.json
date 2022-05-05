@@ -1,0 +1,298 @@
+{
+    "key": "group_6272d7b38757e",
+    "title": "UDS Block: Blockquote",
+    "fields": [
+        {
+            "key": "field_6272e8a12292d",
+            "label": "Quote",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6272ee7a7e1ba",
+            "label": "Quoted text",
+            "name": "uds_blockquote_quote",
+            "type": "textarea",
+            "instructions": "Please do not include quotation marks in this text. <br> They will be applied for you automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_6272e9b2bf34b",
+            "label": "Person Cited",
+            "name": "uds_blockquote_cite",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "First and Last Name",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6272e9f4bf34c",
+            "label": "Description",
+            "name": "uds_blockquote_description",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Citation description goes here",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6272e62e9d194",
+            "label": "Formatting",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6272da90051cf",
+            "label": "Select your style",
+            "name": "uds_blockquote_style",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Quote",
+                "testimonial": "Testimonial"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6272df13051d3",
+            "label": "Include an image?",
+            "name": "uds_blockquote_image_include",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Include",
+            "ui_off_text": "No Image"
+        },
+        {
+            "key": "field_6272e4293eb53",
+            "label": "Select your citation style",
+            "name": "uds_blockquote_alt",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6272da90051cf",
+                        "operator": "==",
+                        "value": "default"
+                    },
+                    {
+                        "field": "field_6272df13051d3",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Alternate",
+            "ui_off_text": "Default"
+        },
+        {
+            "key": "field_6272db3e051d0",
+            "label": "Select your accent color",
+            "name": "uds_blockquote_accent",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6272da90051cf",
+                        "operator": "==",
+                        "value": "testimonial"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_6272da90051cf",
+                        "operator": "==",
+                        "value": "default"
+                    },
+                    {
+                        "field": "field_6272df13051d3",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "black": "Gray 7 (Black)",
+                "maroon": "Maroon",
+                "gold": "Gold"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "default",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_6272dfb3051d4",
+            "label": "Image on which side?",
+            "name": "uds_blockquote_reversed",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6272da90051cf",
+                        "operator": "==",
+                        "value": "default"
+                    },
+                    {
+                        "field": "field_6272df13051d3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Right",
+            "ui_off_text": "Left"
+        },
+        {
+            "key": "field_6272e4a03eb54",
+            "label": "Upload your image",
+            "name": "uds_blockquote_image_src",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6272df13051d3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/blockquote"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1651707346
+}

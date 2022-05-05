@@ -59,6 +59,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 			'/card',               		// UDS Cards.
 			'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
+			'/blockquote'				// UDS Blockquote, inner blocks
 			// '/content-sections',   // Miscellaneous content sections.
 			// '/foldable-card',      // UDS Foldable card block.
 			// '/grid-links',         // UDS Grid Links.
