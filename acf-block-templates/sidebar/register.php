@@ -14,6 +14,9 @@
  * 
  */
 
+// Includes the walker class for manipulating the menu.
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/sidebar/class_pfblocks_sidebar.php';
+
 acf_register_block_type(
 	array(
 		'name'            => 'uds-sidebar',
@@ -24,7 +27,7 @@ acf_register_block_type(
 		'category'        => 'uds',
 		'keywords'        => array( 'sidebar', 'navigation', 'secondary' ),
 		'align'			  => array(),
-		'mode'            => 'preview',
+		'mode'            => 'edit',
 		'supports'        => array(
 			'jsx'   => true,
 			'classname' => false,
