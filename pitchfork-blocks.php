@@ -40,4 +40,5 @@ require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/enqueue-scripts.php';
 
 // ACF configurations.
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-config.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-menu-select/acf-menu-select.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-register-blocks.php';
