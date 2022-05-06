@@ -1,0 +1,9 @@
+/*--------------------------------------------------------------
+# _sidebar.scss
+
+- Styling to prevent accidental clicks of menu items. 
+--------------------------------------------------------------*/
+
+.editor-styles-wrapper .uds-grid-links a {
+    pointer-events: none;
+}
