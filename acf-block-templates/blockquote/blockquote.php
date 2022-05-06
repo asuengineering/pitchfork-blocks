@@ -35,10 +35,6 @@ $block_attr = array();
 $use_glyph = false;
 $use_image = false;
 
-// do_action('qm/debug', 'Image: ' . $withimage);
-// do_action('qm/debug', 'Reversed: ' . $reversed);
-// do_action('qm/debug', $style);
-
 if ('default' == $style ){
 	// Default style. Is there an image included?
 	if ( $withimage ) {
