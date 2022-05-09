@@ -1,0 +1,109 @@
+{
+    "key": "group_613fc14daf233",
+    "title": "UDS Block: Foldable Card",
+    "fields": [
+        {
+            "key": "field_613fc348fae26",
+            "label": "Card title",
+            "name": "uds_foldcard_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6143d81a230b1",
+            "label": "Icon",
+            "name": "uds_foldcard_icon",
+            "type": "text",
+            "instructions": "Enter all required FA classes. Example: <code>fas fa-external-link-alt<\/code>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_613fc3aafae27",
+            "label": "Start collapsed?",
+            "name": "uds_foldcard_collapsed",
+            "type": "true_false",
+            "instructions": "Determines the start state of the foldable card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Expanded",
+            "ui_off_text": "Collapsed"
+        },
+        {
+            "key": "field_62797ead13159",
+            "label": "Disable fold at viewport",
+            "name": "uds_foldcard_disabled",
+            "type": "select",
+            "instructions": "Prevent the card from folding at a certain breakpoint and above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "desktop-disable-never": "Never disabled",
+                "desktop-disable-md": "Disabled at md",
+                "desktop-disable-lg": "Disabled at lg",
+                "desktop-disable-xl": "Disabled at xl"
+            },
+            "default_value": "desktop-disable-never",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/card-foldable"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1652130953
+}

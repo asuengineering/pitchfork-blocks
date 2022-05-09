@@ -1,4 +1,24 @@
-// Fixes an edtior-specific problem with the native WP element card "card" and the UDS version.
-.acf-block-preview .card.card-horizontal {
-    max-width:none;
+/*--------------------------------------------------------------
+# UDS Cards
+
+- Remove included spacing and max-width from WP class
+  of "card" in various places.
+--------------------------------------------------------------*/
+
+
+.acf-block-preview .card {
+    &.card-horizontal {
+        max-width:none;
+    }
+}
+
+.acf-block-preview .card {
+    &.card-foldable {
+        max-width:none;
+        padding: 0;
+
+        .card-header.card-header-icon .card-icon {
+            margin-bottom:0;
+        }
+    }
 }

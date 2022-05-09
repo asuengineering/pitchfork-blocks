@@ -9,6 +9,8 @@ main div[class^='uds-hero']+*:not(.uds-section){margin-top:3rem}
 .uds-section{padding-top:3rem;padding-bottom:3rem}
 .uds-section .wp-block-columns{max-width:1200px;margin-left:auto;margin-right:auto}
 .uds-section.media-file{background-position:center;background-repeat:repeat}
+.card-header.card-header-icon .card-icon{margin-bottom:0}
+.card-header.card-header-icon .card-icon svg{margin-right:1rem}
 @media(min-width:calc(768px)){div[class^='uds-hero'] .wp-block-group,div[class^='uds-hero'] .wp-block-buttons{grid-column:2;max-width:700px;z-index:30}
 div[class^='uds-hero'] .wp-block-buttons{-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 div[class^='uds-hero'] .wp-block-group{margin-top:1.5rem;grid-row:4;font-size:1.5rem;font-weight:700;line-height:1.5}
