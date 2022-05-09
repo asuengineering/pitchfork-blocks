@@ -8,13 +8,30 @@
 $fc_title 		= get_field( 'uds_foldcard_title' );
 $fc_icon 		= get_field( 'uds_foldcard_icon' );
 $collapsed 		= get_field( 'uds_foldcard_collapsed' );
+$disabled 		= get_field( 'uds_foldcard_disabled' );
 
-$base_class = array('card', 'card-foldable');
-// Add color declaration from block properties.
-// Add disable fold.
-
-// do_action('qm/debug', $collapsed );
+// do_action('qm/debug', $block['backgroundColor'] );
 $blockID = $block['id'];
+
+// Start assembling base classes for <div class="card-foldable"> wrapper.
+$base_class = array('card', 'card-foldable');
+
+// Add the required text-color modifier to the base class array.
+// Get block text color from theme.json settings.
+// Block requires "card-{color}" classes to correctly modify the accent color.
+if ( ! empty( $block['backgroundColor'] ) ) {
+	$base_class[] = 'card-' . $block['backgroundColor'];
+}
+
+// Retrieve additional classes from the 'advanced' field in the editor.
+if ( ! empty( $block['className'] ) ) {
+	$base_class[] = $block['className'];
+}
+
+// Add disable fold class and create wrapper.
+$base_class[] = $disabled;
+$card_wrap = '<div class="' . implode( ' ', $base_class) . '">';
+
 
 // Card header, title and icon state.
 if ( ! empty( $fc_icon)) {
@@ -62,7 +79,7 @@ $card_body = '<div ' . implode( ' ', $card_body_attr) . '>';
 
 
 // Sets InnerBlocks with an H4 and a paragraph as default content.
-$allowed_blocks = array( 'core/html', 'core/heading', 'core/paragraph', 'core/image' );
+$allowed_blocks = array( 'core/html', 'core/heading', 'core/paragraph', 'core/image', 'core/list' );
 $template       = array(
 	array(
 		'core/heading', array(
@@ -79,7 +96,7 @@ $template       = array(
 
 // Build the card.
 $card = '';
-$card .= '<div class="card card-foldable">' . $card_head . '<h4>' . $card_head_link . $card_title . '</a></h4></div>' . $card_body;
+$card .= $card_wrap . $card_head . '<h4>' . $card_head_link . $card_title . '</a></h4></div>' . $card_body;
 
 echo wp_kses_post( $card );
 echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';

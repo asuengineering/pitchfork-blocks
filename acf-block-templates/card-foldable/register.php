@@ -27,6 +27,11 @@ acf_register_block_type(
 			'jsx'   => true,
 			'classname' => false,
 			'align' => '',
+			'color' => array(
+				'backround' => true,
+				'text' => false,
+				'link' => false,
+			),
 		),
 		'mode'            => 'edit'
 	)
