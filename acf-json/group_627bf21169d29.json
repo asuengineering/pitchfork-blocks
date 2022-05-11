@@ -1,0 +1,44 @@
+{
+    "key": "group_627bf21169d29",
+    "title": "UDS Block: Accordion",
+    "fields": [
+        {
+            "key": "field_627bf2df3eac9",
+            "label": "Accordion behavior",
+            "name": "uds_accordion_behavior",
+            "type": "true_false",
+            "instructions": "By default, groups of foldable cards will allow for one card to be visible at a time. Disable this option to allow for all cards to expand and contract independently.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "N'Sync",
+            "ui_off_text": "Miss Independent"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/accordion"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1652291346
+}
