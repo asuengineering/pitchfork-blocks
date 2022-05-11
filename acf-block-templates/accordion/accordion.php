@@ -16,7 +16,9 @@ $wrap = '<div class="accordion" id="Accordion-' . $blockID . '">';
 $allowed_blocks = array( 'acf/card-foldable' );
 $template       = array(
 	array(
-		'acf/card-foldable', array(), array(
+		'acf/card-foldable', array(
+			'uds_foldcard_title' => 'This is the first card in the accordion.'
+		), array(
 			array(
 				'core/heading', array(
 					'level' => 4,
@@ -31,7 +33,9 @@ $template       = array(
 		)
 	),
 	array(
-		'acf/card-foldable', array(), array(
+		'acf/card-foldable', array(
+			'uds_foldcard_title' => 'A second card.'
+		), array(
 			array(
 				'core/heading', array(
 					'level' => 4,
