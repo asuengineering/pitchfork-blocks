@@ -23,6 +23,8 @@ acf_register_block_type(
 		'category'        => 'uds',
 		'keywords'        => array( 'foldable', 'card', 'accordion' ),
 		'align'			  => '',
+		'parent'		  => array( 'acf/accordion'),
+		'mode'            => 'preview',
 		'supports'        => array(
 			'jsx'   => true,
 			'classname' => false,
@@ -33,6 +35,5 @@ acf_register_block_type(
 				'link' => false,
 			),
 		),
-		'mode'            => 'edit'
 	)
 );
