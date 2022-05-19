@@ -29,7 +29,7 @@ acf_register_block_type(
 			'classname' => false,
 			'align' => '',
 			'color' => array(
-				'backround' => true,
+				'background' => true,
 				'text' => false,
 				'link' => false,
 			),
