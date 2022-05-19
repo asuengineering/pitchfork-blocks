@@ -22,12 +22,13 @@ acf_register_block_type(
 		'render_template' => PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/banner/banner.php',
 		'category'        => 'uds',
 		'keywords'        => array( 'banner', 'dismiss', 'message' ),
-		'align'			  => 'full',
+		'align'			  => '',
 		'mode'            => 'preview',
 		'supports'        => array(
+			'multiple' => false,
 			'jsx'   => true,
 			'classname' => false,
-			'align' => array('full'),
+			'align' => '',
 			'color' => array(
 				'background' => true,
 				'text' => false,

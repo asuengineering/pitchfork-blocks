@@ -9,3 +9,13 @@
 .wp-block-acf-alert button {
     pointer-events: none;
 }
+
+// Force max-width of block to alignfull settings in the editor.
+// Prevent accidental click of a displayed button in the editor.
+.wp-block-acf-banner {
+    max-width: 1920px;
+
+    .banner-buttons a {
+        pointer-events: none;
+    }
+}
