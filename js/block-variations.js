@@ -6,18 +6,40 @@
 
  wp.domReady( () => {
     
+    /**
+     * Register styles associated with acf/alert
+     */
+    wp.blocks.registerBlockStyle(
+        'acf/alert', [{
+            name: 'alert-warning',
+            label: 'Warning',
+            isDefault: true,
+        }]
+    );
+
+    wp.blocks.registerBlockStyle(
+        'acf/alert', [{
+            name: 'alert-success',
+            label: 'Success',
+            isDefault: false,
+        }]
+    );
+
+    wp.blocks.registerBlockStyle(
+        'acf/alert', [{
+            name: 'alert-info',
+            label: 'Information',
+            isDefault: false,
+        }]
+    );
+
+    wp.blocks.registerBlockStyle(
+        'acf/alert', [{
+            name: 'alert-error',
+            label: 'Error',
+            isDefault: false,
+        }]
+    );
+
 });
-    // Useful technique...
-    // // Our filter function
-    // function setBlockCustomClassName( className, blockName ) {
-    //     console.log('Got here!');
-    //     return blockName === 'core/button' ? 'btn' : className;
-    // }
-    
-    // // Adding the filter
-    // wp.hooks.addFilter(
-    //     'blocks.getBlockDefaultClassName',
-    //     'pitchfork-blocks/set-block-custom-class-name',
-    //     setBlockCustomClassName
-    // );
 

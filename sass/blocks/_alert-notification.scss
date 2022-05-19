@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+# UDS Alert / UDS Notifications
+
+- Include background colors of alert messages directly.
+- UDS-BS4 not directly included in the plugin, so @extend won't work.
+--------------------------------------------------------------*/
+
+.wp-block-alert.alert {
+
+    // Default setting for the block is the warning color.
+    background-color: #ffeade;
+    border-color: #ff7f32;
+
+
+    &.is-style-alert-warning {
+        background-color: #ffeade;
+        border-color: #ff7f32;
+    }
+
+    &.is-style-alert-success {
+        background-color: #e9f5db;
+        border-color: #78be20;
+    }
+
+    &.is-style-alert-info {
+        background-color: #d6f0fa;
+        border-color: #00a3e0;
+    }
+
+    &.is-style-alert-error {
+        background-color: #f7dddd;
+        border-color: #cc2f2f;
+    }
+}
+
+.wp-block-banner {
+    .banner {
+        // Aligns the inner contents of banner to normal alignment.
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -9,5 +9,6 @@
 .editor-styles-wrapper .sidebar .nav-link{pointer-events:none}
 .editor-styles-wrapper .sidebar .card{max-width:none;margin-top:0;padding:0}
 .editor-styles-wrapper .uds-grid-links a{pointer-events:none}
+.wp-block-acf-alert button{pointer-events:none}
 @media(min-width:calc(768px)){.acf-block-preview div[class^='uds-hero'] .wp-block-button__link{margin-top:1.5rem}
 }

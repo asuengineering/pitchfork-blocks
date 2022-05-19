@@ -1,0 +1,11 @@
+/*--------------------------------------------------------------
+# UDS Alert / UDS Notifications
+
+- Include background colors of alert messages directly.
+- UDS-BS4 not directly included in the plugin, so @extend won't work.
+--------------------------------------------------------------*/
+
+// Prevent accidental dismissal of the block in the editor.
+.wp-block-acf-alert button {
+    pointer-events: none;
+}

@@ -147,15 +147,15 @@ div[class^='uds-hero'] {
 main div[class^='uds-hero'] {
 	
 	// Apply top margin to any block immediatly following the hero block.
-	// Except if the block is the background section block.
-	& + *:not(.uds-section) {
+	// Except if the block is the background section block or the notification block.
+	& + *:not(.allowed-after-hero) {
 		margin-top: $uds-size-spacing-6;
 	}
 }
 
 @include media-breakpoint-up($lg) {
 	main div[class^='uds-hero'] {
-		& + *:not(.uds-section) {
+		& + *:not(.allowed-after-hero) {
 			margin-top: $uds-size-spacing-12;
 		}
 	}
