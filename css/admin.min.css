@@ -12,6 +12,6 @@
 .wp-block-acf-alert button{pointer-events:none}
 .wp-block-acf-banner{max-width:1920px}
 .wp-block-acf-banner .banner-buttons a{pointer-events:none}
-.editor-styles-wrapper .is-root-container.block-editor-block-list__layout .block-editor-block-list__block.wp-block.is-reusable{max-width:none}
+.editor-styles-wrapper .is-root-container .wp-block.is-reusable{max-width:none}
 @media(min-width:calc(768px)){.acf-block-preview div[class^='uds-hero'] .wp-block-button__link{margin-top:1.5rem}
 }
