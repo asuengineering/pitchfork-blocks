@@ -14,6 +14,11 @@
 @import 'editor/grid-links';
 @import 'editor/alert-notification';
 
+
+/*--------------------------------------------------------------
+One-off fixes, tempoorary issues.
+--------------------------------------------------------------*/
+
 /* Workaround for open issue with Gutenberg and reusable blocks. 
 - Editor will not respect the alignment settings of inner blocks. Will always display "normal" width.
 - See: https://github.com/WordPress/gutenberg/issues/8288 */
