@@ -26,7 +26,7 @@ acf_register_block_type(
 		'mode'            => 'edit',
 		'supports'        => array(
 			'spacing' => array(
-				'units' => array('em'),
+				'units' => array('rem'),
 				'margin' => array('top', 'bottom'),
 				'padding' => true,
 			),

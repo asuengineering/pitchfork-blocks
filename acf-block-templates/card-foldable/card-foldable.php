@@ -43,6 +43,13 @@ foreach( $postblocks as $postblock ) {
 
 }
 
+/** 
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+
 
 /** 
  * Start assembling base classes for <div class="card-foldable"> wrapper.
@@ -64,7 +71,7 @@ if ( ! empty( $block['className'] ) ) {
 
 // Add disable fold class and create wrapper.
 $base_class[] = $disabled;
-$card_wrap = '<div class="' . implode( ' ', $base_class) . '">';
+$card_wrap = '<div class="' . implode( ' ', $base_class) . '" style="' . $spacing . '">';
 
 
 /** 
