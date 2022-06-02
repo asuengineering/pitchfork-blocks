@@ -11,9 +11,17 @@ $use_icon		= get_field( 'uds_alert_icon' );
 $dismissable	= get_field( 'uds_alert_dismissable' );
 do_action('qm/debug', $block);
 
+/** 
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+
 // Retrieve additional classes from the 'advanced' field in the editor.
 // Add optional classes for dismissal.
 $alert_classes = array('wp-block-alert', 'alert');
+
 
 if ( ! empty( $block['className'] ) ) {
 	$alert_classes[] = $block['className'];
@@ -29,7 +37,7 @@ if ( $dismissable ) {
 	$close = '';
 }
 
-$wrapper = '<div class="' . implode( ' ', $alert_classes) . '">';
+$wrapper = '<div class="' . implode( ' ', $alert_classes) . '" style="' . $spacing . '">';
 
 // Set the icon depending on if the option is enabled and the alert type.
 if ( $use_icon ) {
