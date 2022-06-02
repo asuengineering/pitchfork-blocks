@@ -78,3 +78,39 @@ function pitchfork_blocks_acf_blocks_init() {
 	}
 }
 add_action( 'acf/init', 'pitchfork_blocks_acf_blocks_init' );
+
+
+/**
+ * Given an $block object from a gutenberg block,
+ * This will return a string of inline values suitable for
+ * inclusion in the block output in PHP. 
+ *
+ * @param  mixed $block
+ * @return $style as string
+ */
+function pitchfork_blocks_acf_calculate_spacing($block) {
+
+	$style = '';
+	$padding = array();
+	$margin = array();
+
+	if (isset($block['style']['spacing']['padding'])) {
+
+		$padding = $block['style']['spacing']['padding'];
+
+		foreach ($padding as $rule => $value) {
+			$style .= 'padding-' . $rule . ':' . $value . '; ';
+		}	
+	}
+
+	if (isset($block['style']['spacing']['margin'])) {
+
+		$margin = $block['style']['spacing']['margin'];
+
+		foreach ($margin as $rule => $value) {
+			$style .= 'margin-' . $rule . ':' . $value . '; ';
+		}
+	}
+
+	return $style;
+}

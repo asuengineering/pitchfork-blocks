@@ -10,7 +10,9 @@
 $enable_sync		= get_field( 'uds_accordion_behavior' );
 $blockID 			= $block['id'];
 
-$wrap = '<div class="accordion" id="Accordion-' . $blockID . '">';
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+
+$wrap = '<div class="accordion" id="Accordion-' . $blockID . '" style="' . $spacing . '">';
 
 // Sets InnerBlocks with a pair of foldable cards both containing an H4 and a paragraph.
 $allowed_blocks = array( 'acf/card-foldable' );
