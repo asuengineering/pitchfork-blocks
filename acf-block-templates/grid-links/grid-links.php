@@ -28,7 +28,14 @@ if ( 'mobile' !== $columns ) {
 	$additional_classes = $columns . ' ' . $additional_classes;
 }
 
-echo '<div class="uds-grid-links ' . $additional_classes . '">';
+/** 
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+
+echo '<div class="uds-grid-links ' . $additional_classes . '" style="' . $spacing . '">';
 
 // If then structure determines the actual <a> tags produced. Indicated with user choice for the source of the links.
 // This field is a radio button with a default setting, so no need to see if it exists.
