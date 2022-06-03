@@ -21,6 +21,13 @@ if ( ! empty( $block['className'] ) ) {
 	$additional_classes = $block['className'];
 }
 
+/** 
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+
 // Produce the correct section block 
 if ( $choice ) {
 
@@ -30,15 +37,15 @@ if ( $choice ) {
 
 		if ( 'custom' === $preset ) {
 			// We're doing a custom background color.
-			echo '<section class="uds-section alignfull allowed-after-hero bg-color ' . $additional_classes . '" style="background-color: ' . $color . ';" >';
+			echo '<section class="uds-section alignfull allowed-after-hero bg-color ' . $additional_classes . '" style="background-color: ' . $color . ';" style="' . $spacing . '">';
 		} else {
 			// Background colors via utility BS4 classes.
-			echo '<section class="uds-section alignfull allowed-after-hero bg-color ' . $preset . ' ' . $additional_classes . '" >';
+			echo '<section class="uds-section alignfull allowed-after-hero bg-color ' . $preset . ' ' . $additional_classes . '" style="' . $spacing . '">';
 		}
 	} elseif ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
-		echo '<section class="uds-section alignfull allowed-after-hero bg ' . $pattern . ' ' . $additional_classes . '" >';
+		echo '<section class="uds-section alignfull allowed-after-hero bg ' . $pattern . ' ' . $additional_classes . '" style="' . $spacing . '">';
 
 	} elseif ( 'upload' === $choice ) {
 
@@ -47,7 +54,7 @@ if ( $choice ) {
 
 		// Set the basic utility class + inner bg color as classes.
 
-		echo '<section class="uds-section alignfull allowed-after-hero media-file ' . $additional_classes . '" style="' . $inline_style . '" >';
+		echo '<section class="uds-section alignfull allowed-after-hero media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
 
 	}
 
