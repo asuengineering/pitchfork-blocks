@@ -63,6 +63,13 @@ if ( isset( $block['className'] ) && ! empty( $block['className'] ) ) {
 	$additional_classes = trim( sanitize_text_field( $block['className'] ) );
 }
 
+/** 
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+
 // Check for the 'hover' variant, and set the class if needed.
 $hover_class = '';
 if ( ! empty( get_field( 'hover' ) ) ) {
@@ -81,7 +88,7 @@ if ( ! empty( $image_data ) ) {
 }
 ?>
 
-<div class="card <?php echo $style_class; ?> <?php echo $orientation_class; ?> <?php echo $additional_classes; ?> <?php echo $hover_class; ?>">
+<div class="card <?php echo $style_class; ?> <?php echo $orientation_class; ?> <?php echo $additional_classes; ?> <?php echo $hover_class; ?>" style="<?php echo $spacing; ?>">
 	<?php if ( 'image' == $header_style ) : ?>
 		<img class="card-img-top" src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
 	<?php endif; ?>
