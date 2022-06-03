@@ -25,6 +25,11 @@ acf_register_block_type(
 		'align'			  => '',
 		'mode'            => 'preview',
 		'supports'        => array(
+			'spacing' => array(
+				'units' => array('rem'),
+				'margin' => array('top', 'bottom'),
+				'padding' => false,
+			),
 			'multiple' => false,
 			'jsx'   => true,
 			'classname' => false,

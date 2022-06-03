@@ -11,7 +11,12 @@
 $button_count 	= get_field( 'uds_banner_button_count' );
 $dismissable 	= get_field( 'uds_banner_dismissable' );
 
-// do_action('qm/debug', $block);
+/** 
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing($block);
 
 // Retreive alignment setting from toolbar.
 $block_classes = array('wp-block-banner', 'alignfull', 'allowed-after-hero');
@@ -95,7 +100,7 @@ $template       = array(
 );
 ?>
 
-<section class="<?php echo implode(' ', $block_classes); ?>">
+<section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo $spacing; ?>">
 	<div class="banner" role="banner">
 		<!-- <div class="banner-icon">
 			<span title="Banner" class="fas fa-"></span>
