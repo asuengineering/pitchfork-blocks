@@ -14,7 +14,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 **Contributors**
 
 - Steve Ryan (ASU Engineering)
-- Walt McConnell, Zainab Alsidiki, Nathan Rollins (ASU Knowledge Enterprise)
+- Zainab Alsidiki, Justin Holloway, Walt McConnell, Nathan Rollins, Cindy Zisner (ASU Knowledge Enterprise)
 
 ## Usage Requirements
 
