@@ -50,6 +50,11 @@ This plugin leverages the following libraries for functionality delivered within
 
 ## Release Notes
 
+### Version 1.1
+
+- Added `content-media-overlap` block to the party. 
+- Added additional contributors to this README from ASU Knowledge Enterprise.
+
 ### Version 1.0
 
 - Initial deployment of the plugin. v1.0.
