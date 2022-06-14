@@ -51,21 +51,20 @@ function pitchfork_blocks_acf_blocks_init() {
 
 		// Array of block folders to use. Each must have a 'register.php' file.
 		$block_includes = array(
+			'/accordion',				// UDS Accordion, uses foldable cards.
 			'/alert',					// UDS Alert Block, includes options for dismissal.
 			'/background-section', 		// UDS Background section.
-			'/hero',				  	// UDS Hero block, v2
-			'/subtitle',				// Subtitle block, for use within the hero.
 			'/banner',             		// UDS banner block.
+			'/blockquote',				// UDS Blockquote, inner blocks
 			'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 			'/card',               		// UDS Cards.
-			'/card-foldable',      // UDS Foldable card block.
-			'/accordion',			// UDS Accordion, uses foldable cards.
+			'/card-foldable',      		// UDS Foldable card block.
+			'/content-media-overlap', 	// Miscellaneous content sections.
+			'/grid-links',         		// UDS Grid Links.
+			'/hero',				  	// UDS Hero block, v2
 			'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
-			'/blockquote',				// UDS Blockquote, inner blocks
-			// '/content-sections',   // Miscellaneous content sections.
-			'/grid-links',         // UDS Grid Links.
-			// '/image',              // UDS Image block with caption and shadow options.
-			// '/modals',             // UDS windows modal block.
+			'/subtitle',				// Subtitle block, for use within the hero.
+
 			// '/profile',            // Individual person profile (non-iSearch).
 			// '/show-more',          // Show more button.
 			// '/tabbed-panels',      // UDS Tabbed panels block.
@@ -73,7 +72,7 @@ function pitchfork_blocks_acf_blocks_init() {
 
 		// Loop through array items and include each register file.
 		foreach ( $block_includes as $folder ) {
-			require_once PITCHFORK_BLOCKS_BASE_PATH . '/acf-block-templates' . $folder . '/register.php';
+			require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder . '/register.php';
 		}
 	}
 }
