@@ -46,7 +46,7 @@ Thumbs.db
 ##########
 !assets/js/vendor/
 wpcs/
-/vendor/
+/vendor/*
 !/vendor/autoload.php
 !/vendor/composer/
 !/vendor/justintadlock/
