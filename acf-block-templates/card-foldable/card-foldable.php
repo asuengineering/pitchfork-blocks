@@ -15,33 +15,17 @@ global $post;
 /** 
  * Loop through all of the blocks on the page to identify the parent acf/accordion block's unique ID. 
  * Used in the data-target attribute within the card body.
+ * 
+ * find_accordion_block_in_haystack() is the key recursive function in play.
+ * Returns block info for the parent accoordion block.
  */
 
-$outerbreak = false;
+
 $postblocks = parse_blocks( $post->post_content );
-foreach( $postblocks as $postblock ) {
-	if( 'acf/accordion' === $postblock['blockName'] ) {
+$accordion = find_accordion_block_in_haystack($postblocks, $blockID);
+$accordionID = $accordion['attrs']['id'];
+$accordionBehavior = $accordion['attrs']['data']['uds_accordion_behavior'];
 
-		$accordionInners = $postblock['innerBlocks'];
-
-		foreach( $accordionInners as $accordionInner ) {
-			$accordionInnerID = $accordionInner['attrs']['id'];
-			if ($blockID == $accordionInnerID ) {
-				// Chicken dinner.
-				$outerbreak = true;
-				break;
-			}
-		}
-	}
-
-	// Stops the outer foreach loop once we have a match.
-	if ($outerbreak) {
-		$accordionID = $postblock['attrs']['id'];
-		$accordionBehavior = $postblock['attrs']['data']['uds_accordion_behavior'];
-		break;
-	}
-
-}
 
 /** 
  * Additional margin/padding settings
@@ -120,6 +104,7 @@ $card_body_attr[] = 'id="fCardBody-' . $blockID . '"';
 $card_body_attr[] = 'aria-labelledby="fCard-'  . $blockID . '"';
 
 // If the parent accordion allows for synchronized behavior...
+// do_action('qm/debug', $accordionBehavior );
 if ( $accordionBehavior ) {
 	$card_body_attr[] = 'data-parent="#Accordion-' . $accordionID . '"';
 }
