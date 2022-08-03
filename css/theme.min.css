@@ -7,7 +7,8 @@ div[class^='uds-hero'].has-btn-row .wp-block-group{grid-row:5}
 div[class^='uds-hero'].hide-content .wp-block-group{display:none}
 main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:3rem}
 .uds-section{padding-top:3rem;padding-bottom:3rem}
-.uds-section .wp-block-columns{max-width:1200px;margin-left:auto;margin-right:auto}
+.uds-section .wp-block-columns{max-width:1200px;margin-left:auto;margin-right:auto;padding:0 2rem}
+.uds-section .wp-block-columns:last-child{margin-bottom:0}
 .uds-section.media-file{background-position:center;background-repeat:repeat}
 .card-header.card-header-icon .card-icon{margin-bottom:0}
 .card-header.card-header-icon .card-icon svg{margin-right:1rem}
@@ -28,5 +29,6 @@ div[class^='uds-hero'].hide-content .wp-block-group{display:block}
 }@media(min-width:calc(992px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(940px - 34%)}
 main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:6rem}
 }@media(min-width:calc(1224px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(1200px - 34%)}
+.uds-section .wp-block-columns{padding:0}
 }@media(max-width:calc(540px - .02px)){div[class^='uds-hero'] .wp-block-group>.has-white-color{color:#191919 !important}
 }

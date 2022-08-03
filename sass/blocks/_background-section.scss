@@ -18,23 +18,34 @@
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 2rem;
+
+	&:last-child {
+		margin-bottom:0;
+	}
 }
 
 // Dealing with custom background textures.
 .uds-section.media-file {
-
 	background-position:center;
 	background-repeat: repeat;
 }
 
 /* ------------------------------------------------------------------
-2. Desktop, large
+2. Desktop adjustments
 ------------------------------------------------------------------- */
 @include media-breakpoint-up($md) {
 
 	.uds-section {
 		padding-top: $uds-size-spacing-12;
 		padding-bottom: $uds-size-spacing-12;
+	}
+
+}
+
+@include media-breakpoint-up($xl) {
+	.uds-section .wp-block-columns {
+		padding: 0px;
 	}
 
 }
