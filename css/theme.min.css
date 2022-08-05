@@ -32,7 +32,7 @@ div[class^='uds-hero'].hide-content .wp-block-group{display:block}
 }@media(min-width:calc(992px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(940px - 34%)}
 main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:6rem}
 .uds-hero-video{overflow:hidden}
-.uds-hero-video video{display:block;grid-row:1 / span 6;grid-column:1 / span 3;z-index:30;height:100%;min-height:100%;position:absolute;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
+.uds-hero-video video{display:block;grid-row:1 / span 6;grid-column:1 / span 3;z-index:15;height:100%;min-height:100%;position:absolute;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
 .uds-hero-video .hero-video-controls{display:block;position:relative;z-index:40;grid-column:2;grid-row:6;align-self:end;justify-self:flex-end;top:-3rem}
 .uds-hero-video .hero-video-controls .btn.btn-circle.btn-circle-large{z-index:9;position:absolute;right:0;bottom:0;-webkit-transition:.3s;transition:.3s;opacity:.4}
 .uds-hero-video .hero-video-controls #playHeroVid{display:none}
