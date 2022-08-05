@@ -50,6 +50,12 @@ This plugin leverages the following libraries for functionality delivered within
 
 ## Release Notes
 
+### Version 1.2
+- NEW: Initial deployment of the `acf/hero-video` block. 
+- IMPROVE: Options within the `acf/accordion` block failed when the block was nested within other blocks. Fixed so that the block can exist anyplace on the page.
+- FIX: Adjusted SASS for `acf/background-section` to add padding/margin on a mobile device. Content no longer stretches from edge to edge. 
+- FIX: `.gitignore` excluded a required file fror the acf/breadcrumb block without a prior `composer install`. The plugin will now safely work "out of the box" again without further install steps.
+
 ### Version 1.1
 
 - Added `content-media-overlap` block to the party. 
