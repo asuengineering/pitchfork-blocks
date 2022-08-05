@@ -1,0 +1,73 @@
+/*--------------------------------------------------------------
+# Hero - Video
+# Dependent on additional styles from _hero.scss
+# Mobile styles are basically unchanged.
+
+
+3. Hero-Video, Tablet
+4. Hero-Video, Desktop
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+3. Hero-Video (Mobile
+--------------------------------------------------------------*/
+.uds-hero-video {
+    position: relative;
+    video {
+        display: none;
+    }
+    .hero-video-controls {
+        display: none;
+    }
+}
+
+/*--------------------------------------------------------------
+3. Hero, Tablet
+--------------------------------------------------------------*/
+@include media-breakpoint-up($lg) {
+	.uds-hero-video {
+        overflow: hidden;
+        video {
+            display:block;
+            grid-row: 1 / span 6;
+            grid-column: 1 / span 3;
+            z-index: 30;
+
+            height: 100%;
+            min-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero-video-controls {
+            display: block;
+            position: relative;
+            z-index: 40;
+            grid-column: 2;
+            grid-row: 6;
+            align-self: end;
+            justify-self: flex-end;
+            top: -3rem;
+
+            .btn.btn-circle.btn-circle-large {
+                z-index: 9;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                transition: 0.3s;
+                opacity: 0.4;
+            }
+
+            #playHeroVid {
+                // The play button starts as hidden as the video autoplays upoon page load.
+                display: none;
+            }
+        }
+
+        &:hover .btn.btn-circle.btn-circle-large {
+            opacity: 1;
+        }
+    }
+}

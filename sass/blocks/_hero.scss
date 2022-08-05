@@ -60,7 +60,7 @@ div[class^='uds-hero'] {
   --------------------------------------------------------------*/
 // Prevents white text on a white background when .content
 // is repositioned below the background image.
-@include media-breakpoint-down($sm) {
+@include media-breakpoint-down($md) {
 	div[class^='uds-hero'] .wp-block-group>.has-white-color {
 		color: $uds-color-base-gray-7 !important;
 	}
