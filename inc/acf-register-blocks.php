@@ -9,6 +9,11 @@
  * blocks. We do this by hooking into ACF Pro's 'acf/init' action.
  */
 
+ /**
+  * Initialize ACF field for Unique ID. Requisite file included from plugin root.
+  */
+PhilipNewcomer\ACF_Unique_ID_Field\ACF_Field_Unique_ID::init();
+
 /**
  * Register a custom block category for our blocks to live in. We hook into
  * the block_categories_all() filter to do this.
@@ -51,7 +56,7 @@ function pitchfork_blocks_acf_blocks_init() {
 
 		// Array of block folders to use. Each must have a 'register.php' file.
 		$block_includes = array(
-			'/accordion',				// UDS Accordion, uses foldable cards.
+			// '/accordion',				// UDS Accordion, uses foldable cards.
 			'/alert',					// UDS Alert Block, includes options for dismissal.
 			'/background-section', 		// UDS Background section.
 			'/banner',             		// UDS banner block.
@@ -79,11 +84,16 @@ function pitchfork_blocks_acf_blocks_init() {
 }
 add_action( 'acf/init', 'pitchfork_blocks_acf_blocks_init' );
 
+add_action( 'init', 'pitchfork_blocks_register_v2_acf_blocks', 5 );
+function pitchfork_blocks_register_v2_acf_blocks() {
+    register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/accordion');
+}
+
 
 /**
  * Given an $block object from a gutenberg block,
  * This will return a string of inline values suitable for
- * inclusion in the block output in PHP. 
+ * inclusion in the block output in PHP.
  *
  * @param  mixed $block
  * @return $style as string
@@ -100,7 +110,7 @@ function pitchfork_blocks_acf_calculate_spacing($block) {
 
 		foreach ($padding as $rule => $value) {
 			$style .= 'padding-' . $rule . ':' . $value . '; ';
-		}	
+		}
 	}
 
 	if (isset($block['style']['spacing']['margin'])) {

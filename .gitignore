@@ -50,6 +50,7 @@ wpcs/
 !/vendor/autoload.php
 !/vendor/composer/
 !/vendor/justintadlock/
+!/vendor/philipnewcomer/
 
 
 # Bower #

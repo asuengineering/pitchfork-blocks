@@ -13,7 +13,8 @@
 	"require": {
 		"composer/installers": "^1.9",
 		"php": ">=5.6",
-		"justintadlock/hybrid-breadcrumbs": "^1.0"
+		"justintadlock/hybrid-breadcrumbs": "^1.0",
+		"philipnewcomer/acf-unique-id-field": "^2.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",

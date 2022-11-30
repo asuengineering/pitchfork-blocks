@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit4b24bbdfdb337b747e849e2351366125
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PhilipNewcomer\\ACF_Unique_ID_Field\\' => 35,
+        ),
         'H' => 
         array (
             'Hybrid\\Breadcrumbs\\' => 19,
@@ -22,6 +26,10 @@ class ComposerStaticInit4b24bbdfdb337b747e849e2351366125
     );
 
     public static $prefixDirsPsr4 = array (
+        'PhilipNewcomer\\ACF_Unique_ID_Field\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/philipnewcomer/acf-unique-id-field/src',
+        ),
         'Hybrid\\Breadcrumbs\\' => 
         array (
             0 => __DIR__ . '/..' . '/justintadlock/hybrid-breadcrumbs/src',

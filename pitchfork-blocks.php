@@ -27,7 +27,7 @@ function find_accordion_block_in_haystack( $blocks, $needle ) {
 		// Or, does this block have inner blocks? If so, recurse and keep checking.
 
 		if( 'acf/accordion' === $block['blockName'] ) {
-			
+
 			// Evaluate the inners
 			$inners = $block['innerBlocks'];
 			$foundit = false;
@@ -35,11 +35,11 @@ function find_accordion_block_in_haystack( $blocks, $needle ) {
 				// do_action('qm/debug', 'Inners: ' . $inner['attrs']['id'] );
 				if ( $needle == $inner['attrs']['id'] ) {
 					$parent = $block;
-					break(2); 
+					break(2);
 				}
 			}
 		} elseif ( ! empty( $block['innerBlocks'] )) {
-			// If $block contains inner blocks, recurse the function and keep checking. 
+			// If $block contains inner blocks, recurse the function and keep checking.
 			$blocks = find_accordion_block_in_haystack( $block['innerBlocks'], $needle );
 		}
 
@@ -73,4 +73,5 @@ require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/enqueue-scripts.php';
 // ACF configurations.
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-config.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-menu-select/acf-menu-select.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . '/vendor/philipnewcomer/acf-unique-id-field/src/ACF_Field_Unique_ID.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-register-blocks.php';
