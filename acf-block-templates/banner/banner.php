@@ -40,13 +40,23 @@ if ( isset( $block['className'] ) && ! empty( $block['className'] ) ) {
  * Buttons are part of an ACF form group, so we get the group first, then use
  * standard PHP array notation to get the sub-fields of the group
  */
+
+$button_one_text = '';
+$button_one_url = '';
+$button_two_text = '';
+$button_two_url = '';
+
 $button_one_data = get_field( 'uds_banner_button_1_settings' );
-$button_one_text = $button_one_data['button_one_text'];
-$button_one_url = $button_one_data['button_one_url'];
+if (! empty($button_one_data)) {
+	$button_one_text = $button_one_data['button_one_text'];
+	$button_one_url = $button_one_data['button_one_url'];
+}
 
 $button_two_data = get_field( 'uds_banner_button_2_settings' );
-$button_two_text = $button_two_data['button_two_text'];
-$button_two_url = $button_two_data['button_two_url'];
+if (! empty($button_two_data)) {
+	$button_two_text = $button_two_data['button_two_text'];
+	$button_two_url = $button_two_data['button_two_url'];
+}
 
 /**
  * There are conditions for rendering buttons: the number
