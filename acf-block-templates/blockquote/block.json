@@ -1,0 +1,25 @@
+{
+    "name": "acf/blockquote",
+    "title": "UDS Blockquote",
+    "description": "Blockquote with a dozen formats. Uses inner blocks for content.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["blockquote", "quote", "testimonial"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "blockquote.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": false
+		},
+		"classname": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": true,
+			"link": false
+		}
+	}
+}
