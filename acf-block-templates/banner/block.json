@@ -1,0 +1,32 @@
+{
+    "name": "acf/banner",
+    "title": "UDS Banner",
+    "description": "Banner style message. Full-width. Use with repeatable blocks. Uses Inner Blocks for content.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["banner", "dismiss", "message"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "banner.php"
+    },
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	},
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": false
+		},
+		"multiple": false,
+		"classname": false,
+		"align": ["full"],
+		"color": {
+			"background": true,
+			"text": false,
+			"link": false
+		}
+	}
+}

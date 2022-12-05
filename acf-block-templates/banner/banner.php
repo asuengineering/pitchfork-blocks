@@ -2,16 +2,17 @@
 /**
  * UDS Banner
  * - Includes options for dismissing the banner message temporarily.
- * - Alert types (colors/icons) controled by block style panel. 
+ * - Alert types (colors/icons) controled by block style panel.
  * - TODO: Add arbitrary icon selection via ACF/FA field group.
  *
  * @package Pitchfork_Blocks
  */
 
 $button_count 	= get_field( 'uds_banner_button_count' );
-$dismissable 	= get_field( 'uds_banner_dismissable' );
+$dismissible 	= get_field( 'uds_banner_dismissible' );
+$icon 			= get_field( 'uds_banner_icon' );
 
-/** 
+/**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
@@ -22,7 +23,7 @@ $spacing = pitchfork_blocks_acf_calculate_spacing($block);
 $block_classes = array('wp-block-banner', 'alignfull', 'allowed-after-hero');
 
 // Base class of the banner is set with the background color option from the block.
-// theme.json sets the suffix of each color so that the produced string is correct. 
+// theme.json sets the suffix of each color so that the produced string is correct.
 if ( ! empty( $block['backgroundColor'] ) ) {
 	$block_classes[] = 'banner-' . $block['backgroundColor'];
 } else {
@@ -83,6 +84,13 @@ if ( $button_count ) {
 	$button_block .= $button_block_close;
 }
 
+// Grab the selected icon from the ACF field. Render a placeholder if empty.
+if ( ! empty( $icon )) {
+	$banner_icon = '<div class="banner-icon">' . $icon->element . '</div>';
+} else {
+	$banner_icon = '<div class="icon-placeholder"><i class="not-a-real-icon"></i></div>';
+}
+
 // Sets InnerBlocks with a pair of foldable cards both containing an H4 and a paragraph.
 $allowed_blocks = array( 'core/paragraph', 'core/list', 'core/heading' );
 $template       = array(
@@ -94,7 +102,7 @@ $template       = array(
 	),
 	array(
 		'core/paragraph', array(
-			'content' => 'Example notification box message. Allowed blocks also include lists and headings. Dismissable options are available in the sidebar.'
+			'content' => 'Example notification box message. Allowed blocks also include lists and headings. Dismissible options are available in the sidebar.'
 		)
 	)
 );
@@ -102,14 +110,12 @@ $template       = array(
 
 <section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo $spacing; ?>">
 	<div class="banner" role="banner">
-		<!-- <div class="banner-icon">
-			<span title="Banner" class="fas fa-"></span>
-		</div> -->
+		<?php echo $banner_icon; ?>
 		<div class="banner-content">
 			<?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />'; ?>
 		</div>
 		<?php echo $button_block; ?>
-		<?php if ( $dismissable ) : ?>
+		<?php if ( $dismissible ) : ?>
 			<div class="banner-close">
 				<button type="button" class="btn btn-circle btn-circle-alt-white close" aria-label="Close" onclick="event.target.parentNode.parentNode.style.display='none';">x</button>
 			</div>
