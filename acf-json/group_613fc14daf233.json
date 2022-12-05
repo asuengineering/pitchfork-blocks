@@ -6,6 +6,7 @@
             "key": "field_613fc348fae26",
             "label": "Card title",
             "name": "uds_foldcard_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -22,11 +23,12 @@
             "maxlength": ""
         },
         {
-            "key": "field_6143d81a230b1",
-            "label": "Icon",
+            "key": "field_6388e60675ac4",
+            "label": "Do you want an icon?",
             "name": "uds_foldcard_icon",
-            "type": "text",
-            "instructions": "Enter all required FA classes. Example: <code>fas fa-external-link-alt<\/code>.",
+            "aria-label": "",
+            "type": "font-awesome",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,16 +36,27 @@
                 "class": "",
                 "id": ""
             },
+            "icon_sets": [
+                "solid",
+                "regular",
+                "light",
+                "brands"
+            ],
+            "custom_icon_set": "",
+            "default_label": "",
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "save_format": "object",
+            "allow_null": 1,
+            "show_preview": 1,
+            "enqueue_fa": 0,
+            "fa_live_preview": "",
+            "choices": []
         },
         {
             "key": "field_613fc3aafae27",
             "label": "Start collapsed?",
             "name": "uds_foldcard_collapsed",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "Determines the start state of the foldable card.",
             "required": 0,
@@ -55,14 +68,15 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "Expanded",
-            "ui_off_text": "Collapsed"
+            "ui_off_text": "Collapsed",
+            "ui": 1
         },
         {
             "key": "field_62797ead13159",
             "label": "Disable fold at viewport",
             "name": "uds_foldcard_disabled",
+            "aria-label": "",
             "type": "select",
             "instructions": "Prevent the card from folding at a certain breakpoint and above.",
             "required": 0,
@@ -79,12 +93,27 @@
                 "desktop-disable-xl": "Disabled at xl"
             },
             "default_value": "desktop-disable-never",
-            "allow_null": 0,
+            "return_format": "",
             "multiple": 0,
+            "allow_null": 0,
             "ui": 0,
-            "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_6389122693333",
+            "label": "Foldable Card ID",
+            "name": "uds_foldcard_id",
+            "aria-label": "",
+            "type": "unique_id",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-hidden",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -103,7 +132,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Child block of acf\/accordion. The actual block that expands\/contracts.",
     "show_in_rest": 0,
-    "modified": 1652130953
+    "modified": 1669933541
 }

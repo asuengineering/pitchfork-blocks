@@ -6,6 +6,7 @@
             "key": "field_627bf2df3eac9",
             "label": "Accordion behavior",
             "name": "uds_accordion_behavior",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "By default, groups of foldable cards will allow for one card to be visible at a time. Disable this option to allow for all cards to expand and contract independently.",
             "required": 0,
@@ -20,6 +21,21 @@
             "ui": 1,
             "ui_on_text": "N'Sync",
             "ui_off_text": "Miss Independent"
+        },
+        {
+            "key": "field_6387c3d0fd823",
+            "label": "Accordion Unique ID",
+            "name": "uds_accordion_id",
+            "aria-label": "",
+            "type": "unique_id",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-hidden",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -38,7 +54,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Starting point for accordions. Wrapper block for card-foldable.",
     "show_in_rest": 0,
-    "modified": 1652291346
+    "modified": 1669916111
 }

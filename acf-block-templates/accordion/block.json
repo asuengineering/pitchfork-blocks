@@ -4,10 +4,23 @@
     "description": "An accordion with optional independent expansion/contraction of inner cards.",
     "category": "uds",
     "icon": "star-filled",
-    "keywords": ["testimonial", "quote"],
+    "keywords": ["accordion", "foldable", "expand"],
     "acf": {
         "mode": "edit",
         "renderTemplate": "accordion.php"
     },
-    "align": "full"
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": true
+		},
+		"classname": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	},
+	"providesContext": {"acf/parentFields": "data"}
 }

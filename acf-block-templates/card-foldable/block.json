@@ -1,0 +1,31 @@
+{
+    "name": "acf/card-foldable",
+    "title": "UDS Foldable Card",
+    "description": "A singlular foldable card. Uses Inner Blocks for content.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["foldable", "card", "accordion"],
+	"parent": [
+		"acf/accordion"
+	],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "card-foldable.php"
+    },
+	"usesContext": [
+		"acf/parentFields"
+	],
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": false
+		},
+		"classname": false,
+		"align": false,
+		"color": {
+			"background": true,
+			"text": false,
+			"link": false
+		}
+	}
+}

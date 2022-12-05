@@ -8,7 +8,7 @@
  */
 
 $enable_sync		= get_field( 'uds_accordion_behavior' );
-$blockID 			= $block['id'];
+$blockID 			= get_field( 'uds_accordion_id' );
 
 $spacing = pitchfork_blocks_acf_calculate_spacing($block);
 

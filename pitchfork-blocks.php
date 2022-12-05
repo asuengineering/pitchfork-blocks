@@ -18,39 +18,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-function find_accordion_block_in_haystack( $blocks, $needle ) {
-	static $parent = array();
-	foreach( $blocks as $block ) {
-
-		// do_action('qm/debug', $block['blockName'] );
-		// Is the current block an accordion? Evaluate the inner blocks one level down to check if it's the correct parent.
-		// Or, does this block have inner blocks? If so, recurse and keep checking.
-
-		if( 'acf/accordion' === $block['blockName'] ) {
-
-			// Evaluate the inners
-			$inners = $block['innerBlocks'];
-			$foundit = false;
-			foreach ($inners as $inner) {
-				// do_action('qm/debug', 'Inners: ' . $inner['attrs']['id'] );
-				if ( $needle == $inner['attrs']['id'] ) {
-					$parent = $block;
-					break(2);
-				}
-			}
-		} elseif ( ! empty( $block['innerBlocks'] )) {
-			// If $block contains inner blocks, recurse the function and keep checking.
-			$blocks = find_accordion_block_in_haystack( $block['innerBlocks'], $needle );
-		}
-
-	}
-
-	if( $parent != null ){
-        return $parent;
-    }
-
-}
-
 // Variable for root directory of this plugin.
 define( 'PITCHFORK_BLOCKS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 

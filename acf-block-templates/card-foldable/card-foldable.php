@@ -5,29 +5,20 @@
  * @package Pitchfork_Blocks
  */
 
-$fc_title 		= get_field( 'uds_foldcard_title' );
-$fc_icon 		= get_field( 'uds_foldcard_icon' );
-$collapsed 		= get_field( 'uds_foldcard_collapsed' );
-$disabled 		= get_field( 'uds_foldcard_disabled' );
-$blockID 		= $block['id'];
-global $post;
+$fc_title 			= get_field( 'uds_foldcard_title' );
+$fc_icon 			= get_field( 'uds_foldcard_icon' );
+$collapsed 			= get_field( 'uds_foldcard_collapsed' );
+$disabled 			= get_field( 'uds_foldcard_disabled' );
+$blockID 			= get_field( 'uds_foldcard_id' );
 
-/** 
- * Loop through all of the blocks on the page to identify the parent acf/accordion block's unique ID. 
- * Used in the data-target attribute within the card body.
- * 
- * find_accordion_block_in_haystack() is the key recursive function in play.
- * Returns block info for the parent accoordion block.
- */
+// do_action('qm/debug', $fc_icon);
 
+// Gather field data from parent block. Passed via block context and the $context variable.
+$parentData = $context['acf/parentFields'];
+$accordionID = $parentData['uds_accordion_id'];
+$accordionBehavior = $parentData['uds_accordion_behavior'];
 
-$postblocks = parse_blocks( $post->post_content );
-$accordion = find_accordion_block_in_haystack($postblocks, $blockID);
-$accordionID = $accordion['attrs']['id'];
-$accordionBehavior = $accordion['attrs']['data']['uds_accordion_behavior'];
-
-
-/** 
+/**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
@@ -35,7 +26,7 @@ $accordionBehavior = $accordion['attrs']['data']['uds_accordion_behavior'];
 $spacing = pitchfork_blocks_acf_calculate_spacing($block);
 
 
-/** 
+/**
  * Start assembling base classes for <div class="card-foldable"> wrapper.
  * --------------------
  */
@@ -58,23 +49,28 @@ $base_class[] = $disabled;
 $card_wrap = '<div class="' . implode( ' ', $base_class) . '" style="' . $spacing . '">';
 
 
-/** 
+/**
  * Card header, title and icon state.
+ * Note: Markup for icon needs to be either a placeholder or the actual icon.
+ * Removing the icon markup from the mix completely causes a block render error.
  * --------------------
  */
+
+
 if ( ! empty( $fc_icon)) {
+	$fc_icon_markup = $fc_icon->element;
 	$card_head = '<div class="card-header card-header-icon">';
-	$card_title = '<span class="card-icon"><i class="' . $fc_icon . '"></i>' . $fc_title . '</span>';
-	
 } else {
+	$fc_icon_markup = '<i class="fa-placeholder"></i>';
 	$card_head = '<div class="card-header">';
-	$card_title = $fc_title;
 }
 
+// $card_head = '<div class="card-header card-header-icon">';
+$card_title = '<span class="card-icon">' . $fc_icon_markup . $fc_title . '</span>';
 $card_title .= '<span class="fas fa-chevron-up"></span>';
 
-/** 
- * Card header <a> tag. 
+/**
+ * Card header <a> tag.
  * --------------------
  */
 $card_head_link_attr = array();
@@ -96,7 +92,7 @@ if ( ! $collapsed) {
 $card_head_link = '<a ' . implode( ' ', $card_head_link_attr) . '>';
 
 /**
- * Card body w/classes 
+ * Card body w/classes
  * --------------------
  */
 $card_body_attr = array();

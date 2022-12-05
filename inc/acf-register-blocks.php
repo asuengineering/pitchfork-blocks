@@ -63,7 +63,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			'/blockquote',				// UDS Blockquote, inner blocks
 			'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 			'/card',               		// UDS Cards.
-			'/card-foldable',      		// UDS Foldable card block.
+			// '/card-foldable',      		// UDS Foldable card block.
 			'/content-media-overlap', 	// Miscellaneous content sections.
 			'/grid-links',         		// UDS Grid Links.
 			'/hero',				  	// UDS Hero block, v2
@@ -87,12 +87,13 @@ add_action( 'acf/init', 'pitchfork_blocks_acf_blocks_init' );
 add_action( 'init', 'pitchfork_blocks_register_v2_acf_blocks', 5 );
 function pitchfork_blocks_register_v2_acf_blocks() {
     register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/accordion');
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card-foldable');
 }
 
 
 /**
- * Given an $block object from a gutenberg block,
- * This will return a string of inline values suitable for
+ * Given an $block object from an ACF block for gutenberg:
+ * This will return a string of CSS inline values suitable for
  * inclusion in the block output in PHP.
  *
  * @param  mixed $block
@@ -109,7 +110,13 @@ function pitchfork_blocks_acf_calculate_spacing($block) {
 		$padding = $block['style']['spacing']['padding'];
 
 		foreach ($padding as $rule => $value) {
-			$style .= 'padding-' . $rule . ':' . $value . '; ';
+			if ( str_starts_with( $value, 'var:') ) {
+				$var_position = strrpos($value, '|');
+				$variable = substr($value, $var_position );
+				$style .= 'padding-' . $rule . ':var(--wp--preset--spacing--' . $variable . '); ';
+			} else {
+				$style .= 'padding-' . $rule . ':' . $value . '; ';
+			}
 		}
 	}
 
@@ -118,9 +125,16 @@ function pitchfork_blocks_acf_calculate_spacing($block) {
 		$margin = $block['style']['spacing']['margin'];
 
 		foreach ($margin as $rule => $value) {
-			$style .= 'margin-' . $rule . ':' . $value . '; ';
+			if ( str_starts_with( $value, 'var:') ) {
+				$var_position = strrpos($value, '|');
+				$variable = substr($value, $var_position + 1 );
+				$style .= 'margin-' . $rule . ':var(--wp--preset--spacing--' . $variable . '); ';
+			} else {
+				$style .= 'margin-' . $rule . ':' . $value . '; ';
+			}
 		}
 	}
 
 	return $style;
+	// echo '<div style="' . $style . '">Block content</div>';
 }
