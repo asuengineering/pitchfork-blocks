@@ -1,0 +1,16 @@
+{
+    "name": "acf/breadcrumb",
+    "title": "UDS Breadcrumb",
+    "description": "Produces a breadcrumb to promote better internal site navigation.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["breadcrumb", "navigation"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "breadcrumb.php"
+    },
+	"supports": {
+		"classname": false,
+		"align": ["full"]
+	}
+}

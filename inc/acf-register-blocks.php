@@ -61,7 +61,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			// '/background-section', 		// UDS Background section.
 			// '/banner',             		// UDS banner block.
 			// '/blockquote',				// UDS Blockquote, inner blocks
-			'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
+			// '/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 			'/card',               		// UDS Cards.
 			// '/card-foldable',      		// UDS Foldable card block.
 			'/content-media-overlap', 	// Miscellaneous content sections.
@@ -91,6 +91,7 @@ function pitchfork_blocks_register_v2_acf_blocks() {
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/background-section');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/banner');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/blockquote');
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/breadcrumb');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card-foldable');
 }
 

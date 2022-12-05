@@ -4,8 +4,9 @@
     "fields": [
         {
             "key": "field_6267288e5eb51",
-            "label": "Breadcrumb Options",
+            "label": "<strong>Breadcrumb Options<\/strong>",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -15,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "This will output a breadcrumb on the front end. No configuration necessary.",
+            "message": "Display a breadcrumb for this page.<\/br><\/br>No configuration necessary. Updates automatically as page or post is sorted or reordered.",
             "new_lines": "",
             "esc_html": 0
         }
@@ -38,5 +39,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650927838
+    "modified": 1670280006
 }
