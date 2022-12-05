@@ -6,6 +6,7 @@
             "key": "field_602314ea0c7df",
             "label": "Background Image",
             "name": "uds_image_overlap_background",
+            "aria-label": "",
             "type": "image",
             "instructions": "Select the background image for the component. \r\nHorizontal orientation, any aspect ratio.",
             "required": 1,
@@ -27,29 +28,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_6260546dfc1ec",
-            "label": "Image size",
-            "name": "uds_image_overlap_image_size",
-            "type": "range",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 100,
-            "min": 65,
-            "max": "",
-            "step": 1,
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6023169c15df8",
             "label": "Position of the content section",
             "name": "uds_image_overlap_orientation",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -89,5 +71,5 @@
     "active": true,
     "description": "Fields for creating block that features a prominent image, with a smaller content area overlapped. The content area can contain other blocks, and comes with placeholder content.",
     "show_in_rest": 0,
-    "modified": 1655244411
+    "modified": 1670282483
 }

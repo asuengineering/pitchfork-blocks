@@ -1,0 +1,25 @@
+{
+    "name": "acf/content-image-overlap",
+    "title": "UDS Content Image Overlap",
+    "description": "A stylized layout element with a prominent image, and a configurable content area.",
+    "category": "uds",
+    "icon": "welcome-widgets-menus",
+    "keywords": ["overlap", "content", "section"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "content-media.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": false
+		},
+		"classname": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	}
+}
