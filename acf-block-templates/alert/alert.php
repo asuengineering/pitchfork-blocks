@@ -3,15 +3,13 @@
  * UDS Alert
  * - Includes options for dismissing the alert message temporarily.
  * - Includes an option for including/excluding the corresponding icon for the alert type.
- * - Alert types (colors/icons) controled by block style panel. 
+ * - Alert types (colors/icons) controled by block style panel.
  *
  * @package Pitchfork_Blocks
  */
-$use_icon		= get_field( 'uds_alert_icon' );
-$dismissable	= get_field( 'uds_alert_dismissable' );
-do_action('qm/debug', $block);
+$dismissable	= get_field( 'uds_alert_dismissible' );
 
-/** 
+/**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
@@ -39,30 +37,25 @@ if ( $dismissable ) {
 
 $wrapper = '<div class="' . implode( ' ', $alert_classes) . '" style="' . $spacing . '">';
 
-// Set the icon depending on if the option is enabled and the alert type.
-if ( $use_icon ) {
-	$icon = '<div class="alert-icon">';
+// Set the icon depending on the alert type.
+$icon = '<div class="alert-icon">';
 
-	// $block['className]' may be blank if the user hasn't made a choice yet.
-	// default: should catch that use case and still add warning icon.
-	switch ($block['className']) {
-		case 'is-style-alert-success':
-			$icon .= '<span class="fas fa-bell"></span></div>';
-			break;
-		case 'is-style-alert-info':
-			$icon .= '<span class="fas fa-check-circle"></span></div>';
-			break;
-		case 'is-style-alert-error':
-			$icon .= '<span class="fas fa-info-circle"></span></div>';
-			break;
-		case 'is-style-alert-warning':
-		default:
-			$icon .= '<span class="fas fa-exclamation-triangle"></span></div>';
-			break;
-	}
-	
-} else {
-	$icon = '';
+// $block['className]' may be blank if the user hasn't made a choice yet.
+// default: should catch that use case and still add warning icon.
+switch ($block['className']) {
+	case 'is-style-alert-success':
+		$icon .= '<span class="fas fa-bell"></span></div>';
+		break;
+	case 'is-style-alert-info':
+		$icon .= '<span class="fas fa-check-circle"></span></div>';
+		break;
+	case 'is-style-alert-error':
+		$icon .= '<span class="fas fa-info-circle"></span></div>';
+		break;
+	case 'is-style-alert-warning':
+	default:
+		$icon .= '<span class="fas fa-exclamation-triangle"></span></div>';
+		break;
 }
 
 

@@ -57,7 +57,7 @@ function pitchfork_blocks_acf_blocks_init() {
 		// Array of block folders to use. Each must have a 'register.php' file.
 		$block_includes = array(
 			// '/accordion',				// UDS Accordion, uses foldable cards.
-			'/alert',					// UDS Alert Block, includes options for dismissal.
+			// '/alert',					// UDS Alert Block, includes options for dismissal.
 			'/background-section', 		// UDS Background section.
 			'/banner',             		// UDS banner block.
 			'/blockquote',				// UDS Blockquote, inner blocks
@@ -87,6 +87,7 @@ add_action( 'acf/init', 'pitchfork_blocks_acf_blocks_init' );
 add_action( 'init', 'pitchfork_blocks_register_v2_acf_blocks', 5 );
 function pitchfork_blocks_register_v2_acf_blocks() {
     register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/accordion');
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/alert');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card-foldable');
 }
 

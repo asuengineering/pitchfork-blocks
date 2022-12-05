@@ -3,28 +3,10 @@
     "title": "UDS Block: Alert",
     "fields": [
         {
-            "key": "field_606c9b92ea06c",
-            "label": "Include Icon?",
-            "name": "uds_alert_icon",
-            "type": "true_false",
-            "instructions": "Show the icon associated with the alert style?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_62852d5dfca50",
-            "label": "Dismissable?",
-            "name": "uds_alert_dismissable",
+            "label": "Should the alert box be dismissible?",
+            "name": "uds_alert_dismissible",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "Should the user be able to dismiss this warning? (It will always reappear upon a new page load.)",
             "required": 0,
@@ -36,9 +18,9 @@
             },
             "message": "",
             "default_value": 1,
-            "ui": 1,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -59,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652911235
+    "modified": 1670265807
 }

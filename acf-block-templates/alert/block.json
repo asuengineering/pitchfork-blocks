@@ -1,0 +1,25 @@
+{
+    "name": "acf/alert",
+    "title": "UDS Alert",
+    "description": "Creates an alert message. Block styles dictate the color/purpose. Uses Inner Blocks for content.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["alert", "dismiss", "message"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "alert.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": false
+		},
+		"classname": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	}
+}
