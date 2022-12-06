@@ -65,7 +65,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			'/card',               		// UDS Cards.
 			// '/card-foldable',      		// UDS Foldable card block.
 			// '/content-media-overlap', 	// Miscellaneous content sections.
-			'/grid-links',         		// UDS Grid Links.
+			// '/grid-links',         		// UDS Grid Links.
 			'/hero',				  	// UDS Hero block, v2
 			'/hero-video',				  	// UDS Hero block, v2
 			'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
@@ -94,6 +94,7 @@ function pitchfork_blocks_register_v2_acf_blocks() {
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/breadcrumb');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card-foldable');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/content-media-overlap');
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/grid-links');
 }
 
 
@@ -118,7 +119,7 @@ function pitchfork_blocks_acf_calculate_spacing($block) {
 		foreach ($padding as $rule => $value) {
 			if ( str_starts_with( $value, 'var:') ) {
 				$var_position = strrpos($value, '|');
-				$variable = substr($value, $var_position );
+				$variable = substr($value, $var_position + 1 );
 				$style .= 'padding-' . $rule . ':var(--wp--preset--spacing--' . $variable . '); ';
 			} else {
 				$style .= 'padding-' . $rule . ':' . $value . '; ';

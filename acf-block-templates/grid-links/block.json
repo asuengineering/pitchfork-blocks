@@ -1,0 +1,35 @@
+{
+    "name": "acf/grid-links",
+    "title": "UDS Grid Links",
+    "description": "A series of formatted links arranged in a grid.",
+    "category": "uds",
+    "icon": "grid-view",
+    "keywords": ["grid", "links"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "grid-links.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": true
+		},
+		"classname": false,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": true,
+			"link": false
+		}
+	},
+	"example": {
+		"attributes": {
+			"data": {
+				"uds_grid_links_source": "arbitrary",
+				"uds_grid_links_columns": "three-columns",
+				"uds_grid_links_color": "none",
+				"uds_grid_links_created": ""
+			}
+		}
+	}
+}
