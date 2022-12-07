@@ -1,0 +1,32 @@
+{
+    "name": "acf/hero",
+    "title": "UDS Hero",
+    "description": "Creates a hero for the top of the page. Uses Inner Blocks for content.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["hero", "cover", "image"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "hero.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"classname": false,
+		"align": [ "full" ],
+		"multiple": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	}
+}

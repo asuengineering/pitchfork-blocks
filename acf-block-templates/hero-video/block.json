@@ -1,0 +1,32 @@
+{
+    "name": "acf/hero-video",
+    "title": "UDS Hero - Video",
+    "description": "Used for full motion video (MP4) in your hero. Inner Blocks for content.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["hero", "cover", "video"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "hero-video.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"classname": false,
+		"align": [ "full" ],
+		"multiple": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	}
+}

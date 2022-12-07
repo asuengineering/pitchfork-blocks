@@ -10,6 +10,12 @@ Styling to allow normal use of the hero within the block editor.
 // 2. Hero, Mobile
 .acf-block-preview div[class^='uds-hero'] {
 
+	// Present for v2 of the acf/hero block.
+	.acf-innerblocks-container {
+		display: contents;
+	}
+
+	// Older markup, possibly not needed.
     .block-editor-inner-blocks {
         display:contents;
 
