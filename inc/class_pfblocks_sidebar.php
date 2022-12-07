@@ -3,12 +3,20 @@
  * PFBlocks_Sidebar class, extends native Nav Walker.
  *
  * @package Pitchfork_Blocks
- * 
+ *
  */
 
 if ( !class_exists('PFBlocks_Sidebar') ) {
 
     class PFBlocks_Sidebar extends Walker_Nav_Menu {
+
+		function start_lvl( &$output, $depth = 0, $args = null ) {
+			$output .= '';
+		}
+
+		function end_lvl( &$output, $depth = 0, $args = null ) {
+			$output .= '';
+		}
 
         function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
 
@@ -22,7 +30,7 @@ if ( !class_exists('PFBlocks_Sidebar') ) {
             if ( in_array('current-menu-parent', $item->classes)) {
                 $item->classes[] = 'is-active';
             }
-            
+
             $normal_link = '<a class="nav-link ' . implode(" ", $item->classes) . '" href="' . $item->url . '">' . $item->title . '</a>';
 
             // If we are at the top level...
@@ -44,7 +52,7 @@ if ( !class_exists('PFBlocks_Sidebar') ) {
                     // Top level, no kids. We need to wrap the normal link with a <div>.
                     $output .= '<div class="nav-link-container">';
                     $output .= $normal_link;
-                    
+
                 }
 
             } else {
@@ -54,17 +62,17 @@ if ( !class_exists('PFBlocks_Sidebar') ) {
 
             }
 
-        } 
+        }
 
         function end_el(&$output, $item, $depth=0, $args=[], $id=0) {
 
             // If we are at the top level...
             if ( $depth == 0 ) {
 
-                // Different check for "does this have children." 
+                // Different check for "does this have children."
                 // Previous logic unavailable in end_el for some reason...
                 // See: https://wordpress.stackexchange.com/a/199847/69368
-                
+
                 if ( in_array('menu-item-has-children', $item->classes)) {
 
                     // Top level card output needs two closing divs.

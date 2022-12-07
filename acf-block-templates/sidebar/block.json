@@ -1,0 +1,20 @@
+{
+    "name": "acf/uds-sidebar",
+    "title": "UDS Sidebar",
+    "description": "Secondary navigation powered by menus made the old skool way.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["sidebar", "navigation", "secondary"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "sidebar.php"
+    },
+	"supports": {
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": false
+		},
+		"classname": false,
+		"align": false
+	}
+}

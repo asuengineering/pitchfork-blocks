@@ -68,7 +68,7 @@ function pitchfork_blocks_acf_blocks_init() {
 			// '/grid-links',         		// UDS Grid Links.
 			// '/hero',				  	// UDS Hero block, v2
 			// '/hero-video',				  	// UDS Hero block, v2
-			'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
+			// '/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
 			'/subtitle',				// Subtitle block, for use within the hero.
 
 			// '/profile',            // Individual person profile (non-iSearch).
@@ -97,6 +97,7 @@ function pitchfork_blocks_register_v2_acf_blocks() {
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/grid-links');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/hero');
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/hero-video');
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/sidebar');
 }
 
 

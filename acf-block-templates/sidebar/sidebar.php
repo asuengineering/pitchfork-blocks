@@ -2,10 +2,10 @@
 /**
  * UDS Sidebar
  * - Uses an ACF custom field for selecting the menu object from the DB.
- * - Uses a custom walker for outputting the structure of the <nav> element. 
- * 
+ * - Uses a custom walker for outputting the structure of the <nav> element.
+ *
  * @package Pitchfork_Blocks
- * 
+ *
  */
 
 $menu_object = wp_get_nav_menu_object( get_field( 'uds_sidebar_menu_name' ) );

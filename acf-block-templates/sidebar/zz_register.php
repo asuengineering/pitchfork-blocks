@@ -8,14 +8,11 @@
  *
  * @package Pitchfork_Blocks
  *
- * Notes: Produces a sidebar navigation element as a block. 
+ * Notes: Produces a sidebar navigation element as a block.
  * - ACF field definitions will include a new custom control for ACF that was graciously
  *   left for us to consume via GitHub. (Forked for safety and maintained within ASU Engineering.)
- * 
+ *
  */
-
-// Includes the walker class for manipulating the menu.
-require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/sidebar/class_pfblocks_sidebar.php';
 
 acf_register_block_type(
 	array(

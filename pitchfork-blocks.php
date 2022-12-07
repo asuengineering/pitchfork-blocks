@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// Variable for root directory of this plugin.
+// Variable for root directory of this plugin. Includes trailing slash.
 define( 'PITCHFORK_BLOCKS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
 // Composer vendor autoload
@@ -31,14 +31,17 @@ if ( file_exists( PITCHFORK_BLOCKS_BASE_PATH . 'vendor/autoload.php' ) ) {
 // Function: Execute plugin.
 
 // TGM Plugin Activation Script. Checks for Advanced Custom Fields.
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/class-tgm-plugin-activation.php';
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/dependency-check.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'tgmpa/class-tgm-plugin-activation.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'tgmpa/dependency-check.php';
 
 // Enqueue scripts.
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/enqueue-scripts.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/enqueue-scripts.php';
+
+// Add class to extend nav walker for the sidebar block.
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/class_pfblocks_sidebar.php';
 
 // ACF configurations.
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-config.php';
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-menu-select/acf-menu-select.php';
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/vendor/philipnewcomer/acf-unique-id-field/src/ACF_Field_Unique_ID.php';
-require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-register-blocks.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-config.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-menu-select/acf-menu-select.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'vendor/philipnewcomer/acf-unique-id-field/src/ACF_Field_Unique_ID.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-register-blocks.php';
