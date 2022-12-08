@@ -1,0 +1,30 @@
+{
+    "name": "acf/subtitle",
+    "title": "UDS Subtitle",
+    "description": "A block specifically for the UDS Hero. Used to include a subtitle above the H1.",
+    "category": "uds",
+    "icon": "star-filled",
+    "keywords": ["hero", "title", "subtitle"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "subtitle.php"
+    },
+	"parent": [ "acf/hero" ],
+	"supports": {
+		"spacing": {
+			"margin": false,
+			"padding": false
+		},
+		"classname": false,
+		"align": false,
+		"multiple": false
+	},
+	"example": {
+		"attributes": {
+			"data": {
+				"uds_subtitle_text"  :  "Your hero subtitle",
+				"uds_subtitle_highlight_color" :  "highlight-gold"
+			}
+		}
+	}
+}

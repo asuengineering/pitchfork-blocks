@@ -1,7 +1,7 @@
 <?php
 /**
  * UDS Hero
- * 
+ *
  * - encoded to deliver the UDS Hero v2 (CSS Grid-based)
  *
  * @package Pitchfork_Blocks
@@ -19,5 +19,8 @@ if ( 'none' !== $highlight ) {
 	$content = $subtitle;
 }
 
-// Block output.
-echo '<div role="doc-subtitle">' . $content . '</div>';
+// Block output. Only echo the markup if there's something actually there.
+if (! empty($subtitle)) {
+	echo '<div role="doc-subtitle">' . $content . '</div>';
+}
+
