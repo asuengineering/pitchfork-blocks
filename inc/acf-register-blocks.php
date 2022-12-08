@@ -50,57 +50,42 @@ add_filter( 'block_categories_all', 'pitchfork_blocks_custom_category', 10, 2 );
  * Note: Blocks appear in the block picker IN THE ORDER THEY ARE LISTED HERE.
  * When adding a new block, please make sure to insert it an alphabetical order.
  */
-function pitchfork_blocks_acf_blocks_init() {
-	// Check to see if we have ACF Pro for block support.
-	if ( function_exists( 'acf_register_block_type' ) ) {
+function pitchfork_blocks_register_acf_blocks() {
 
-		// Array of block folders to use. Each must have a 'register.php' file.
-		$block_includes = array(
-			// '/accordion',				// UDS Accordion, uses foldable cards.
-			// '/alert',					// UDS Alert Block, includes options for dismissal.
-			// '/background-section', 		// UDS Background section.
-			// '/banner',             		// UDS banner block.
-			// '/blockquote',				// UDS Blockquote, inner blocks
-			// '/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
-			'/card',               		// UDS Cards.
-			// '/card-foldable',      		// UDS Foldable card block.
-			// '/content-media-overlap', 	// Miscellaneous content sections.
-			// '/grid-links',         		// UDS Grid Links.
-			// '/hero',				  	// UDS Hero block, v2
-			// '/hero-video',				  	// UDS Hero block, v2
-			// '/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
-			// '/subtitle',				// Subtitle block, for use within the hero.
+	// Array of block folders to use. Each contains a block.json file.
+	$block_includes = array(
+		'/accordion',				// UDS Accordion, uses foldable cards.
+		'/alert',					// UDS Alert Block, includes options for dismissal.
+		'/background-section', 		// UDS Background section.
+		'/banner',             		// UDS banner block.
+		'/blockquote',				// UDS Blockquote, inner blocks
+		'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
+		// '/card',               		// UDS Cards.
+		'/card-foldable',      		// UDS Foldable card block.
+		'/content-media-overlap', 	// Miscellaneous content sections.
+		'/grid-links',         		// UDS Grid Links.
+		'/hero',				  	// UDS Hero block, v2
+		'/hero-video',				// UDS Hero block, v2
+		'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
+		'/subtitle',				// Subtitle block, for use within the hero.
+	);
 
-			// '/profile',            // Individual person profile (non-iSearch).
-			// '/show-more',          // Show more button.
-			// '/tabbed-panels',      // UDS Tabbed panels block.
-		);
-
-		// Loop through array items and include each register file.
-		foreach ( $block_includes as $folder ) {
-			require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder . '/register.php';
-		}
+	// Loop through array items and register each block.
+	foreach ( $block_includes as $folder ) {
+		register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder );
 	}
 }
-add_action( 'acf/init', 'pitchfork_blocks_acf_blocks_init' );
+add_action( 'init', 'pitchfork_blocks_register_acf_blocks' );
 
-add_action( 'init', 'pitchfork_blocks_register_v2_acf_blocks', 5 );
-function pitchfork_blocks_register_v2_acf_blocks() {
-    register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/accordion');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/alert');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/background-section');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/banner');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/blockquote');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/breadcrumb');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card-foldable');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/content-media-overlap');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/grid-links');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/hero');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/hero-video');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/sidebar');
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/subtitle');
+function pitchfork_blocks_register_v1_acf_blocks() {
+
+	// Old school method of registering a block. Check to see if we have ACF Pro for block support.
+	if ( function_exists( 'acf_register_block_type' ) ) {
+		require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card/register.php';
+	}
 }
 
+add_action( 'acf/init', 'pitchfork_blocks_register_v1_acf_blocks' );
 
 /**
  * Given an $block object from an ACF block for gutenberg:
