@@ -77,84 +77,13 @@ function pitchfork_blocks_register_acf_blocks() {
 }
 add_action( 'init', 'pitchfork_blocks_register_acf_blocks' );
 
+/**
+ * Old school method of registering a block.
+ * Check to see if we have ACF Pro for block support.
+ */
 function pitchfork_blocks_register_v1_acf_blocks() {
-
-	// Old school method of registering a block. Check to see if we have ACF Pro for block support.
 	if ( function_exists( 'acf_register_block_type' ) ) {
 		require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card/register.php';
 	}
 }
-
 add_action( 'acf/init', 'pitchfork_blocks_register_v1_acf_blocks' );
-
-/**
- * Given an $block object from an ACF block for gutenberg:
- * This will return a string of CSS inline values suitable for
- * inclusion in the block output in PHP.
- *
- * @param  mixed $block
- * @return $style as string
- */
-function pitchfork_blocks_acf_calculate_spacing($block) {
-
-	$style = '';
-	$padding = array();
-	$margin = array();
-
-	if (isset($block['style']['spacing']['padding'])) {
-
-		$padding = $block['style']['spacing']['padding'];
-
-		foreach ($padding as $rule => $value) {
-			if ( str_starts_with( $value, 'var:') ) {
-				$var_position = strrpos($value, '|');
-				$variable = substr($value, $var_position + 1 );
-				$style .= 'padding-' . $rule . ':var(--wp--preset--spacing--' . $variable . '); ';
-			} else {
-				$style .= 'padding-' . $rule . ':' . $value . '; ';
-			}
-		}
-	}
-
-	if (isset($block['style']['spacing']['margin'])) {
-
-		$margin = $block['style']['spacing']['margin'];
-
-		foreach ($margin as $rule => $value) {
-			if ( str_starts_with( $value, 'var:') ) {
-				$var_position = strrpos($value, '|');
-				$variable = substr($value, $var_position + 1 );
-				$style .= 'margin-' . $rule . ':var(--wp--preset--spacing--' . $variable . '); ';
-			} else {
-				$style .= 'margin-' . $rule . ':' . $value . '; ';
-			}
-		}
-	}
-
-	return $style;
-	// echo '<div style="' . $style . '">Block content</div>';
-}
-
-/**
- * Create filter to remove ACF inner blocks wrapper from a couple of blocks.
- *
- * Note that some additional CSS to "ignore" the wrapper in a grid context is required
- * for any of these blocks to function correctly in the block editor. The wrapper is
- * non-removable in that context.
- *
- * Removed here for greater transparency and compliance with actual markup for Unity elements.
- *
- * See: https://www.advancedcustomfields.com/resources/whats-new-with-acf-blocks-in-acf-6/#block-versioning
- */
-add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'pitchfork_acf_remove_wrap_innerblocks', 10, 2 );
-function pitchfork_acf_remove_wrap_innerblocks( $wrap, $name ) {
-
-	$nowrap_block_names = array( 'acf/hero', 'acf/hero-video' );
-
-	// Loop through the array above. If located, remove the wrapper.
-    if ( in_array( $name, $nowrap_block_names ) ) {
-        return false;
-    }
-
-    return true;
-}

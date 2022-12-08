@@ -42,6 +42,7 @@ require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/class_pfblocks_sidebar.php';
 
 // ACF configurations.
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-config.php';
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-block-utilities.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-menu-select/acf-menu-select.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'vendor/philipnewcomer/acf-unique-id-field/src/ACF_Field_Unique_ID.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-register-blocks.php';
