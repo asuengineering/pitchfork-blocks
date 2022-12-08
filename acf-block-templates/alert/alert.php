@@ -8,12 +8,6 @@
  * @package Pitchfork_Blocks
  */
 $dismissable	= get_field( 'uds_alert_dismissible' );
-
-/**
- * Additional margin/padding settings
- * Returns a string for inclusion with style=""
- * --------------------
- */
 $spacing = pitchfork_blocks_acf_calculate_spacing($block);
 
 // Retrieve additional classes from the 'advanced' field in the editor.
