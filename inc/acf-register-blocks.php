@@ -65,7 +65,8 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/content-media-overlap', 	// Miscellaneous content sections.
 		'/grid-links',         		// UDS Grid Links.
 		'/hero',				  	// UDS Hero block, v2
-		'/hero-video',				// UDS Hero block, v2
+		'/hero-video',				// UDS Video hero
+		'/profile-manual',			// UDS Profile (Person), manual data entry edition.
 		'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
 		'/subtitle',				// Subtitle block, for use within the hero.
 	);
