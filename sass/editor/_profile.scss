@@ -1,0 +1,10 @@
+/*--------------------------------------------------------------
+# UDS Profile
+
+1. (Manual block) - remove has-background class from background
+color selection in the block editor.
+--------------------------------------------------------------*/
+
+.editor-styles-wrapper .acf-block-preview.wp-block-acf-profile-manual.has-fill-background-color {
+	background-color:transparent !important;
+}

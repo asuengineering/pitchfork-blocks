@@ -13,13 +13,14 @@
 @import 'editor/sidebar';
 @import 'editor/grid-links';
 @import 'editor/alert-notification';
+@import 'editor/profile';
 
 
 /*--------------------------------------------------------------
 One-off fixes, tempoorary issues.
 --------------------------------------------------------------*/
 
-/* Workaround for open issue with Gutenberg and reusable blocks. 
+/* Workaround for open issue with Gutenberg and reusable blocks.
 - Editor will not respect the alignment settings of inner blocks. Will always display "normal" width.
 - See: https://github.com/WordPress/gutenberg/issues/8288 */
 .editor-styles-wrapper .is-root-container .wp-block.is-reusable {

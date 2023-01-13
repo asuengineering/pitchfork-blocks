@@ -19,6 +19,7 @@ $email 			= get_field('uds_profilemanual_email');
 $phone 			= get_field('uds_profilemanual_phone');
 $address 		= get_field('uds_profilemanual_address');
 $description 	= get_field('uds_profilemanual_description');
+$social			= get_field('uds_profilemanual_social');
 
 /**
  * Retrieve spacing settings from editor.
@@ -86,6 +87,23 @@ if (! empty($contactlist)) {
 }
 
 /**
+ * Gather social media icons and links from ACF.
+ */
+$social_list = '';
+if( have_rows('uds_profilemanual_social') ):
+    while ( have_rows('uds_profilemanual_social') ) : the_row();
+        $social_icon = get_sub_field('icon');
+		$social_url = get_sub_field('url');
+
+		$social_list .= '<li><a href="' . esc_url($social_url) . '" aria-label="Go to user social media accouunt: ' . $social_icon->id . '" data-ga-event="link" data-ga-action="click" data-ga-name="onclick" data-ga-type="external link" data-ga-region="main content" data-ga-section="' . $displayname . '" data-ga="' . $social_icon->id  . '">' . $social_icon->element . '</a></li>';
+
+    endwhile;
+	$social_list = '<ul class="person-social-medias">' . $social_list . '</ul>';
+else :
+    // no rows found
+endif;
+
+/**
  * Manipulate displayname, title and department to include wrapper <h#> elements and check for blanks.
  */
 if (('large' === $display_size) && (! empty($searchURL)) ) {
@@ -112,7 +130,6 @@ if (! empty($description)) {
 }
 
 $profileimg = wp_get_attachment_image( $image, 'thumbnail', false, array( "class" => "profile-img"));
-do_action('qm/debug', $profileimg);
 
 /**
  * Render the block
@@ -126,7 +143,7 @@ $profile .= '<div class="person-profession">' . $title . $department . '</div>';
 $profile .= $contactlist;
 
 if ('large' === $display_size) {
-	$profile .= $description;
+	$profile .= $description . $social_list;
 } elseif (('small' === $display_size) && (! empty($searchURL))) {
 	$profile .= '<a href="' . $searchURL . '" class="btn btn-maroon btn-md">View Profile</a>';
 }

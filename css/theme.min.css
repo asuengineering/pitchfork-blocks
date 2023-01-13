@@ -21,6 +21,7 @@ main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:3rem}
 .wp-block-alert.alert.is-style-alert-info{background-color:#d6f0fa;border-color:#00a3e0}
 .wp-block-alert.alert.is-style-alert-error{background-color:#f7dddd;border-color:#cc2f2f}
 .wp-block-banner .banner{max-width:1200px;margin-left:auto;margin-right:auto}
+.uds-person-profile.fill-white{background-color:#fff;border:1px solid #d0d0d0;padding:2rem}
 @media(min-width:calc(768px)){div[class^='uds-hero'] .wp-block-group,div[class^='uds-hero'] .wp-block-buttons{grid-column:2;max-width:700px;z-index:30}
 div[class^='uds-hero'] .wp-block-buttons{-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 div[class^='uds-hero'] .wp-block-group{margin-top:1.5rem;grid-row:4;font-size:1.5rem;font-weight:700;line-height:1.5}
