@@ -14,8 +14,8 @@ function pitchfork_blocks_enqueue_block_styles() {
 		$the_version    = $the_plugin['Version'];
 		$plugin_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'css/theme.min.css' );
 		$hero_video_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'js/hero-video.js' );
-	
-		wp_enqueue_style( 'pitchfork-block-styles', plugin_dir_url( __DIR__ ) . 'css/theme.min.css', array(), $plugin_version );
+
+		wp_enqueue_style( 'pitchfork-block-styles', plugin_dir_url( __DIR__ ) . 'css/theme.min.css', array('pitchfork-styles'), $plugin_version );
 		wp_enqueue_script( 'hero-video-controls', plugin_dir_url( __DIR__ ) . 'js/hero-video.js',  array( 'jquery' ), $hero_video_version , true );
 }
 
@@ -28,10 +28,10 @@ function pitchfork_blocks_enqueue_block_scripts() {
 	$block_variations_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'js/block-variations.js' );
 	$block_styles_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'css/theme.min.css' );
 	$hero_video_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'js/hero-video.js' );
-	
+
 	wp_enqueue_script( 'uds-block-variations', plugin_dir_url( __DIR__ ) . 'js/block-variations.js',  array( 'wp-blocks', 'wp-dom' ), $block_variations_version , true );
 	wp_enqueue_script( 'hero-video-controls', plugin_dir_url( __DIR__ ) . 'js/hero-video.js',  array( 'jquery' ), $hero_video_version , true );
-	wp_enqueue_style( 'pitchfork-block-styles', plugin_dir_url( __DIR__ ) . 'css/theme.min.css', array(), $block_styles_version );
+	wp_enqueue_style( 'pitchfork-block-styles', plugin_dir_url( __DIR__ ) . 'css/theme.min.css', array('pitchfork-styles'), $block_styles_version );
 
 }
 

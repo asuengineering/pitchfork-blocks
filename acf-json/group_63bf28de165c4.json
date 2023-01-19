@@ -3,11 +3,11 @@
     "title": "UDS Block: Profile (Manual)",
     "fields": [
         {
-            "key": "field_63bf3795bde7e",
-            "label": "Name, image & URL",
+            "key": "field_63c84bfcf4e01",
+            "label": "Name, URL and Photo",
             "name": "",
             "aria-label": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,7 +16,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -33,7 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Placeholder Name",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -83,10 +84,10 @@
         },
         {
             "key": "field_63bf37abbde7f",
-            "label": "Title & Description",
+            "label": "Title and Description",
             "name": "",
             "aria-label": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -95,7 +96,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -112,7 +114,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Placeholder title",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -132,7 +134,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Placeholder department",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -163,7 +165,7 @@
             "label": "Contact Details",
             "name": "",
             "aria-label": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -172,7 +174,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
@@ -235,11 +238,11 @@
             "new_lines": ""
         },
         {
-            "key": "field_63c1916b88f68",
-            "label": "Social media",
+            "key": "field_63c8256db90ed",
+            "label": "Social Icons",
             "name": "",
             "aria-label": "",
-            "type": "tab",
+            "type": "accordion",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -248,11 +251,12 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "open": 0,
+            "multi_expand": 0,
             "endpoint": 0
         },
         {
-            "key": "field_63c1918288f69",
+            "key": "field_63c82588b90ee",
             "label": "Social Media Icons",
             "name": "uds_profilemanual_social",
             "aria-label": "",
@@ -265,7 +269,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -274,7 +278,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_63c191a688f6a",
+                    "key": "field_63c825cab90ef",
                     "label": "Icon",
                     "name": "icon",
                     "aria-label": "",
@@ -290,23 +294,25 @@
                     "icon_sets": [
                         "solid",
                         "regular",
+                        "light",
+                        "thin",
                         "brands"
                     ],
-                    "custom_icon_set": "",
-                    "default_label": "&lt;i class=\"fa-duotone fa-earth-americas fa-fw\"&gt;&lt;\/i&gt; Earth americas",
-                    "default_value": "{ \"style\" : \"duotone\", \"id\" : \"earth-americas\", \"label\" : \"Earth americas\", \"unicode\" : \"f57d\" }",
+                    "custom_icon_set": "ACFFA_custom_icon_list_v6_ApprovedSocialIcons",
+                    "default_label": "",
+                    "default_value": "",
                     "save_format": "object",
                     "allow_null": 0,
                     "show_preview": 0,
                     "enqueue_fa": 0,
                     "fa_live_preview": "",
                     "choices": [],
-                    "parent_repeater": "field_63c1918288f69"
+                    "parent_repeater": "field_63c82588b90ee"
                 },
                 {
-                    "key": "field_63c1922b88f6b",
-                    "label": "url",
-                    "name": "url",
+                    "key": "field_63c82614b90f0",
+                    "label": "Link",
+                    "name": "link",
                     "aria-label": "",
                     "type": "url",
                     "instructions": "",
@@ -319,7 +325,7 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "parent_repeater": "field_63c1918288f69"
+                    "parent_repeater": "field_63c82588b90ee"
                 }
             ]
         }
@@ -342,5 +348,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673637377
+    "modified": 1674071097
 }

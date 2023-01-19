@@ -44,6 +44,15 @@
 	/**
      * Register styles associated with acf/profile-manual
      */
+
+	wp.blocks.registerBlockStyle(
+		'acf/profile-manual', [{
+			name: 'large',
+			label: 'Large',
+			isDefault: false,
+		}]
+	);
+
 	wp.blocks.registerBlockStyle(
 		'acf/profile-manual', [{
 			name: 'small',
@@ -54,8 +63,8 @@
 
 	wp.blocks.registerBlockStyle(
 		'acf/profile-manual', [{
-			name: 'large',
-			label: 'Large',
+			name: 'micro',
+			label: 'Micro',
 			isDefault: false,
 		}]
 	);

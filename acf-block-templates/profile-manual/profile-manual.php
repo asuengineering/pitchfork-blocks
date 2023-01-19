@@ -43,13 +43,15 @@ $block_classes = explode(' ', $block_class_string);
  */
 
 $display_size = 'small';
-if (in_array('is-style-small', $block_classes)) {
-	$display_size = 'small';
-}
 if (in_array('is-style-large', $block_classes)) {
 	$display_size = 'large';
 }
-$block_classes[] = $display_size;
+if (in_array('is-style-small', $block_classes)) {
+	$display_size = 'small';
+}
+if (in_array('is-style-micro', $block_classes)) {
+	$display_size = 'micro';
+}
 
 /**
  * Check to see if there is a background color selected.
@@ -83,7 +85,7 @@ if (! empty($address)) {
 $contactlist = '';
 $contactlist = $email . $phone . $address;
 if (! empty($contactlist)) {
-	$contactlist = '<ul className="person-contact-info">' . $contactlist . '</ul>';
+	$contactlist = '<ul class="person-contact-info">' . $contactlist . '</ul>';
 }
 
 /**
@@ -93,7 +95,7 @@ $social_list = '';
 if( have_rows('uds_profilemanual_social') ):
     while ( have_rows('uds_profilemanual_social') ) : the_row();
         $social_icon = get_sub_field('icon');
-		$social_url = get_sub_field('url');
+		$social_url = get_sub_field('link');
 
 		$social_list .= '<li><a href="' . esc_url($social_url) . '" aria-label="Go to user social media accouunt: ' . $social_icon->id . '" data-ga-event="link" data-ga-action="click" data-ga-name="onclick" data-ga-type="external link" data-ga-region="main content" data-ga-section="' . $displayname . '" data-ga="' . $social_icon->id  . '">' . $social_icon->element . '</a></li>';
 
@@ -106,7 +108,7 @@ endif;
 /**
  * Manipulate displayname, title and department to include wrapper <h#> elements and check for blanks.
  */
-if (('large' === $display_size) && (! empty($searchURL)) ) {
+if (('small' !== $display_size) && (! empty($searchURL)) ) {
 	// Is this a large profile, and is there a URL present?
 	$displayname = '<h3 class="person-name"><a href="' . $searchURL . '">' . $displayname . '</a></h3>';
 } else {
@@ -118,8 +120,20 @@ if (! empty($title)) {
 	$title = '<h4><span>' . $title . '</span></h4>';
 }
 
+// Set the department to the typed in value.
+// Override this value if the block style is "micro"
+$department = '';
 if (! empty($department)) {
 	$department = '<h4><span>' . $department . '</span></h4>';
+}
+
+$micro_contact = '';
+if ('micro' === $display_size) {
+	// If there is an email address, grab it. Overwrite department string with address.
+	if (! empty($email)) {
+		$micro_contact = strip_tags($email, '<a>');
+		$department = '<h4>' . $micro_contact . '</h4>';
+	}
 }
 
 /**
@@ -129,23 +143,32 @@ if (! empty($description)) {
 	$description = '<div><p class="person-description">' . $description . '</p></div>';
 }
 
-$profileimg = wp_get_attachment_image( $image, 'thumbnail', false, array( "class" => "profile-img"));
+/**
+ * Check if there's a profile image and create the markup for it.
+*/
+$profileimg = '';
+if (! empty($image)) {
+	$profileimg .= '<div class="profile-img-container"><div class="profile-img-placeholder">';
+	$profileimg .= wp_get_attachment_image( $image, 'thumbnail', false, array( "class" => "profile-img"));
+	$profileimg .= '</div></div>';
+}
 
 /**
  * Render the block
  */
 $profile = '<div class="' . implode( ' ', $block_classes) . '" style="' . $spacing . '">';
-$profile .= '<div class="profile-img-container"><div class="profile-img-placeholder">';
-$profile .= wp_get_attachment_image( $image, 'thumbnail', false, array( "class" => "profile-img"));
-$profile .= '</div></div>';
+$profile .= $profileimg;
 $profile .= '<div class="person"><div class="person-name">' . $displayname . '</div>';
 $profile .= '<div class="person-profession">' . $title . $department . '</div>';
-$profile .= $contactlist;
+
+if ('micro' !== $display_size ){
+	$profile .= $contactlist;
+}
 
 if ('large' === $display_size) {
 	$profile .= $description . $social_list;
 } elseif (('small' === $display_size) && (! empty($searchURL))) {
-	$profile .= '<a href="' . $searchURL . '" class="btn btn-maroon btn-md">View Profile</a>';
+	$profile .= '<a href="' . $searchURL . '" class="btn btn-maroon btn-md">View profile</a>';
 }
 
 $profile .= '</div></div>';

@@ -13,7 +13,14 @@
 .wp-block-acf-alert button{pointer-events:none}
 .wp-block-acf-banner{max-width:1920px}
 .wp-block-acf-banner .banner-buttons a{pointer-events:none}
+.editor-styles-wrapper .uds-person-profile.is-style-small{--pic-size:120px}
+.editor-styles-wrapper .uds-person-profile.is-style-micro{--pic-size:78px;--person-name-size:20px;--name-top-margin:0}
 .editor-styles-wrapper .acf-block-preview.wp-block-acf-profile-manual.has-fill-background-color{background-color:transparent !important}
+.editor-styles-wrapper .wp-block-acf-profile-manual .person-name a{pointer-events:none}
+.editor-styles-wrapper .wp-block-acf-profile-manual .person-contact-info a{pointer-events:none}
+.editor-styles-wrapper .wp-block-acf-profile-manual a.btn{pointer-events:none}
+.editor-styles-wrapper .wp-block-acf-profile-manual .person-social-medias a{pointer-events:none}
+.editor-styles-wrapper .wp-block-acf-profile-manual:not(.acf-block-preview){min-width:400px}
 .editor-styles-wrapper .is-root-container .wp-block.is-reusable{max-width:none}
 @media(min-width:calc(768px)){.acf-block-preview div[class^='uds-hero'] .wp-block-button__link{margin-top:1.5rem}
 }

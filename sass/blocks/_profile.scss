@@ -1,0 +1,87 @@
+/*--------------------------------------------------------------
+# UDS Profile (Manual)
+
+- Create fill-white variant to provide a border/interior padding + white background.
+Intended for use on a background color.
+--------------------------------------------------------------*/
+// Map is-style-{size} declarations to previously set CSS rules.
+// BS4 not directly included with the plugin, so @extend won't work.
+// Avoiding the use of .small and .large as utility classes since they have rules defined in WP.
+.uds-person-profile {
+	--max-width:none;
+
+	&.is-style-small {
+		--pic-size: 120px;
+	}
+	&.is-style-micro {
+		--pic-size: 78px;
+		--person-name-size: 20px;
+		--name-top-margin: 0;
+		--person-profession-bottom-margin:0px;
+	}
+
+	// At small widths, contact info should be in a column too.
+	.person ul.person-contact-info {
+		flex-direction: column;
+
+		li {
+			margin:0;
+		}
+	}
+}
+
+
+// Move padding to profile image element as opposed to person.
+.uds-person-profile[class*="is-style"] {
+	.person {
+    	margin-left: 0;
+	}
+
+	.profile-img-container {
+		margin-right: $uds-size-spacing-3;
+	}
+}
+
+// Overrides media breakpoint width declaration in original.
+@include media-breakpoint-down($lg) {
+	.uds-person-profile {
+		max-width: none;
+	}
+}
+
+@include media-breakpoint-up($sm) {
+	.uds-person-profile .person ul.person-contact-info {
+		flex-direction: row;
+		gap: $uds-size-spacing-2;
+	}
+}
+
+// Create fill-white variant. Background white w/ 1px border.
+.uds-person-profile.fill-white {
+	background-color: #ffffff;
+	border-bottom: 1px solid $uds-color-base-gray-3;
+	padding: $uds-size-spacing-2;
+}
+
+@include media-breakpoint-up($sm) {
+	.uds-person-profile.fill-white {
+		border: 1px solid $uds-color-base-gray-3;
+		padding: $uds-size-spacing-4;
+	}
+}
+
+// Micro style adjustments.
+// Always flex-row. Remove maroon color on linked email.
+.uds-person-profile.is-style-micro {
+
+	flex-direction: row;
+
+	.person-name {
+		margin-top:0;
+	}
+
+	.person-profession a {
+		font-weight:400;
+		text-decoration:none;
+	}
+}
