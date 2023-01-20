@@ -10,7 +10,7 @@
 /**
  * Get fields.
  */
-$displayname	= get_field( 'uds_profilemanual_name' );
+$displayname	= get_field('uds_profilemanual_name' );
 $title 			= get_field('uds_profilemanual_title');
 $department 	= get_field('uds_profilemanual_department');
 $searchURL 		= get_field('uds_profilemanual_url');

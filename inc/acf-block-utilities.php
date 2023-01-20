@@ -44,7 +44,7 @@ function pitchfork_blocks_acf_calculate_spacing($block) {
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'pitchfork_acf_remove_wrap_innerblocks', 10, 2 );
 function pitchfork_acf_remove_wrap_innerblocks( $wrap, $name ) {
 
-	$nowrap_block_names = array( 'acf/hero', 'acf/hero-video' );
+	$nowrap_block_names = array( 'acf/hero', 'acf/hero-video', 'acf/profiles' );
 
 	// Loop through the array above. If located, remove the wrapper.
     if ( in_array( $name, $nowrap_block_names ) ) {

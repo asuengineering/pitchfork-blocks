@@ -6,10 +6,11 @@
     "icon": "grid-view",
     "keywords": ["profile", "person", "card"],
     "acf": {
-        "mode": "edit",
+        "mode": "preview",
         "renderTemplate": "profile-manual.php"
     },
 	"supports": {
+		"anchor": true,
 		"spacing": {
 			"margin": ["top", "bottom"],
 			"padding": false

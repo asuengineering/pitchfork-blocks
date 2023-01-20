@@ -33,3 +33,10 @@
 .editor-styles-wrapper .wp-block-acf-profile-manual:not(.acf-block-preview) {
 	min-width:400px;
 }
+
+// Ignore the ACF inner wrapper
+.editor-styles-wrapper .uds-profile-grid {
+	.acf-innerblocks-container {
+		display: contents;
+	}
+}

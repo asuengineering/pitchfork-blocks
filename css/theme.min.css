@@ -23,17 +23,19 @@ main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:3rem}
 .wp-block-banner .banner{max-width:1200px;margin-left:auto;margin-right:auto}
 .uds-person-profile{--max-width:none}
 .uds-person-profile.is-style-small{--pic-size:120px}
-.uds-person-profile.is-style-micro{--pic-size:78px;--person-name-size:20px;--name-top-margin:0;--person-profession-bottom-margin:0}
-.uds-person-profile .person ul.person-contact-info{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
-.uds-person-profile .person ul.person-contact-info li{margin:0}
-.uds-person-profile[class*="is-style"] .person{margin-left:0}
-.uds-person-profile[class*="is-style"] .profile-img-container{margin-right:1.5rem}
-.uds-person-profile.fill-white{background-color:#fff;border-bottom:1px solid #d0d0d0;padding:1rem}
-.uds-person-profile.is-style-micro{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.uds-person-profile.is-style-micro{--pic-size:78px;--person-name-size:20px;--name-top-margin:0;--person-profession-bottom-margin:0;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .uds-person-profile.is-style-micro .person-name{margin-top:0}
 .uds-person-profile.is-style-micro .person-profession a{font-weight:400;text-decoration:none}
-@media(min-width:calc(540px)){.uds-person-profile .person ul.person-contact-info{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;gap:1rem}
-.uds-person-profile.fill-white{border:1px solid #d0d0d0;padding:2rem}
+.uds-person-profile.fill-white{background-color:#fff;border-bottom:1px solid #d0d0d0;padding:1rem}
+.uds-person-profile.fill-white .person{margin-bottom:1rem}
+.uds-person-profile[class*="is-style"] .person{margin-left:0}
+.uds-person-profile[class*="is-style"] .profile-img-container{margin-right:1.5rem}
+.uds-person-profile .person ul.person-contact-info{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important;-webkit-column-gap:1rem;-moz-column-gap:1rem;column-gap:1rem;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.uds-person-profile .person ul.person-contact-info li{margin:0}
+.uds-profile-grid{display:grid;grid-template-columns:1fr;grid-template-rows:1fr;gap:2rem}
+@media(min-width:calc(540px)){.uds-person-profile.fill-white{border:1px solid #d0d0d0;padding:2rem}
+.uds-person-profile.fill-white .person{margin-bottom:0}
+.uds-person-profile .person ul.person-contact-info{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;gap:1rem}
 }@media(min-width:calc(768px)){div[class^='uds-hero'] .wp-block-group,div[class^='uds-hero'] .wp-block-buttons{grid-column:2;max-width:700px;z-index:30}
 div[class^='uds-hero'] .wp-block-buttons{-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 div[class^='uds-hero'] .wp-block-group{margin-top:1.5rem;grid-row:4;font-size:1.5rem;font-weight:700;line-height:1.5}
@@ -42,6 +44,8 @@ div[class^='uds-hero'].has-btn-row .wp-block-group{grid-row:4}
 div[class^='uds-hero'].has-btn-row .wp-block-buttons{grid-row:5;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 div[class^='uds-hero'].hide-content .wp-block-group{display:block}
 .uds-section{padding-top:6rem;padding-bottom:6rem}
+.uds-profile-grid.col-one{grid-template-columns:minmax(0,800px)}
+.uds-profile-grid.col-two,.uds-profile-grid.col-three{grid-template-columns:repeat(2,1fr)}
 }@media(min-width:calc(992px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(940px - 34%)}
 main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:6rem}
 .uds-hero-video{overflow:hidden}
@@ -52,6 +56,7 @@ main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:6rem}
 .uds-hero-video:hover .btn.btn-circle.btn-circle-large{opacity:1}
 }@media(min-width:calc(1224px)) { div[class^='uds-hero'] .wp-block-group, div[class^='uds-hero'] .wp-block-buttons { max-width: calc(1200px - 34%)}
 .uds-section .wp-block-columns{padding:0}
+.uds-profile-grid.col-three{grid-template-columns:repeat(3,1fr)}
 }@media(max-width:calc(992px - .02px)){.uds-person-profile{max-width:none}
 }@media(max-width:calc(768px - .02px)){div[class^='uds-hero'] .wp-block-group>.has-white-color{color:#191919 !important}
 }

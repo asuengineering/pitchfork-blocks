@@ -192,7 +192,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "email@asu.edu",
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -235,7 +235,7 @@
             "maxlength": "",
             "rows": 2,
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "br"
         },
         {
             "key": "field_63c8256db90ed",
@@ -348,5 +348,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674071097
+    "modified": 1674248964
 }

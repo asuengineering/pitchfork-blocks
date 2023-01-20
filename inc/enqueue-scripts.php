@@ -31,7 +31,7 @@ function pitchfork_blocks_enqueue_block_scripts() {
 
 	wp_enqueue_script( 'uds-block-variations', plugin_dir_url( __DIR__ ) . 'js/block-variations.js',  array( 'wp-blocks', 'wp-dom' ), $block_variations_version , true );
 	wp_enqueue_script( 'hero-video-controls', plugin_dir_url( __DIR__ ) . 'js/hero-video.js',  array( 'jquery' ), $hero_video_version , true );
-	wp_enqueue_style( 'pitchfork-block-styles', plugin_dir_url( __DIR__ ) . 'css/theme.min.css', array('pitchfork-styles'), $block_styles_version );
+	wp_enqueue_style( 'pitchfork-block-styles', plugin_dir_url( __DIR__ ) . 'css/theme.min.css', array(), $block_styles_version );
 
 }
 

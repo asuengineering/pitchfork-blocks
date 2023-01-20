@@ -52,12 +52,14 @@ add_filter( 'block_categories_all', 'pitchfork_blocks_custom_category', 10, 2 );
  */
 function pitchfork_blocks_register_acf_blocks() {
 
+	require_once PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/icons.php';
+
 	// Array of block folders to use. Each contains a block.json file.
 	$block_includes = array(
 		'/accordion',				// UDS Accordion, uses foldable cards.
 		'/alert',					// UDS Alert Block, includes options for dismissal.
 		'/background-section', 		// UDS Background section.
-		'/banner',             		// UDS banner block.
+		'/banner',             		// UDS Banner block.
 		'/blockquote',				// UDS Blockquote, inner blocks
 		'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 		// '/card',               		// UDS Cards.
@@ -66,6 +68,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/grid-links',         		// UDS Grid Links.
 		'/hero',				  	// UDS Hero block, v2
 		'/hero-video',				// UDS Video hero
+		// '/profiles',				// UDS Profiles, container block for directories.
 		'/profile-manual',			// UDS Profile (Person), manual data entry edition.
 		'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
 		'/subtitle',				// Subtitle block, for use within the hero.
@@ -75,6 +78,11 @@ function pitchfork_blocks_register_acf_blocks() {
 	foreach ( $block_includes as $folder ) {
 		register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder );
 	}
+
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profiles', array(
+		'icon' => $blockIcon->$users_rectangle,
+		'category' => 'pitchfork-blocks'
+	));
 }
 add_action( 'init', 'pitchfork_blocks_register_acf_blocks' );
 
