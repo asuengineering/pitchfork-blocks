@@ -69,7 +69,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/hero',				  	// UDS Hero block, v2
 		'/hero-video',				// UDS Video hero
 		// '/profiles',				// UDS Profiles, container block for directories.
-		'/profile-manual',			// UDS Profile (Person), manual data entry edition.
+		// '/profile-manual',		// UDS Profile (Person), manual data entry edition.
 		'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
 		'/subtitle',				// Subtitle block, for use within the hero.
 	);
@@ -79,8 +79,15 @@ function pitchfork_blocks_register_acf_blocks() {
 		register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder );
 	}
 
+	// UDS Profiles, container block for directories.
 	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profiles', array(
-		'icon' => $blockIcon->$users_rectangle,
+		'icon' => $block_icon->users_rectangle,
+		'category' => 'pitchfork-blocks'
+	));
+
+	// UDS Profile (Person), manual data entry edition.
+	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profile-manual', array(
+		'icon' => $block_icon->image_user,
 		'category' => 'pitchfork-blocks'
 	));
 }
