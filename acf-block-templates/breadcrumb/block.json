@@ -2,7 +2,7 @@
     "name": "acf/breadcrumb",
     "title": "UDS Breadcrumb",
     "description": "Produces a breadcrumb to promote better internal site navigation.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["breadcrumb", "navigation"],
     "acf": {

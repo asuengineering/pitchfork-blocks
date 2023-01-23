@@ -2,7 +2,7 @@
     "name": "acf/card-foldable",
     "title": "UDS Foldable Card",
     "description": "A singlular foldable card. Uses Inner Blocks for content.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["foldable", "card", "accordion"],
 	"parent": [

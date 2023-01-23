@@ -2,7 +2,7 @@
     "name": "acf/accordion",
     "title": "UDS Accordion",
     "description": "An accordion with optional independent expansion/contraction of inner cards.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["accordion", "foldable", "expand"],
     "acf": {

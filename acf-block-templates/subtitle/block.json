@@ -2,7 +2,7 @@
     "name": "acf/subtitle",
     "title": "UDS Subtitle",
     "description": "A block specifically for the UDS Hero. Used to include a subtitle above the H1.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["hero", "title", "subtitle"],
     "acf": {

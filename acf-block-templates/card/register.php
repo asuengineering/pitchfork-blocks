@@ -27,7 +27,7 @@ acf_register_block_type(
 		'description'       => __( 'A block for building static versions of basic, degree, story, and event cards.', 'uds-wordpress-theme' ),
 		'icon'              => $icon,
 		'render_template'   => PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card/card.php',
-		'category'          => 'uds',
+		'category'          => 'pitchfork-blocks',
 		'keywords'          => array( 'card', 'cards', 'content' ),
 		'supports'          => array(
 			'spacing' => array(

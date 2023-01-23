@@ -2,7 +2,7 @@
     "name": "acf/hero",
     "title": "UDS Hero",
     "description": "Creates a hero for the top of the page. Uses Inner Blocks for content.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["hero", "cover", "image"],
     "acf": {

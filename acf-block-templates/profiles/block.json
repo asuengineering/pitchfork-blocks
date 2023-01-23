@@ -2,7 +2,7 @@
     "name": "acf/profiles",
     "title": "UDS Profiles",
     "description": "A container for building a grid of profiles",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "grid-view",
     "keywords": ["directory", "profile", "grid"],
     "acf": {

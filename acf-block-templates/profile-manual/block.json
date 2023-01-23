@@ -2,7 +2,7 @@
     "name": "acf/profile-manual",
     "title": "UDS Profile (Manual)",
     "description": "A profile card to represent a person at ASU. Data entered manually into the block editor.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "grid-view",
     "keywords": ["profile", "person", "card"],
     "acf": {

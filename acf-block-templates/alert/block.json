@@ -2,7 +2,7 @@
     "name": "acf/alert",
     "title": "UDS Alert",
     "description": "Creates an alert message. Block styles dictate the color/purpose. Uses Inner Blocks for content.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["alert", "dismiss", "message"],
     "acf": {

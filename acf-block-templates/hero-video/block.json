@@ -2,7 +2,7 @@
     "name": "acf/hero-video",
     "title": "UDS Hero - Video",
     "description": "Used for full motion video (MP4) in your hero. Inner Blocks for content.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["hero", "cover", "video"],
     "acf": {

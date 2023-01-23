@@ -2,7 +2,7 @@
     "name": "acf/uds-sidebar",
     "title": "UDS Sidebar",
     "description": "Secondary navigation powered by menus made the old skool way.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["sidebar", "navigation", "secondary"],
     "acf": {

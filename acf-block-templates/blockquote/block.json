@@ -2,7 +2,7 @@
     "name": "acf/blockquote",
     "title": "UDS Blockquote",
     "description": "Blockquote with a dozen formats. Uses inner blocks for content.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["blockquote", "quote", "testimonial"],
     "acf": {

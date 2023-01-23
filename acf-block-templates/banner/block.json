@@ -2,7 +2,7 @@
     "name": "acf/banner",
     "title": "UDS Banner",
     "description": "Banner style message. Full-width. Use with repeatable blocks. Uses Inner Blocks for content.",
-    "category": "uds",
+    "category": "pitchfork-blocks",
     "icon": "star-filled",
     "keywords": ["banner", "dismiss", "message"],
     "acf": {
