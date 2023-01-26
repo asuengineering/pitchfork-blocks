@@ -52,6 +52,12 @@ This plugin leverages the following libraries for functionality delivered within
 
 ## Release Notes
 
+### Version 1.4
+
+- ADD: Created two new blocks called `acf/profiles` and `acf/profile-manual` to aid with the creation of directory pages in Pitchfork. Both blocks are documented at [WordPress @ ASU](https://wordpress.asu.edu/pitchfork/docs/).
+- CHANGE: Recategorized all blocks in this plugin into their own category in the block inserter.
+- FIX: Removed debugging code in several places. Applied code linting standards.
+
 ### Version 1.3
 This release contains several bigger refactoring efforts for performance and best practices.
 - CHANGE:  Refactored all blocks to use `block.json`, which is now [the recommended method](https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/) for doing so as of ACF 6.0.
