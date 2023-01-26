@@ -5,10 +5,10 @@
  * @package UDS WordPress Theme
  */
 
-$source = get_field( 'uds_grid_links_source' );
-$columns = get_field( 'uds_grid_links_columns' );
+$source     = get_field( 'uds_grid_links_source' );
+$columns    = get_field( 'uds_grid_links_columns' );
 $breakpoint = get_field( 'uds_grid_links_breakpoint' );
-$color = get_field( 'uds_grid_links_color' );
+$color      = get_field( 'uds_grid_links_color' );
 
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
@@ -28,12 +28,12 @@ if ( 'mobile' !== $columns ) {
 	$additional_classes = $columns . ' ' . $additional_classes;
 }
 
-/** 
+/**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
  */
-$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+$spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 echo '<div class="uds-grid-links ' . $additional_classes . '" style="' . $spacing . '">';
 
@@ -48,12 +48,12 @@ if ( 'arbitrary' === $source ) {
 			the_row();
 
 			// Reset all loop variables with each loop.
-			$icon = '';
-			$bg_image = '';
-			$gridlink = '';
+			$icon       = '';
+			$bg_image   = '';
+			$gridlink   = '';
 			$linkstring = '';
 
-			$icon = get_sub_field( 'uds_grid_links_created_icon' );
+			$icon     = get_sub_field( 'uds_grid_links_created_icon' );
 			$gridlink = get_sub_field( 'uds_grid_links_created_link' );
 
 			if ( ! empty( $icon ) ) {
@@ -61,12 +61,12 @@ if ( 'arbitrary' === $source ) {
 			}
 
 			if ( ! empty( $gridlink ) ) {
-				$link_url = $gridlink['url'];
-				$link_title = $gridlink['title'];
+				$link_url    = $gridlink['url'];
+				$link_title  = $gridlink['title'];
 				$link_target = $gridlink['target'] ? $gridlink['target'] : '_self';
 			} else {
-				$link_url = '#';
-				$link_title = 'No link defined.';
+				$link_url    = '#';
+				$link_title  = 'No link defined.';
 				$link_target = '_self';
 			}
 

@@ -21,14 +21,14 @@ if ( ! empty( $block['className'] ) ) {
 	$additional_classes = $block['className'];
 }
 
-/** 
+/**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
  */
-$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+$spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
-// Produce the correct section block 
+// Produce the correct section block
 if ( $choice ) {
 
 	// Produce the correct classes for the <section> element and echo it.

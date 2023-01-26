@@ -17,11 +17,11 @@
  * @param  mixed $block
  * @return $style as string
  */
-function pitchfork_blocks_acf_calculate_spacing($block) {
+function pitchfork_blocks_acf_calculate_spacing( $block ) {
 
 	if ( ! empty( $block['style'] ) ) {
 		$style_engine = wp_style_engine_get_styles( $block['style'] );
-		$style = $style_engine['css'];
+		$style        = $style_engine['css'];
 	} else {
 		$style = '';
 	}
@@ -47,9 +47,9 @@ function pitchfork_acf_remove_wrap_innerblocks( $wrap, $name ) {
 	$nowrap_block_names = array( 'acf/hero', 'acf/hero-video', 'acf/profiles' );
 
 	// Loop through the array above. If located, remove the wrapper.
-    if ( in_array( $name, $nowrap_block_names ) ) {
-        return false;
-    }
+	if ( in_array( $name, $nowrap_block_names ) ) {
+		return false;
+	}
 
-    return true;
+	return true;
 }

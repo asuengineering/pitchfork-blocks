@@ -6,9 +6,9 @@
  */
 
 // Get the background image, or set a placeholder if there isn't one.
-$background 	= get_field( 'uds_image_overlap_background' );
-$orientation 	= get_field( 'uds_image_overlap_orientation' );
-$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+$background  = get_field( 'uds_image_overlap_background' );
+$orientation = get_field( 'uds_image_overlap_orientation' );
+$spacing     = pitchfork_blocks_acf_calculate_spacing( $block );
 
 if ( ! $background ) {
 	$background['url'] = 'https://via.placeholder.com/960x640/5C6670/FAFAFA.png?text=image+placeholder';
@@ -22,10 +22,10 @@ if ( isset( $block['className'] ) && ! empty( $block['className'] ) ) {
 }
 
 // Combine the base, orientation, and advanced classes into one string.
-$classes = 'uds-image-overlap ';
+$classes     = 'uds-image-overlap ';
 $image_class = '';
 if ( 'left' === $orientation ) {
-	$classes .= 'content-left ';
+	$classes    .= 'content-left ';
 	$image_class = 'ml-auto';
 }
 
@@ -37,7 +37,7 @@ $allowed_blocks = array(
 	'core/paragraph',
 	'core/separator',
 	'core/list',
-	'core/buttons'
+	'core/buttons',
 );
 
 // Pre-populate the InnerBlocks area with some content.
@@ -55,15 +55,18 @@ $template = array(
 		),
 	),
 	array(
-		'core/buttons', array(), array(
+		'core/buttons',
+		array(),
+		array(
 			array(
-				'core/button', array(
-					'className' => 'is-style-uds-md',
-					'backgroundColor' => 'asu-maroon'
-				)
-			)
-		)
-	)
+				'core/button',
+				array(
+					'className'       => 'is-style-uds-md',
+					'backgroundColor' => 'asu-maroon',
+				),
+			),
+		),
+	),
 );
 
 // Echo the block.
@@ -74,4 +77,4 @@ echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks 
 echo '</div>';
 echo '</div>';
 
-?>
+

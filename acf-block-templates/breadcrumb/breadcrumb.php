@@ -8,11 +8,11 @@
 
 
 $crumbs = array(
-	'list_tag'      => 'ul',
-	'item_tag'      => 'li',
-	'list_class'    => 'breadcrumb',
-	'item_class'    => 'breadcrumb-item',
-	'title_class'   => 'd-none'
+	'list_tag'    => 'ul',
+	'item_tag'    => 'li',
+	'list_class'  => 'breadcrumb',
+	'item_class'  => 'breadcrumb-item',
+	'title_class' => 'd-none',
 );
 
 // Display a fake breadcrumb on preview since class is not loaded in admin.
@@ -20,7 +20,7 @@ $crumbs = array(
 // See: https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/
 
 if ( ! empty( $_POST['query']['preview'] ) ) {
-	
+
 	?>
 	<ol class="breadcrumb bg-white">
 		<li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -29,10 +29,10 @@ if ( ! empty( $_POST['query']['preview'] ) ) {
 	<?php
 
 } else {
-	
+
 	// Invoke class for breadcrumb.
 	Hybrid\Breadcrumbs\Trail::display( $crumbs );
-	
+
 };
 
 

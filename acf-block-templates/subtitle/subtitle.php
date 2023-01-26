@@ -7,8 +7,8 @@
  * @package Pitchfork_Blocks
  */
 
-$subtitle     			= get_field( 'uds_subtitle_text' );
-$highlight    			= get_field( 'uds_subtitle_highlight_color' );
+$subtitle  = get_field( 'uds_subtitle_text' );
+$highlight = get_field( 'uds_subtitle_highlight_color' );
 
 $content = '';
 
@@ -20,7 +20,7 @@ if ( 'none' !== $highlight ) {
 }
 
 // Block output. Only echo the markup if there's something actually there.
-if (! empty($subtitle)) {
+if ( ! empty( $subtitle ) ) {
 	echo '<div role="doc-subtitle">' . $content . '</div>';
 }
 

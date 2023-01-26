@@ -63,12 +63,12 @@ if ( isset( $block['className'] ) && ! empty( $block['className'] ) ) {
 	$additional_classes = trim( sanitize_text_field( $block['className'] ) );
 }
 
-/** 
+/**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
  */
-$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+$spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 // Check for the 'hover' variant, and set the class if needed.
 $hover_class = '';
@@ -173,7 +173,7 @@ if ( ! empty( $image_data ) ) {
 							// Set the text for the icon, if requested.
 							if ( $button_icon ) {
 								$button_icon = sanitize_text_field( $button_icon );
-								$icon_span = '<span class="fas fa-' . $button_icon . '"></span>&nbsp;&nbsp;';
+								$icon_span   = '<span class="fas fa-' . $button_icon . '"></span>&nbsp;&nbsp;';
 							} else {
 								$icon_span = '';
 							}
@@ -199,8 +199,8 @@ if ( ! empty( $image_data ) ) {
 						the_row();
 						?>
 						<?php
-							$link_label = sanitize_text_field( get_sub_field( 'link_text' ) );
-							$link_url = esc_url( get_sub_field( 'link_url' ) );
+							$link_label    = sanitize_text_field( get_sub_field( 'link_text' ) );
+							$link_url      = esc_url( get_sub_field( 'link_url' ) );
 							$external_link = get_sub_field( 'external_link' );
 
 						if ( $external_link ) {
@@ -224,7 +224,7 @@ if ( ! empty( $image_data ) ) {
 						?>
 						<?php
 							$tag_label = sanitize_text_field( get_sub_field( 'tag_text' ) );
-							$tag_url = esc_url( get_sub_field( 'tag_url' ) );
+							$tag_url   = esc_url( get_sub_field( 'tag_url' ) );
 						?>
 						<a class="btn btn-tag btn-tag-alt-white" href="<?php echo $tag_url; ?>" ><?php echo $tag_label; ?></a>
 					<?php endwhile; ?>

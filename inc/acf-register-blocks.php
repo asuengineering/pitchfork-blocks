@@ -56,22 +56,22 @@ function pitchfork_blocks_register_acf_blocks() {
 
 	// Array of block folders to use. Each contains a block.json file.
 	$block_includes = array(
-		'/accordion',				// UDS Accordion, uses foldable cards.
-		'/alert',					// UDS Alert Block, includes options for dismissal.
-		'/background-section', 		// UDS Background section.
-		'/banner',             		// UDS Banner block.
-		'/blockquote',				// UDS Blockquote, inner blocks
-		'/breadcrumb',				// UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
+		'/accordion',               // UDS Accordion, uses foldable cards.
+		'/alert',                   // UDS Alert Block, includes options for dismissal.
+		'/background-section',      // UDS Background section.
+		'/banner',                  // UDS Banner block.
+		'/blockquote',              // UDS Blockquote, inner blocks
+		'/breadcrumb',              // UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 		// '/card',               		// UDS Cards.
-		'/card-foldable',      		// UDS Foldable card block.
-		'/content-media-overlap', 	// Miscellaneous content sections.
-		'/grid-links',         		// UDS Grid Links.
-		'/hero',				  	// UDS Hero block, v2
-		'/hero-video',				// UDS Video hero
+		'/card-foldable',           // UDS Foldable card block.
+		'/content-media-overlap',   // Miscellaneous content sections.
+		'/grid-links',              // UDS Grid Links.
+		'/hero',                    // UDS Hero block, v2
+		'/hero-video',              // UDS Video hero
 		// '/profiles',				// UDS Profiles, container block for directories.
 		// '/profile-manual',		// UDS Profile (Person), manual data entry edition.
-		'/sidebar',					// UDS Sidebar, powered by a custom ACF field to choose the menu object.
-		'/subtitle',				// Subtitle block, for use within the hero.
+		'/sidebar',                 // UDS Sidebar, powered by a custom ACF field to choose the menu object.
+		'/subtitle',                // Subtitle block, for use within the hero.
 	);
 
 	// Loop through array items and register each block.
@@ -80,16 +80,22 @@ function pitchfork_blocks_register_acf_blocks() {
 	}
 
 	// UDS Profiles, container block for directories.
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profiles', array(
-		'icon' => $block_icon->users_rectangle,
-		'category' => 'pitchfork-blocks'
-	));
+	register_block_type(
+		PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profiles',
+		array(
+			'icon'     => $block_icon->users_rectangle,
+			'category' => 'pitchfork-blocks',
+		)
+	);
 
 	// UDS Profile (Person), manual data entry edition.
-	register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profile-manual', array(
-		'icon' => $block_icon->image_user,
-		'category' => 'pitchfork-blocks'
-	));
+	register_block_type(
+		PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/profile-manual',
+		array(
+			'icon'     => $block_icon->image_user,
+			'category' => 'pitchfork-blocks',
+		)
+	);
 }
 add_action( 'init', 'pitchfork_blocks_register_acf_blocks' );
 

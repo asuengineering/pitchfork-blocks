@@ -22,23 +22,23 @@ $icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="cu
 
 acf_register_block_type(
 	array(
-		'name'              => 'uds-card',
-		'title'             => __( 'UDS Card', 'uds-wordpress-theme' ),
-		'description'       => __( 'A block for building static versions of basic, degree, story, and event cards.', 'uds-wordpress-theme' ),
-		'icon'              => $icon,
-		'render_template'   => PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card/card.php',
-		'category'          => 'pitchfork-blocks',
-		'keywords'          => array( 'card', 'cards', 'content' ),
-		'supports'          => array(
+		'name'            => 'uds-card',
+		'title'           => __( 'UDS Card', 'uds-wordpress-theme' ),
+		'description'     => __( 'A block for building static versions of basic, degree, story, and event cards.', 'uds-wordpress-theme' ),
+		'icon'            => $icon,
+		'render_template' => PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates/card/card.php',
+		'category'        => 'pitchfork-blocks',
+		'keywords'        => array( 'card', 'cards', 'content' ),
+		'supports'        => array(
 			'spacing' => array(
-				'units' => array('rem'),
-				'margin' => array('top', 'bottom'),
+				'units'   => array( 'rem' ),
+				'margin'  => array( 'top', 'bottom' ),
 				'padding' => false,
 			),
-			'align' => false, // Remove the align button in the editor toolbar.
+			'align'   => false, // Remove the align button in the editor toolbar.
 		),
-		'mode'              => 'preview', // make this block default to preview mode when added to the page.
-		'example'           => array(
+		'mode'            => 'preview', // make this block default to preview mode when added to the page.
+		'example'         => array(
 			'attributes' => array(
 				'mode' => 'preview', // show the actual card view for the preview when adding this block.
 				'data' => array(

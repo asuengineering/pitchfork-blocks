@@ -8,19 +8,19 @@
  * @package Pitchfork_Blocks
  */
 
-$button_count 	= get_field( 'uds_banner_button_count' );
-$dismissible 	= get_field( 'uds_banner_dismissible' );
-$icon 			= get_field( 'uds_banner_icon' );
+$button_count = get_field( 'uds_banner_button_count' );
+$dismissible  = get_field( 'uds_banner_dismissible' );
+$icon         = get_field( 'uds_banner_icon' );
 
 /**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
  * --------------------
  */
-$spacing = pitchfork_blocks_acf_calculate_spacing($block);
+$spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 // Retreive alignment setting from toolbar.
-$block_classes = array('wp-block-banner', 'alignfull', 'allowed-after-hero');
+$block_classes = array( 'wp-block-banner', 'alignfull', 'allowed-after-hero' );
 
 // Base class of the banner is set with the background color option from the block.
 // theme.json sets the suffix of each color so that the produced string is correct.
@@ -42,20 +42,20 @@ if ( isset( $block['className'] ) && ! empty( $block['className'] ) ) {
  */
 
 $button_one_text = '';
-$button_one_url = '';
+$button_one_url  = '';
 $button_two_text = '';
-$button_two_url = '';
+$button_two_url  = '';
 
 $button_one_data = get_field( 'uds_banner_button_1_settings' );
-if (! empty($button_one_data)) {
+if ( ! empty( $button_one_data ) ) {
 	$button_one_text = $button_one_data['button_one_text'];
-	$button_one_url = $button_one_data['button_one_url'];
+	$button_one_url  = $button_one_data['button_one_url'];
 }
 
 $button_two_data = get_field( 'uds_banner_button_2_settings' );
-if (! empty($button_two_data)) {
+if ( ! empty( $button_two_data ) ) {
 	$button_two_text = $button_two_data['button_two_text'];
-	$button_two_url = $button_two_data['button_two_url'];
+	$button_two_url  = $button_two_data['button_two_url'];
 }
 
 /**
@@ -65,8 +65,8 @@ if (! empty($button_two_data)) {
  */
 
 // we'll build a 'button block' based on those conditions.
-$button_block = '';
-$button_block_open = '<div class="banner-buttons">';
+$button_block       = '';
+$button_block_open  = '<div class="banner-buttons">';
 $button_block_close = '</div>';
 
 // if our button count is more than zero, we have buttons to build.
@@ -95,7 +95,7 @@ if ( $button_count ) {
 }
 
 // Grab the selected icon from the ACF field. Render a placeholder if empty.
-if ( ! empty( $icon )) {
+if ( ! empty( $icon ) ) {
 	$banner_icon = '<div class="banner-icon">' . $icon->element . '</div>';
 } else {
 	$banner_icon = '<div class="icon-placeholder"><i class="not-a-real-icon"></i></div>';
@@ -105,20 +105,22 @@ if ( ! empty( $icon )) {
 $allowed_blocks = array( 'core/paragraph', 'core/list', 'core/heading' );
 $template       = array(
 	array(
-		'core/heading', array(
-			'level' => 3,
-			'content' => 'Example Notification Headline (H3)'
-		)
+		'core/heading',
+		array(
+			'level'   => 3,
+			'content' => 'Example Notification Headline (H3)',
+		),
 	),
 	array(
-		'core/paragraph', array(
-			'content' => 'Example notification box message. Allowed blocks also include lists and headings. Dismissible options are available in the sidebar.'
-		)
-	)
+		'core/paragraph',
+		array(
+			'content' => 'Example notification box message. Allowed blocks also include lists and headings. Dismissible options are available in the sidebar.',
+		),
+	),
 );
 ?>
 
-<section class="<?php echo implode(' ', $block_classes); ?>" style="<?php echo $spacing; ?>">
+<section class="<?php echo implode( ' ', $block_classes ); ?>" style="<?php echo $spacing; ?>">
 	<div class="banner" role="banner">
 		<?php echo $banner_icon; ?>
 		<div class="banner-content">
