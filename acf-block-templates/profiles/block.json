@@ -11,7 +11,7 @@
     },
 	"supports": {
 		"spacing": {
-			"margin": true,
+			"margin": ["top", "bottom"],
 			"padding": false
 		},
 		"classname": false,

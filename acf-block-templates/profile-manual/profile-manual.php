@@ -12,7 +12,7 @@
  */
 $displayname	= get_field('uds_profilemanual_name' );
 $title 			= get_field('uds_profilemanual_title');
-$department 	= get_field('uds_profilemanual_department');
+$dept 			= get_field('uds_profilemanual_department');
 $searchURL 		= get_field('uds_profilemanual_url');
 $image 			= get_field('uds_profilemanual_image');
 $email 			= get_field('uds_profilemanual_email');
@@ -123,8 +123,8 @@ if (! empty($title)) {
 // Set the department to the typed in value.
 // Override this value if the block style is "micro"
 $department = '';
-if (! empty($department)) {
-	$department = '<h4><span>' . $department . '</span></h4>';
+if (! empty($dept)) {
+	$department = '<h4><span>' . $dept. '</span></h4>';
 }
 
 $micro_contact = '';
@@ -147,10 +147,11 @@ if (! empty($description)) {
  * Check if there's a profile image and create the markup for it.
 */
 $profileimg = '';
-if (! empty($image)) {
-	$profileimg .= '<div class="profile-img-container"><div class="profile-img-placeholder">';
-	$profileimg .= wp_get_attachment_image( $image, 'thumbnail', false, array( "class" => "profile-img"));
-	$profileimg .= '</div></div>';
+do_action('qm/debug', $image);
+if ((! empty($image)) || (in_array('has-default-img', $block_classes))) {
+		$profileimg .= '<div class="profile-img-container"><div class="profile-img-placeholder">';
+		$profileimg .= wp_get_attachment_image( $image['ID'], 'thumbnail', false, array( "class" => "profile-img"));
+		$profileimg .= '</div></div>';
 }
 
 /**
