@@ -54,9 +54,15 @@ This plugin leverages the following libraries for functionality delivered within
 
 ### Version 1.4
 
-- ADD: Created two new blocks called `acf/profiles` and `acf/profile-manual` to aid with the creation of directory pages in Pitchfork. Both blocks are documented at [WordPress @ ASU](https://wordpress.asu.edu/pitchfork/docs/).
+- ADD: Created two new blocks called `acf/profiles` and `acf/profile-manual` to aid with the creation of directory pages in Pitchfork.
 - CHANGE: Recategorized all blocks in this plugin into their own category in the block inserter.
 - FIX: Removed debugging code in several places. Applied code linting standards.
+
+**Documentation:**
+
+- ADD: https://wordpress.asu.edu/pitchfork/docs/profiles-block/
+- ADD: https://wordpress.asu.edu/pitchfork/docs/profile-block-manual/
+- ADD: https://wordpress.asu.edu/pitchfork/docs/block-patterns/
 
 ### Version 1.3
 This release contains several bigger refactoring efforts for performance and best practices.
