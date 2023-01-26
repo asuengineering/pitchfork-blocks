@@ -28,6 +28,7 @@ main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:3rem}
 .uds-person-profile.is-style-micro .person-profession a{font-weight:400;text-decoration:none}
 .uds-person-profile.fill-white{background-color:#fff;border-bottom:1px solid #d0d0d0;padding:1rem}
 .uds-person-profile.fill-white .person{margin-bottom:1rem}
+.uds-person-profile.has-default-img .profile-img-placeholder{background-image:url("https://ui-avatars.com/api/?background=D0D0D0&color=191919&size=256&name=AZ&rounded=true&format=png")}
 .uds-person-profile[class*="is-style"] .person{margin-left:0}
 .uds-person-profile[class*="is-style"] .profile-img-container{margin-right:1.5rem}
 .uds-person-profile .person ul.person-contact-info{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important;-webkit-column-gap:1rem;-moz-column-gap:1rem;column-gap:1rem;-ms-flex-wrap:wrap;flex-wrap:wrap}

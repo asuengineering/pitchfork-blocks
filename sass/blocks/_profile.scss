@@ -46,6 +46,11 @@
 		}
 	}
 
+	// Has default image class.
+	&.has-default-img .profile-img-placeholder {
+		background-image: url('https://ui-avatars.com/api/?background=D0D0D0&color=191919&size=256&name=AZ&rounded=true&format=png')
+	}
+
 	// Move padding to profile image element as opposed to person.
 	// Allows padding to be removed when there's no image.
 	&[class*="is-style"] {
