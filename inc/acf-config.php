@@ -6,17 +6,17 @@
  * @package pitchfork-blocks
  */
 
-/**
- * Register a new save point for the Local JSON feature for this plugin.
- *
- * @param  mixed $path // path to ACF safe point.
- * @return $path
- */
-function pitchfork_blocks_acf_json_save_point( $path ) {
-	$path = PITCHFORK_BLOCKS_BASE_PATH . '/acf-json';
-	return $path;
-}
-add_filter( 'acf/settings/save_json', 'pitchfork_blocks_acf_json_save_point' );
+// /**
+//  * Register a new save point for the Local JSON feature for this plugin.
+//  *
+//  * @param  mixed $path // path to ACF safe point.
+//  * @return $path
+//  */
+// function pitchfork_blocks_acf_json_save_point( $path ) {
+// 	$path = PITCHFORK_BLOCKS_BASE_PATH . '/acf-json';
+// 	return $path;
+// }
+// add_filter( 'acf/settings/save_json', 'pitchfork_blocks_acf_json_save_point' );
 
 /**
  * Register a new loading point for the Local JSON feature for this plugin.
