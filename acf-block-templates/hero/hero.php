@@ -76,6 +76,7 @@ $template       = array(
 
 // Block output.
 echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . esc_html( $hidecontent ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
+echo '<div class="hero-overlay"></div>';
 if ( $image ) {
 	echo wp_get_attachment_image( $image, $size, '', array( 'class' => 'hero' ) );
 }

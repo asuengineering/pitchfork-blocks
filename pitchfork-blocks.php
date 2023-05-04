@@ -6,7 +6,7 @@
  * Author:          Steve Ryan (ASU Engineering)
  * Author URI:      https://engineering.asu.edu
  * Text Domain:     pitchfork-blocks
- * Version:         1.4
+ * Version:         1.4.1
  *
  * @package         Pitchfork_Blocks
  *
@@ -26,9 +26,9 @@ if ( file_exists( PITCHFORK_BLOCKS_BASE_PATH . 'vendor/autoload.php' ) ) {
 	require_once PITCHFORK_BLOCKS_BASE_PATH . 'vendor/autoload.php';
 }
 
-// Function: Activate.
-// Function: Deactivate.
-// Function: Execute plugin.
+// Function: Activate
+// Function: Deactivate
+// Function: Execute plugin
 
 // TGM Plugin Activation Script. Checks for Advanced Custom Fields.
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'tgmpa/class-tgm-plugin-activation.php';
