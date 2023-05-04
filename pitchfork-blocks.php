@@ -26,9 +26,9 @@ if ( file_exists( PITCHFORK_BLOCKS_BASE_PATH . 'vendor/autoload.php' ) ) {
 	require_once PITCHFORK_BLOCKS_BASE_PATH . 'vendor/autoload.php';
 }
 
-// Function: Activate.
-// Function: Deactivate.
-// Function: Execute plugin.
+// Function: Activate
+// Function: Deactivate
+// Function: Execute plugin
 
 // TGM Plugin Activation Script. Checks for Advanced Custom Fields.
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'tgmpa/class-tgm-plugin-activation.php';
