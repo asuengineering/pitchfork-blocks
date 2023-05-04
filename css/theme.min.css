@@ -34,6 +34,7 @@ main div[class^='uds-hero']+*:not(.allowed-after-hero){margin-top:3rem}
 .uds-person-profile .person ul.person-contact-info{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important;-webkit-column-gap:1rem;-moz-column-gap:1rem;column-gap:1rem;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .uds-person-profile .person ul.person-contact-info li{margin:0}
 .uds-profile-grid{display:grid;grid-template-columns:1fr;grid-template-rows:1fr;gap:2rem}
+.sidebar>.nav-link-container{background-color:#fff}
 @media(min-width:calc(540px)){.uds-person-profile.fill-white{border:1px solid #d0d0d0;padding:2rem}
 .uds-person-profile.fill-white .person{margin-bottom:0}
 .uds-person-profile .person ul.person-contact-info{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;gap:1rem}

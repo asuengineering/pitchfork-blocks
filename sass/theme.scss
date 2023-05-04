@@ -13,3 +13,11 @@
 @import 'blocks/card-foldable';
 @import 'blocks/alert-notification';
 @import 'blocks/profile';
+
+/*--------------------------------------------------------------
+# Temporary fixes, should be addressed by future iteration of BS4.
+--------------------------------------------------------------*/
+// 04-May-2023.
+.sidebar>.nav-link-container {
+	background-color: $uds-color-base-white;
+}
