@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### Version 1.5 (Pitchfork People)
+
+This minor release corresponds with the launch of [Pitchfork People](https://github.com/asuengineering/pitchfork-people) and represents the relocation of blocks and processes related to building directory pages within the Pitchfork system.
+
+- REMOVED: The following blocks were moved to the Pitchfork People plugin.
+  - `acf/profiles`
+  - `acf/profile-manual`
+
+Neither of the above blocks were changed other than the relocation to a different plugin. If you have page content that features these blocks, simply activate the Pitchfork People plugin in your environment to restore the page to its original form.
+
 ### Version 1.4.1 (Bug Fixes)
 
 A regression of the ACF hero blocks prevented the image overlay from appearing within `acf/hero` or `acf/hero-video`. The cause was a downstream effect of the update to Pitchfork v1.9 which updated the Bootstrap 4 library from the Unity project.
