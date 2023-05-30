@@ -11,7 +11,6 @@
 $size           = get_field( 'uds_herovideo_size' );
 $video          = get_field( 'uds_herovideo_source' );
 $image          = get_field( 'uds_herovideo_image' );
-$mobile_content = get_field( 'uds_herovideo_content_on_mobile' );
 
 do_action( 'qm/debug', $video );
 
@@ -25,12 +24,6 @@ if ( ! empty( $block['className'] ) ) {
 $alignment = '';
 if ( ! empty( $block['align'] ) ) {
 	$alignment = ' alignfull';
-}
-
-// Retrieve hide-content setting from ACF
-$hidecontent = '';
-if ( ! $mobile_content ) {
-	$hidecontent = ' hide-content';
 }
 
 // Sets InnerBlocks with default content and default block arrangement.
@@ -66,7 +59,9 @@ $template       = array(
 	),
 	array(
 		'core/buttons',
-		array(),
+		array(
+			'className' => 'btn-row',
+		),
 		array(
 			array(
 				'core/button',
@@ -79,7 +74,7 @@ $template       = array(
 );
 
 // Block output.
-echo '<div class="uds-hero-video ' . esc_html( $size ) . esc_html( $alignment ) . esc_html( $hidecontent ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
+echo '<div class="uds-hero-video ' . esc_html( $size ) . esc_html( $alignment ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
 echo '<div class="hero-overlay"></div>';
 if ( $video ) {
 	?>

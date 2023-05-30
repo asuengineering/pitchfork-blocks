@@ -6,6 +6,7 @@
             "key": "field_611425a016b0e",
             "label": "Hero Size",
             "name": "uds_hero_size",
+            "aria-label": "",
             "type": "select",
             "instructions": "Choose",
             "required": 0,
@@ -32,6 +33,7 @@
             "key": "field_6114269916b0f",
             "label": "Hero Background",
             "name": "uds_hero_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "Large images can be cropped using the <a href=\"https:\/\/wordpress.org\/support\/article\/edit-media\/\" target=\"_blank\">edit media<\/a> screen within the Media Library.",
             "required": 1,
@@ -51,25 +53,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_611aa5d4d076a",
-            "label": "Display hero content on mobile?",
-            "name": "uds_hero_content_on_mobile",
-            "type": "true_false",
-            "instructions": "Content presented within the hero wrapper will usually appear immediately below the background image on mobile. Toggle this control to prevent that behavior.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "Show",
-            "ui_off_text": "Hide"
         }
     ],
     "location": [
@@ -90,5 +73,5 @@
     "active": true,
     "description": "The beloved topper of nearly every page you'll build.",
     "show_in_rest": 0,
-    "modified": 1649710954
+    "modified": 1685486005
 }

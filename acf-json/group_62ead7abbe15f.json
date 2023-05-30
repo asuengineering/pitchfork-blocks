@@ -1,11 +1,12 @@
 {
     "key": "group_62ead7abbe15f",
-    "title": "UDS Block: Hero (copy)",
+    "title": "UDS Block: Hero (Video)",
     "fields": [
         {
             "key": "field_62ead7abc40c3",
             "label": "Hero Size",
             "name": "uds_herovideo_size",
+            "aria-label": "",
             "type": "select",
             "instructions": "Choose",
             "required": 0,
@@ -32,6 +33,7 @@
             "key": "field_62ead7abc40db",
             "label": "Hero Video Source",
             "name": "uds_herovideo_source",
+            "aria-label": "",
             "type": "file",
             "instructions": "Videos should be less than 2MB and shouldn't last for more than 30 seconds.",
             "required": 1,
@@ -51,6 +53,7 @@
             "key": "field_62eae10d14e80",
             "label": "Hero Fallback Image",
             "name": "uds_herovideo_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "This uploaded image will be displayed if the user elects to disable JS within their browser or otherwise suppress the video file from playing.",
             "required": 1,
@@ -70,25 +73,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_62ead7abc40f3",
-            "label": "Display hero content on mobile?",
-            "name": "uds_herovideo_content_on_mobile",
-            "type": "true_false",
-            "instructions": "Content presented within the hero wrapper will usually appear immediately below the background image on mobile. Toggle this control to prevent that behavior.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "Show",
-            "ui_off_text": "Hide"
         }
     ],
     "location": [
@@ -109,5 +93,5 @@
     "active": true,
     "description": "Yo dawg, I heard you like video in your hero? Dig this here.",
     "show_in_rest": 0,
-    "modified": 1659561577
+    "modified": 1685485993
 }

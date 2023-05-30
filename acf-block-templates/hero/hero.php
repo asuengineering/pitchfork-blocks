@@ -9,7 +9,6 @@
 
 $size           = get_field( 'uds_hero_size' );
 $image          = get_field( 'uds_hero_image' );
-$mobile_content = get_field( 'uds_hero_content_on_mobile' );
 
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
@@ -21,12 +20,6 @@ if ( ! empty( $block['className'] ) ) {
 $alignment = '';
 if ( ! empty( $block['align'] ) ) {
 	$alignment = ' alignfull';
-}
-
-// Retrieve hide-content setting from ACF
-$hidecontent = '';
-if ( ! $mobile_content ) {
-	$hidecontent = ' hide-content';
 }
 
 // Sets InnerBlocks with default content and default block arrangement.
@@ -75,7 +68,7 @@ $template       = array(
 );
 
 // Block output.
-echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . esc_html( $hidecontent ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
+echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
 echo '<div class="hero-overlay"></div>';
 if ( $image ) {
 	echo wp_get_attachment_image( $image, $size, '', array( 'class' => 'hero' ) );
