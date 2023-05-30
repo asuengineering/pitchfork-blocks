@@ -1,161 +1,24 @@
 /*--------------------------------------------------------------
 # Heroes
 
-2. Hero, Mobile
-3. Hero, Tablet
-4. Hero, Desktop
+1. Default spacing for hero block
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
-  2. Hero, Mobile
-  --------------------------------------------------------------*/
-
-div[class^='uds-hero'] {
-
-	// Column alignment for decendent items
-	.wp-block-group,
-	.wp-block-buttons {
-		grid-column: 2;
-        z-index:30;
-	}
-
-	.wp-block-buttons {
-		grid-row: 4;
-		margin-bottom: $uds-size-spacing-1;
-	}
-
-	.wp-block-group {
-		grid-row: 6;
-		font-size: $uds-size-font-large;
-		font-weight: $uds-font-weight-bold;
-	}
-
-	// Base class modifier: .has-btn-row
-	&.has-btn-row {
-
-		[role='doc-subtitle'] {
-			grid-row: 1;
-		}
-
-		.wp-block-buttons {
-			grid-row: 3;
-			display: flex;
-			flex-direction: column;
-		}
-
-		.wp-block-group {
-			grid-row: 5;
-		}
-	}
-
-	// Base class modifier: .hide-content {
-	&.hide-content .wp-block-group {
-		display: none;
-	}
-}
-
-/*--------------------------------------------------------------
-  2.5 Mobile Only
-  --------------------------------------------------------------*/
-// Prevents white text on a white background when .content
-// is repositioned below the background image.
-@include media-breakpoint-down($md) {
-	div[class^='uds-hero'] .wp-block-group>.has-white-color {
-		color: $uds-color-base-gray-7 !important;
-	}
-}
-
-/*--------------------------------------------------------------
-  3. Hero, Tablet
-  --------------------------------------------------------------*/
-@include media-breakpoint-up($md) {
-	div[class^='uds-hero'] {
-
-		// Column alignment for decendent items
-		.wp-block-group,
-		.wp-block-buttons {
-			grid-column: 2;
-			max-width: 700px;
-			z-index: 30;
-		}
-
-		.wp-block-buttons {
-			align-items: center;
-		}
-
-		.wp-block-group {
-			margin-top: $uds-size-spacing-3;
-			grid-row: 4;
-			font-size: $uds-size-font-xl;
-			font-weight: $uds-font-weight-bold;
-			line-height: 1.5;
-
-			p:last-child {
-				margin-bottom: 0;
-			}
-		}
-
-		// Base class modifier: .has-btn-row
-		&.has-btn-row {
-
-			.wp-block-group {
-				grid-row: 4;
-			}
-
-			.wp-block-buttons {
-				grid-row: 5;
-				flex-direction: row;
-			}
-		}
-
-		// Base class modifier: .hide-content
-		&.hide-content .wp-block-group {
-			display: block;
-		}
-	}
-}
-
-/*--------------------------------------------------------------
-  4. Hero, Desktop
-  --------------------------------------------------------------*/
-@include media-breakpoint-up($lg) {
-	div[class^='uds-hero'] {
-
-		// Column alignment for decendent items
-		.wp-block-group,
-		.wp-block-buttons {
-			max-width: calc(940px - 34%);
-		}
-	}
-}
-
-@include media-breakpoint-up($xl) {
-	div[class^='uds-hero'] {
-
-		// Column alignment for decendent items
-		.wp-block-group,
-		.wp-block-buttons {
-			max-width: calc(1200px - 34%);
-		}
-	}
-}
-
-/*--------------------------------------------------------------
-4. Default spacing for hero
+1. Default spacing for hero
 --------------------------------------------------------------*/
 main div[class^='uds-hero'] {
-	
+
 	// Apply top margin to any block immediatly following the hero block.
 	// Except if the block is the background section block or the notification block.
-	& + *:not(.allowed-after-hero) {
+	&+*:not(.allowed-after-hero) {
 		margin-top: $uds-size-spacing-6;
 	}
 }
 
 @include media-breakpoint-up($lg) {
 	main div[class^='uds-hero'] {
-		& + *:not(.allowed-after-hero) {
+		&+*:not(.allowed-after-hero) {
 			margin-top: $uds-size-spacing-12;
 		}
 	}
