@@ -39,6 +39,9 @@ function pitchfork_blocks_acf_calculate_spacing( $block ) {
  *
  * Removed here for greater transparency and compliance with actual markup for Unity elements.
  *
+ * TODO: (2023-May) Pitchfork People and the acf/profiles block are now relocated to a separate plugin.
+ * Need to relocate this filter to the theme so that one filter can support both plugins.
+ *
  * See: https://www.advancedcustomfields.com/resources/whats-new-with-acf-blocks-in-acf-6/#block-versioning
  */
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'pitchfork_acf_remove_wrap_innerblocks', 10, 2 );
