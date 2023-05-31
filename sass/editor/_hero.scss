@@ -16,35 +16,35 @@ Styling to allow normal use of the hero within the block editor.
 	}
 
 	// Older markup, possibly not needed.
-    .block-editor-inner-blocks {
-        display:contents;
+	.block-editor-inner-blocks {
+		display: contents;
 
-        > .block-editor-block-list__layout {
-            display:contents;
-        }
-    }
+		>.block-editor-block-list__layout {
+			display: contents;
+		}
+	}
 
-    .wp-block-acf-subtitle {
-        grid-row: 1;
-        grid-column: 2;
-        z-index: 30;
-    }
+	.wp-block-acf-subtitle {
+		grid-row: 2;
+		grid-column: 2;
+		z-index: 30;
+	}
 }
 
 // 3. Hero, Tablet
 @include media-breakpoint-up($md) {
 	.acf-block-preview div[class^='uds-hero'] {
-        .wp-block-button__link {
-            margin-top: $uds-size-spacing-3;
-        }
-    }
+		.wp-block-button__link {
+			margin-top: $uds-size-spacing-3;
+		}
+	}
 }
 
 // 4. Hero, Desktop
 @include media-breakpoint-up($lg) {
-    .acf-block-preview div[class^='uds-hero'] {}
+	.acf-block-preview div[class^='uds-hero'] {}
 }
 
 @include media-breakpoint-up($xl) {
-    .acf-block-preview div[class^='uds-hero'] {}
+	.acf-block-preview div[class^='uds-hero'] {}
 }
