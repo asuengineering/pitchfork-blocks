@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 This release addresses a few issues with the `acf/hero` block due to a change in the required markup from the Unity Project.
 
-Please also note that a concurrent update to the Pitchfork People plugin will also resolve a related but separate compatability issue also effecting the `acf/hero` block. See the [CHANGELOG for Pitchfork People](https://github.com/asuengineering/pitchfork-people/blob/main/CHANGELOG.md#version-12) for additional details.
+Please also note that a concurrent update to the Pitchfork People plugin will also resolve a related but separate compatability issue also effecting the `acf/hero` block. See the [CHANGELOG for Pitchfork People](https://github.com/asuengineering/pitchfork-people/blob/main/CHANGELOG.md#version-11) for additional details.
 
 - FIX: Layout issues with buttons and subtitles within the `acf/hero` block were fixed.
 - REMOVED: The option to retain the content within the hero block as visible text on mobile has been removed from the component at the Unity level. The corresponding control within the block editor was also removed.
