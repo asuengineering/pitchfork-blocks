@@ -21,7 +21,7 @@ const injectChanges = true;
 
 // >>>>> Style options.
 // Path to main .scss file.
-const styleSRC = ['./sass/theme.scss', './sass/admin.scss'];
+const styleSRC = ['./sass/blocks.scss', './sass/block-editor.scss'];
 
 // Path to place the compiled CSS file. Default set to root folder.
 const styleDestination = './css/';
@@ -53,7 +53,7 @@ const jsCustomDestination = './js/';
 // Compiled JS custom file name. Default set to custom i.e. custom.js.
 const jsCustomFile = 'custom';
 
-// NOTE: JS files outside of these two folders won't be compiled. 
+// NOTE: JS files outside of these two folders won't be compiled.
 // That may be what you want if they are enqueued separately. =)
 
 // Images options.
