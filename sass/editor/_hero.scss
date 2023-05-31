@@ -2,12 +2,9 @@
 # _hero.scss
 
 Styling to allow normal use of the hero within the block editor.
-
-2. Hero, Mobile
-3. Hero, Tablet
-4. Hero, Desktop
 --------------------------------------------------------------*/
-// 2. Hero, Mobile
+// 1. Hero, Mobile
+
 .acf-block-preview div[class^='uds-hero'] {
 
 	// Present for v2 of the acf/hero block.
@@ -29,22 +26,4 @@ Styling to allow normal use of the hero within the block editor.
 		grid-column: 2;
 		z-index: 30;
 	}
-}
-
-// 3. Hero, Tablet
-@include media-breakpoint-up($md) {
-	.acf-block-preview div[class^='uds-hero'] {
-		.wp-block-button__link {
-			margin-top: $uds-size-spacing-3;
-		}
-	}
-}
-
-// 4. Hero, Desktop
-@include media-breakpoint-up($lg) {
-	.acf-block-preview div[class^='uds-hero'] {}
-}
-
-@include media-breakpoint-up($xl) {
-	.acf-block-preview div[class^='uds-hero'] {}
 }

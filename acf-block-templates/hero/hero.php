@@ -55,7 +55,9 @@ $template       = array(
 	),
 	array(
 		'core/buttons',
-		array(),
+		array(
+			'className' => 'btn-row',
+		),
 		array(
 			array(
 				'core/button',

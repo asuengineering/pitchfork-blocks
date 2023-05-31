@@ -23,5 +23,3 @@
 .editor-styles-wrapper .wp-block-acf-profile-manual:not(.acf-block-preview){min-width:400px}
 .editor-styles-wrapper .uds-profile-grid .acf-innerblocks-container{display:contents}
 .editor-styles-wrapper .is-root-container .wp-block.is-reusable{max-width:none}
-@media(min-width:calc(768px)){.acf-block-preview div[class^='uds-hero'] .wp-block-button__link{margin-top:1.5rem}
-}
