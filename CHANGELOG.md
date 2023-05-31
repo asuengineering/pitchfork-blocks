@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### Version 1.6
+
+This release addresses a few issues with the `acf/hero` block due to a change in the required markup from the Unity Project.
+
+Please also note that a concurrent update to the Pitchfork People plugin will also resolve a related but separate compatability issue also effecting the `acf/hero` block. See the [CHANGELOG for Pitchfork People](https://github.com/asuengineering/pitchfork-people/blob/main/CHANGELOG.md#version-12) for additional details.
+
+- FIX: Layout issues with buttons and subtitles within the `acf/hero` block were fixed.
+- REMOVED: The option to retain the content within the hero block as visible text on mobile has been removed from the component at the Unity level. The corresponding control within the block editor was also removed.
+
 ### Version 1.5 (Pitchfork People)
 
 This minor release corresponds with the launch of [Pitchfork People](https://github.com/asuengineering/pitchfork-people) and represents the relocation of blocks and processes related to building directory pages within the Pitchfork system.
