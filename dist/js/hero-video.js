@@ -3,22 +3,24 @@ var __webpack_exports__ = {};
 /*!***********************************!*\
   !*** ./src/scripts/hero-video.js ***!
   \***********************************/
-jQuery(document).ready(function ($) {
-  //Get the hero video ID.
+document.addEventListener('DOMContentLoaded', function () {
+  //Get the hero video element.
   var HeroVid = document.getElementById('media-video');
   if (HeroVid) {
-    //When play button is clicked
+    // When play button is clicked
     document.getElementById('playHeroVid').addEventListener('click', function () {
       HeroVid.play();
-      $(this).hide();
-      $('#pauseHeroVid').show().focus();
+      this.style.display = 'none';
+      document.getElementById('pauseHeroVid').style.display = 'block';
+      document.getElementById('pauseHeroVid').focus();
     });
 
-    //When pause button is clicked
+    // When pause button is clicked
     document.getElementById('pauseHeroVid').addEventListener('click', function () {
       HeroVid.pause();
-      $(this).hide();
-      $('#playHeroVid').show().focus();
+      this.style.display = 'none';
+      document.getElementById('playHeroVid').style.display = 'block';
+      document.getElementById('playHeroVid').focus();
     });
   }
 });
