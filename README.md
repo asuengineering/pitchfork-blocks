@@ -46,7 +46,7 @@ This plugin leverages the following libraries for functionality delivered within
 ## Development
 
 - Run `npm install` and `composer install` prior to local development.
-- SASS and JS compile & watch tasks are triggered via WP-Gulp and `npm start` from the project root.
+- SASS and JS compile & watch tasks are triggered via [Gulp WP](https://github.com/BlackbirdDigital/gulp-wp) and `npx gulp-wp` from the project root.
 
 ## Release Notes
 
