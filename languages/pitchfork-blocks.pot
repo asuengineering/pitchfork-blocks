@@ -1,0 +1,38 @@
+# Copyright (C) 2023 Pitchfork Blocks
+# This file is distributed under the same license as the Pitchfork Blocks package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Pitchfork Blocks\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Econdig: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: Pitchfork Blocks\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: pitchfork-blocks.php:3, inc/acf-register-blocks.php:34
+msgid "Pitchfork Blocks"
+msgstr ""
+
+#: pitchfork-blocks.php:4
+msgid "http://github.com/ASU-Engineering/Pitchfork-Blocks"
+msgstr ""
+
+#: pitchfork-blocks.php:5
+msgid "Contains blocks that correspond to the universal design system within ASU. Leverages Bootstrap 4 and Advanced Custom Fields (ACF)."
+msgstr ""
+
+#: pitchfork-blocks.php:6
+msgid "Steve Ryan (ASU Engineering)"
+msgstr ""
+
+#: pitchfork-blocks.php:7
+msgid "https://engineering.asu.edu"
+msgstr ""
