@@ -27,16 +27,16 @@ $spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 
 /**
- * Start assembling base classes for <div class="card-foldable"> wrapper.
+ * Start assembling base classes for <div class="accordion-item"> wrapper.
  * --------------------
  */
-$base_class = array( 'card', 'card-foldable' );
+$base_class = array( 'accordion-item' );
 
 // Add the required text-color modifier to the base class array.
 // Get block text color from theme.json settings.
-// Block requires "card-{color}" classes to correctly modify the accent color.
+// Block requires "accordion-{color}" classes to correctly modify the accent color.
 if ( ! empty( $block['backgroundColor'] ) ) {
-	$base_class[] = 'card-' . $block['backgroundColor'];
+	$base_class[] = 'accordion-item-' . $block['backgroundColor'];
 }
 
 // Retrieve additional classes from the 'advanced' field in the editor.
@@ -59,14 +59,13 @@ $card_wrap    = '<div class="' . implode( ' ', $base_class ) . '" style="' . $sp
 
 if ( ! empty( $fc_icon ) ) {
 	$fc_icon_markup = $fc_icon->element;
-	$card_head      = '<div class="card-header card-header-icon">';
+	$card_head      = '<div class="accordion-header accordion-header-icon">';
 } else {
 	$fc_icon_markup = '<i class="fa-placeholder"></i>';
-	$card_head      = '<div class="card-header">';
+	$card_head      = '<div class="accordion-header">';
 }
 
-// $card_head = '<div class="card-header card-header-icon">';
-$card_title  = '<span class="card-icon">' . $fc_icon_markup . $fc_title . '</span>';
+$card_title  = '<span class="accordion-icon">' . $fc_icon_markup . $fc_title . '</span>';
 $card_title .= '<span class="fas fa-chevron-up"></span>';
 
 /**
@@ -77,8 +76,8 @@ $card_head_link_attr   = array();
 $card_head_link_attr[] = 'id="fCard-' . $blockID . '"';
 $card_head_link_attr[] = 'href="#fCardBody-' . $blockID . '"';
 $card_head_link_attr[] = 'role="button"';
-$card_head_link_attr[] = 'data-toggle="collapse"';
-$card_head_link_attr[] = 'data-target="#fCardBody-' . $blockID . '"';
+$card_head_link_attr[] = 'data-bs-toggle="collapse"';
+$card_head_link_attr[] = 'data-bs-target="#fCardBody-' . $blockID . '"';
 $card_head_link_attr[] = 'aria-controls="fCardBody-' . $blockID . '"';
 
 if ( ! $collapsed ) {
@@ -100,15 +99,15 @@ $card_body_attr[] = 'id="fCardBody-' . $blockID . '"';
 $card_body_attr[] = 'aria-labelledby="fCard-' . $blockID . '"';
 
 // If the parent accordion allows for synchronized behavior...
-// do_action('qm/debug', $accordionBehavior );
+
 if ( $accordionBehavior ) {
-	$card_body_attr[] = 'data-parent="#Accordion-' . $accordionID . '"';
+	$card_body_attr[] = 'data-bs-parent="#Accordion-' . $accordionID . '"';
 }
 
 if ( ! $collapsed ) {
-	$card_body_attr[] = 'class="card-body collapse"';
+	$card_body_attr[] = 'class="accordion-body collapse"';
 } else {
-	$card_body_attr[] = $card_body_attr[] = 'class="card-body collapse show"';
+	$card_body_attr[] = $card_body_attr[] = 'class="accordion-body collapse show"';
 }
 
 $card_body = '<div ' . implode( ' ', $card_body_attr ) . '>';

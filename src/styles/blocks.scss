@@ -7,11 +7,11 @@
 @import 'media-queries';
 
 // Additional block markup.
+@import 'blocks/accordion';
+@import 'blocks/alert-notification';
+@import 'blocks/background-section';
 @import 'blocks/hero';
 @import 'blocks/hero-video';
-@import 'blocks/background-section';
-@import 'blocks/card-foldable';
-@import 'blocks/alert-notification';
 
 /*--------------------------------------------------------------
 # Temporary fixes, should be addressed by future iteration of BS4.

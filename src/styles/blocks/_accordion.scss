@@ -1,0 +1,11 @@
+/*--------------------------------------------------------------
+# UDS Accordion Items
+
+- Add default spacing for icon within title.
+-------------------------------------------------------------- */
+
+.accordion-header.accordion-header-icon .accordion-icon {
+	svg {
+		margin-right: $uds-size-spacing-2;
+	}
+}
