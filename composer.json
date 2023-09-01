@@ -13,8 +13,7 @@
 	"require": {
 		"composer/installers": "^1.9",
 		"php": ">=5.6",
-		"justintadlock/hybrid-breadcrumbs": "^1.0",
-		"philipnewcomer/acf-unique-id-field": "^2.0"
+		"justintadlock/hybrid-breadcrumbs": "^1.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
@@ -24,9 +23,15 @@
 		"php-parallel-lint/php-parallel-lint": "^1.2"
 	},
 	"scripts": {
-		"check:cs": ["@php phpcs -s --extensions=php --runtime-set testVersion 5.6- ."],
-		"fix:cs": ["@php phpcbf --extensions=php ."],
-		"lint:php": ["@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor . --exclude src ."]
+		"check:cs": [
+			"@php phpcs -s --extensions=php --runtime-set testVersion 5.6- ."
+		],
+		"fix:cs": [
+			"@php phpcbf --extensions=php ."
+		],
+		"lint:php": [
+			"@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor . --exclude src ."
+		]
 	},
 	"support": {
 		"issues": "https://github.com/asu-ke-web-services/uds-wordpress-theme/issues",

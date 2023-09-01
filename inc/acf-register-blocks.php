@@ -12,7 +12,8 @@
  /**
   * Initialize ACF field for Unique ID. Requisite file included from plugin root.
   */
-PhilipNewcomer\ACF_Unique_ID_Field\ACF_Field_Unique_ID::init();
+// PhilipNewcomer\ACF_Unique_ID_Field\ACF_Field_Unique_ID::init();
+ASUEngineering\ACF_Unique_ID_Field\ACF_Field_Unique_ID::init();
 
 /**
  * Register a custom block category for our blocks to live in. We hook into

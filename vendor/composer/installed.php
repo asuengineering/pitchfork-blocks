@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'asuengineering/pitchfork-blocks',
-        'pretty_version' => 'dev-develop',
-        'version' => 'dev-develop',
-        'reference' => '4096e13c3a5f237d81199ae7bff6bca017a423c4',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '920a760ce20a8f9e06a9b28eb363623f2cfe9ca5',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'asuengineering/pitchfork-blocks' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
-            'reference' => '4096e13c3a5f237d81199ae7bff6bca017a423c4',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '920a760ce20a8f9e06a9b28eb363623f2cfe9ca5',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -58,15 +58,6 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'philipnewcomer/acf-unique-id-field' => array(
-            'pretty_version' => '2.0.0',
-            'version' => '2.0.0.0',
-            'reference' => '8145a8defc811a3ddce6a481e487ed45afa8d20b',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../philipnewcomer/acf-unique-id-field',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'php-parallel-lint/php-parallel-lint' => array(
             'pretty_version' => 'v1.3.2',
             'version' => '1.3.2.0',
@@ -106,7 +97,7 @@
         'roave/security-advisories' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '6120dcc6cea2150079c5b75d31f0c5ad2ab3206e',
+            'reference' => '9971379442eb64596a59f6c3b89ec66fac58c611',
             'type' => 'metapackage',
             'install_path' => NULL,
             'aliases' => array(),
@@ -125,9 +116,9 @@
             ),
         ),
         'squizlabs/php_codesniffer' => array(
-            'pretty_version' => '3.7.1',
-            'version' => '3.7.1.0',
-            'reference' => '1359e176e9307e906dc3d890bcc9603ff6d90619',
+            'pretty_version' => '3.7.2',
+            'version' => '3.7.2.0',
+            'reference' => 'ed8e00df0a83aa96acf703f8c2979ff33341f879',
             'type' => 'library',
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),

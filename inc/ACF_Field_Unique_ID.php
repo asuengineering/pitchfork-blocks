@@ -1,6 +1,12 @@
 <?php
-
-namespace PhilipNewcomer\ACF_Unique_ID_Field;
+/**
+ * Extending class for a unique ID field.
+ * Based on work done here, available via composer.
+ * - https://github.com/philipnewcomer/ACF-Unique-ID-Field/blob/master/src/ACF_Field_Unique_ID.php
+ *
+ * 01-Sept-2023: ACF class doesn't have an outside repository just yet.
+ */
+namespace ASUEngineering\ACF_Unique_ID_Field;
 
 use acf_field;
 
@@ -35,12 +41,13 @@ class ACF_Field_Unique_ID extends acf_field {
 
 	/**
 	 * Render the HTML field.
+	 * In the original render statement the field was readonly. It's editable here.
 	 *
 	 * @param array $field The field data.
 	 */
 	public function render_field( $field ) {
 		printf(
-			'<input type="text" name="%s" value="%s" readonly>',
+			'<input type="text" name="%s" value="%s">',
 			esc_attr( $field['name'] ),
 			esc_attr( $field['value'] )
 		);
