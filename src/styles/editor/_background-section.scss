@@ -1,14 +1,14 @@
-.editor-styles-wrapper .is-root-container {
+.is-root-container {
 
-    .wp-block.wp-block-acf-background-section {
-        max-width: 1920px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+	.wp-block.wp-block-acf-background-section {
+		max-width: 1920px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-    .wp-block.wp-block-acf-background-section .block-editor-inner-blocks {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1200px;
-    }
+	.wp-block.wp-block-acf-background-section .block-editor-inner-blocks {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1200px;
+	}
 }

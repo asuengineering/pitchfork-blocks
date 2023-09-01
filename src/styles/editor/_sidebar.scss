@@ -2,18 +2,18 @@
 # _sidebar.scss
 
 - Styling to prevent accidental clicks of menu items.
-- Overriting styles from native .card element within Gutenberg editor. 
+- Overriting styles from native .card element within Gutenberg editor.
 --------------------------------------------------------------*/
 
-.editor-styles-wrapper .sidebar {
-    
-    .nav-link {
-        pointer-events: none;  
-    }
+.sidebar {
 
-    .card {
-        max-width: none;
-        margin-top: 0;
-        padding: 0;
-    }
+	.nav-link {
+		pointer-events: none;
+	}
+
+	.card {
+		max-width: none;
+		margin-top: 0;
+		padding: 0;
+	}
 }
