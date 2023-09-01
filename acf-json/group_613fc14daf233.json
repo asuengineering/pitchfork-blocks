@@ -101,8 +101,8 @@
             "placeholder": ""
         },
         {
-            "key": "field_6389122693333",
-            "label": "Foldable Card ID",
+            "key": "field_64f21b4cce3b0",
+            "label": "Foldable Card ID (ASU)",
             "name": "uds_foldcard_id",
             "aria-label": "",
             "type": "unique_id",
@@ -111,7 +111,7 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "acf-hidden",
+                "class": "acf-enabled",
                 "id": ""
             }
         }
@@ -134,5 +134,5 @@
     "active": true,
     "description": "Child block of acf\/accordion. The actual block that expands\/contracts.",
     "show_in_rest": 0,
-    "modified": 1669933541
+    "modified": 1693589249
 }
