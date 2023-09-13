@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: pitchfork-blocks.php:3, inc/acf-register-blocks.php:34
+#: pitchfork-blocks.php:3, inc/acf-register-blocks.php:35
 msgid "Pitchfork Blocks"
 msgstr ""
 

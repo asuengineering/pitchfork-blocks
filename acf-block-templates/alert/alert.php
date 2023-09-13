@@ -22,7 +22,7 @@ if ( ! empty( $block['className'] ) ) {
 if ( $dismissable ) {
 	$alert_classes[] = 'alert-dismissable';
 	$close           = '<div class="alert-close">
-				<button type="button" class="btn btn-circle btn-circle-alt-black close" data-dismiss="alert" aria-label="Close">
+				<button type="button" class="btn btn-circle btn-circle-alt-black close" data-bs-dismiss="alert" aria-label="Close">
 				<span class="fas fa-times"></span>
 				</button></div>';
 } else {
