@@ -20,7 +20,7 @@ $icon         = get_field( 'uds_banner_icon' );
 $spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 // Retreive alignment setting from toolbar.
-$block_classes = array( 'wp-block-banner', 'alignfull', 'allowed-after-hero' );
+$block_classes = array( 'wp-block-banner', 'alignfull' );
 
 // Base class of the banner is set with the background color option from the block.
 // theme.json sets the suffix of each color so that the produced string is correct.
@@ -121,7 +121,7 @@ $template       = array(
 ?>
 
 <section class="<?php echo implode( ' ', $block_classes ); ?>" style="<?php echo $spacing; ?>">
-	<div class="banner" role="banner">
+	<div class="banner alert" role="banner">
 		<?php echo $banner_icon; ?>
 		<div class="banner-content">
 			<?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />'; ?>
@@ -129,7 +129,7 @@ $template       = array(
 		<?php echo $button_block; ?>
 		<?php if ( $dismissible ) : ?>
 			<div class="banner-close">
-				<button type="button" class="btn btn-circle btn-circle-alt-white close" aria-label="Close" onclick="event.target.parentNode.parentNode.style.display='none';">x</button>
+				<button type="button" class="btn btn-circle btn-circle-alt-white close" aria-label="Close" data-bs-dismiss="alert"><span class="fas fa-times"></span></button>
 			</div>
 		<?php endif; ?>
 	</div>

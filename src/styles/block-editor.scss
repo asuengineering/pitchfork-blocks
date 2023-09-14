@@ -26,3 +26,8 @@ One-off fixes, tempoorary issues.
 .editor-styles-wrapper .is-root-container .wp-block.is-reusable {
 	max-width: none;
 }
+
+// Addresses issue with blockquote/image aligned right.
+.editor-styles-wrapper .uds-blockquote img {
+	max-width: none;
+}
