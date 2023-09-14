@@ -6,6 +6,7 @@
             "key": "field_626987704a687",
             "label": "Which navigation menu?",
             "name": "uds_sidebar_menu_name",
+            "aria-label": "",
             "type": "menu",
             "instructions": "",
             "required": 0,
@@ -21,6 +22,7 @@
             "key": "field_626b16df028a4",
             "label": "Omit the menu title?",
             "name": "uds_sidebar_no_title",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "By default, the title of the menu object will be produced above the <code>nav<\/code>.<\/br>\r\nToggle this off if you want to omit this title. Replace with an <code>h3<\/code> if desired.",
             "required": 1,
@@ -37,50 +39,24 @@
             "ui_off_text": "Keep"
         },
         {
-            "key": "field_626c1885137c0",
-            "label": "Collapse on mobile?",
-            "name": "uds_sidebar_mobile_collapse",
-            "type": "true_false",
-            "instructions": "Should this sidebar menu collapse to a select box on mobile?",
-            "required": 0,
+            "key": "field_626c18ef137c1",
+            "label": "Prompt on mobile",
+            "name": "uds_sidebar_mobile_prompt",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "What text should we include in the select box on mobile?",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "Collapsed",
-            "ui_off_text": "Full"
-        },
-        {
-            "key": "field_626c18ef137c1",
-            "label": "Prompt on mobile",
-            "name": "uds_sidebar_mobile_prompt",
-            "type": "text",
-            "instructions": "What text should we include in the select box on mobile?",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_626c1885137c0",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
             "default_value": "Select a page",
+            "maxlength": 50,
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": 50
+            "append": ""
         }
     ],
     "location": [
@@ -101,5 +77,5 @@
     "active": true,
     "description": "Produces a sidebar based on the traditional output from <a href=\"nav-menus.php\">nav-menus.php<\/a>",
     "show_in_rest": 0,
-    "modified": 1651254490
+    "modified": 1694712360
 }

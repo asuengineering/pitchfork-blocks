@@ -20,3 +20,11 @@
 .sidebar>.nav-link-container {
 	background-color: $uds-color-base-white;
 }
+
+// Fix for sidebar, mobile presentation.
+// Block editor adds top margin by default.
+@include media-breakpoint-down($md) {
+	nav.sidebar {
+		margin-block-start: 0;
+	}
+}

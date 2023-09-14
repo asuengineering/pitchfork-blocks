@@ -16,7 +16,7 @@
  * @return $paths
  */
 function pitchfork_blocks_acf_json_load_point( $paths ) {
-	$paths[] = PITCHFORK_BLOCKS_BASE_PATH . '/acf-json';
+	$paths[] = PITCHFORK_BLOCKS_BASE_PATH . 'acf-json';
 	return $paths;
 }
 add_filter( 'acf/settings/load_json', 'pitchfork_blocks_acf_json_load_point' );
@@ -45,7 +45,7 @@ add_filter( 'acf/settings/load_json', 'pitchfork_blocks_acf_json_load_point' );
  * @return $paths
  */
 function pitchfork_blocks_field_groups( $path ) {
-    $path = get_stylesheet_directory() . '/acf-json';
+    $path = PITCHFORK_BLOCKS_BASE_PATH . 'acf-json';
     return $path;
 }
 add_filter( 'acf/settings/save_json/key=group_627bf21169d29', 'pitchfork_blocks_field_groups' );

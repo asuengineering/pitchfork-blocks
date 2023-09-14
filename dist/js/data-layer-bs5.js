@@ -58,6 +58,103 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
+    // Sidebar menu items. Track open close events.
+    document.querySelectorAll('.sidebar .card-body').forEach(element => {
+      console.log(element);
+
+      // Because the sidebar menu items are nested in another expandable element,
+      // We need to ignore the event emitted for showing the sidebar on mobile if it wasn't clicked directly.
+      // Best way to do that is to test the element that was actually clicked.
+
+      if (document.querySelector(`a[data-bs-target="#${element.id}"]`)) {
+        element.addEventListener('hide.bs.collapse', function () {
+          const name = element.getAttribute('id') || 'unknown-sidebar';
+          const event = 'collapse';
+          const action = 'hide';
+          const type = 'click';
+          const section = 'sidebar-menu';
+          const region = 'sidebar';
+          const text = document.querySelector(`a[data-bs-target="#${element.id}"]`).textContent.slice(0, 40);
+          console.log('Sidebar menu hide. ' + name);
+          pushGAEvent({
+            name: name.toLowerCase(),
+            event: event.toLowerCase(),
+            action: action.toLowerCase(),
+            type: type.toLowerCase(),
+            section: section.toLowerCase(),
+            region: region.toLowerCase(),
+            text: text.toLowerCase()
+          });
+        });
+        element.addEventListener('show.bs.collapse', function () {
+          const name = element.getAttribute('id') || 'unknown-sidebar';
+          const event = 'collapse';
+          const action = 'show';
+          const type = 'click';
+          const section = 'sidebar-menu';
+          const region = 'sidebar';
+          const text = document.querySelector(`a[data-bs-target="#${element.id}"]`).textContent.slice(0, 40);
+          console.log('Sidebar menu show.' + name);
+          pushGAEvent({
+            name: name.toLowerCase(),
+            event: event.toLowerCase(),
+            action: action.toLowerCase(),
+            type: type.toLowerCase(),
+            section: section.toLowerCase(),
+            region: region.toLowerCase(),
+            text: text.toLowerCase()
+          });
+        });
+      } else {
+
+        // This was an event specifically for the mobile menu expand of the sidebar.
+        // Ignore it for now.
+      }
+    });
+
+    // Sidebar mobile menu. Track open close events.
+    document.querySelectorAll('nav.sidebar').forEach(element => {
+      console.log(element);
+      element.addEventListener('hide.bs.collapse', function () {
+        const name = element.getAttribute('id') || 'unknown-sidebar';
+        const event = 'collapse';
+        const action = 'hide';
+        const type = 'click';
+        const section = 'sidebar-mobile';
+        const region = 'main-content';
+        const text = document.querySelector(`.sidebar-toggler[data-bs-target="#${element.id}"]`).textContent;
+        console.log('Sidebar menu hide. ' + name);
+        pushGAEvent({
+          name: name.toLowerCase(),
+          event: event.toLowerCase(),
+          action: action.toLowerCase(),
+          type: type.toLowerCase(),
+          section: section.toLowerCase(),
+          region: region.toLowerCase(),
+          text: text.toLowerCase()
+        });
+      });
+      element.addEventListener('show.bs.collapse', function () {
+        const name = element.getAttribute('id') || 'unknown-sidebar';
+        const event = 'collapse';
+        const action = 'show';
+        const type = 'click';
+        const section = 'sidebar-mobile';
+        const region = 'main-content';
+        const text = document.querySelector(`.sidebar-toggler[data-bs-target="#${element.id}"]`).textContent;
+        console.log('Sidebar menu show.' + name);
+        pushGAEvent({
+          name: name.toLowerCase(),
+          event: event.toLowerCase(),
+          action: action.toLowerCase(),
+          type: type.toLowerCase(),
+          section: section.toLowerCase(),
+          region: region.toLowerCase(),
+          text: text.toLowerCase()
+        });
+      });
+    });
+
     // Alerts and banners. Events emitted by the .alert element which uses BS5 collapse.
     document.querySelectorAll('.alert').forEach(element => {
       // While we are here, let's move the focus appropriately. We'll need the index later.

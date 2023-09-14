@@ -21,7 +21,7 @@ if ( ! class_exists( 'PFBlocks_Sidebar' ) ) {
 		function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
 			// Check to see if item includes "current-menu-item" class.
-			// Output the correct additional class from UDS-BS4 if so.
+			// Output the correct additional class from Unity Bootstrap if so.
 			if ( in_array( 'current-menu-item', $item->classes ) ) {
 				$item->classes[] = 'is-active';
 			}
@@ -43,9 +43,9 @@ if ( ! class_exists( 'PFBlocks_Sidebar' ) ) {
 					// If this top level item also has children, we need the card markup.
 					$output .= '<div class="card card-foldable">';
 					$output .= '<div class="card-header">';
-					$output .= '<a id="card' . $mid . '" class="collapsed nav-link' . implode( ' ', $item->classes ) . '" href="#cardBody' . $mid . '" data-toggle="collapse" data-target="#cardBody' . $mid . '" aria-expanded="false" aria-controls="cardBody' . $mid . '">';
-					$output .= $item->title . '<span class="fas fa-chevron-down ml-1"></span></a></div>';
-					$output .= '<div id="cardBody' . $mid . '" class="collapse card-body" aria-labelledby="card' . $mid . '" data-parent=".sidebar">';
+					$output .= '<a id="card' . $mid . '" class="collapsed nav-link' . implode( ' ', $item->classes ) . '" href="#cardBody' . $mid . '" data-bs-toggle="collapse" data-bs-target="#cardBody' . $mid . '" aria-expanded="false" aria-controls="cardBody' . $mid . '">';
+					$output .= $item->title . '<span class="fas fa-chevron-down ms-1"></span></a></div>';
+					$output .= '<div id="cardBody' . $mid . '" class="collapse card-body" aria-labelledby="card' . $mid . '" data-bs-parent=".sidebar">';
 
 				} else {
 
