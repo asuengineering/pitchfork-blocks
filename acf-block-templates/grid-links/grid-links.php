@@ -8,7 +8,6 @@
 $source     = get_field( 'uds_grid_links_source' );
 $columns    = get_field( 'uds_grid_links_columns' );
 $breakpoint = get_field( 'uds_grid_links_breakpoint' );
-$color      = get_field( 'uds_grid_links_color' );
 
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
@@ -57,7 +56,15 @@ if ( 'arbitrary' === $source ) {
 			$gridlink = get_sub_field( 'uds_grid_links_created_link' );
 
 			if ( ! empty( $icon ) ) {
-				$linkstring .= '<span class="fa-fw ' . $icon . '"></span>';
+				$linkstring .= $icon;
+			} else {
+				/**
+				 * This else statement doesb't actually make it into the block markup.
+				 * But performing an operation here (of any kind) prevents an error in the block editor.
+				 * Error occurs when the icon picker is set back to null.
+				 * (Error: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.)
+				 */
+				$icon = '<i class="empty-icon"></i>';
 			}
 
 			if ( ! empty( $gridlink ) ) {

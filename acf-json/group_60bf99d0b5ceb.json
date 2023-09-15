@@ -3,9 +3,27 @@
     "title": "UDS Block: Grid Links",
     "fields": [
         {
+            "key": "field_6504b70c71156",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_60bfcfdf0ef27",
             "label": "# of Columns",
             "name": "uds_grid_links_columns",
+            "aria-label": "",
             "type": "radio",
             "instructions": "How many columns should there be on a non-mobile display?",
             "required": 1,
@@ -32,6 +50,7 @@
             "key": "field_60bf99d486b13",
             "label": "Content Source",
             "name": "uds_grid_links_source",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -46,17 +65,18 @@
                 "category": "Selected Categories",
                 "arbitrary": "Create your own links"
             },
+            "default_value": "tag",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "default_value": "tag",
             "layout": "vertical",
-            "return_format": "value",
             "save_other_choice": 0
         },
         {
             "key": "field_60bf9ad386b14",
             "label": "Which tags?",
             "name": "uds_grid_links_tag",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -70,23 +90,26 @@
                 ]
             ],
             "wrapper": {
-                "width": "65",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "taxonomy": "post_tag",
-            "field_type": "multi_select",
-            "allow_null": 0,
             "add_term": 0,
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "object",
-            "multiple": 0
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_60bf9b7986b15",
             "label": "Which categories?",
             "name": "uds_grid_links_category",
+            "aria-label": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -100,25 +123,28 @@
                 ]
             ],
             "wrapper": {
-                "width": "66",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "taxonomy": "category",
-            "field_type": "multi_select",
-            "allow_null": 0,
             "add_term": 0,
             "save_terms": 0,
             "load_terms": 0,
             "return_format": "object",
-            "multiple": 0
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
-            "key": "field_60bf9cd886b16",
-            "label": "Create your own grid.",
-            "name": "uds_grid_links_created",
-            "type": "repeater",
-            "instructions": "Select your link destination, text and an appropriate icon if desired.\r\n\r\nEnter all required FA classes. Example: <code>fas fa-external-link-alt<\/code>.",
+            "key": "field_6504b73171157",
+            "label": "Custom links",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
@@ -130,39 +156,40 @@
                 ]
             ],
             "wrapper": {
-                "width": "66",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_60bf9e0a86b17",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60bf9cd886b16",
+            "label": "Create your own grid.",
+            "name": "uds_grid_links_created",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Grid icons are optional for any link presented here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
             "min": 0,
             "max": 0,
-            "layout": "row",
+            "collapsed": "field_60bf9e0a86b17",
             "button_label": "Add Grid Link",
+            "rows_per_page": 20,
             "sub_fields": [
-                {
-                    "key": "field_60bf9ebc86b18",
-                    "label": "Icon",
-                    "name": "uds_grid_links_created_icon",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
                 {
                     "key": "field_60bf9e0a86b17",
                     "label": "Link",
                     "name": "uds_grid_links_created_link",
+                    "aria-label": "",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -172,7 +199,41 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "return_format": "array",
+                    "parent_repeater": "field_60bf9cd886b16"
+                },
+                {
+                    "key": "field_6504b48125ea6",
+                    "label": "Icon",
+                    "name": "uds_grid_links_created_icon",
+                    "aria-label": "",
+                    "type": "font-awesome",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "icon_sets": [
+                        "solid",
+                        "regular",
+                        "light",
+                        "thin",
+                        "duotone",
+                        "brands"
+                    ],
+                    "custom_icon_set": "",
+                    "default_label": "",
+                    "default_value": "",
+                    "save_format": "element",
+                    "allow_null": 1,
+                    "show_preview": 1,
+                    "enqueue_fa": 0,
+                    "fa_live_preview": "",
+                    "choices": [],
+                    "parent_repeater": "field_60bf9cd886b16"
                 }
             ]
         }
@@ -195,5 +256,5 @@
     "active": true,
     "description": "Creates the UDS Grid Links element based on a taxonomy selection or your own custom list.",
     "show_in_rest": 0,
-    "modified": 1651776223
+    "modified": 1694808150
 }
