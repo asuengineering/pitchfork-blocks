@@ -1,21 +1,29 @@
 {
-    "name": "acf/hero",
-    "title": "UDS Hero",
-    "description": "Creates a hero for the top of the page. Uses Inner Blocks for content.",
-    "category": "pitchfork-blocks",
-    "icon": "star-filled",
-    "keywords": ["hero", "cover", "image"],
-    "acf": {
-        "mode": "edit",
-        "renderTemplate": "hero.php"
-    },
+	"name": "acf/hero",
+	"title": "UDS Hero",
+	"description": "Creates a hero for the top of the page. Uses Inner Blocks for content.",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"hero",
+		"cover",
+		"image"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "hero.php"
+	},
 	"supports": {
 		"spacing": {
-			"margin": false,
+			"margin": [
+				"bottom"
+			],
 			"padding": false
 		},
 		"classname": false,
-		"align": [ "full" ],
+		"align": [
+			"full"
+		],
 		"multiple": false,
 		"color": {
 			"background": false,
@@ -27,6 +35,16 @@
 		"align": {
 			"type": "string",
 			"default": "full"
+		},
+		"style": {
+			"type": "object",
+			"default": {
+				"spacing": {
+					"margin": {
+						"bottom": "var:preset|spacing|uds-size-8"
+					}
+				}
+			}
 		}
 	}
 }

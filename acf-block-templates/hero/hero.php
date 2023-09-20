@@ -69,6 +69,7 @@ $template       = array(
 	),
 );
 
+
 // Block output.
 echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
 echo '<div class="hero-overlay"></div>';
