@@ -46,3 +46,6 @@ require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-block-utilities.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-menu-select/acf-menu-select.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/ACF_Field_Unique_ID.php';
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-register-blocks.php';
+
+// Block filters using HTML API
+require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/html-block-filters.php';
