@@ -37,15 +37,15 @@ if ( $choice ) {
 
 		if ( 'custom' === $preset ) {
 			// We're doing a custom background color.
-			echo '<section class="uds-section alignfull allowed-after-hero bg-color ' . $additional_classes . '" style="background-color: ' . $color . ';" style="' . $spacing . '">';
+			echo '<section class="uds-section alignfull bg-color ' . $additional_classes . '" style="background-color: ' . $color . ';" style="' . $spacing . '">';
 		} else {
 			// Background colors via utility BS4 classes.
-			echo '<section class="uds-section alignfull allowed-after-hero bg-color ' . $preset . ' ' . $additional_classes . '" style="' . $spacing . '">';
+			echo '<section class="uds-section alignfull bg-color ' . $preset . ' ' . $additional_classes . '" style="' . $spacing . '">';
 		}
 	} elseif ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
-		echo '<section class="uds-section alignfull allowed-after-hero bg ' . $pattern . ' ' . $additional_classes . '" style="' . $spacing . '">';
+		echo '<section class="uds-section alignfull bg ' . $pattern . ' ' . $additional_classes . '" style="' . $spacing . '">';
 
 	} elseif ( 'upload' === $choice ) {
 
@@ -54,7 +54,7 @@ if ( $choice ) {
 
 		// Set the basic utility class + inner bg color as classes.
 
-		echo '<section class="uds-section alignfull allowed-after-hero media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
+		echo '<section class="uds-section alignfull media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
 
 	}
 
