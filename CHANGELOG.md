@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### Version 2.0
+
+This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.0 version of this plugin is being used with the 2.0 version of the theme.
+
+**Bootstrap 5 and the data layer**
+
+- FIX: All included blocks are now formatted to use Bootstrap 5 and the latest markup recommended by the ASU Unity project.
+- ADD: The following elements within Pitchfork Blocks will automatically have their user interface interactions added to ASU's GA4 data layer object.
+
+| Element             | Data tracked                                                      |
+| ------------------- | ----------------------------------------------------------------- |
+| `acf/alert`         | Tracks any close/dismissal event.                                 |
+| `acf/banner`        | Tracks any close/dismissal event.                                 |
+| `acf/card-foldable` | Within an accordion, tracks all individual open and close events. |
+| `acf/sidebar`       | Tracks all open and close events for nested menu items.           |
+
+**Additional fixes**
+
+- FIX: The `acf/card-foldable` block now allows for an end user to alter the unique ID associated with the card. Addresses a problem when duplicating an existing foldable card block to allow for more accordions in the set.
+- CHANGE: Change the `acf/alert` and `acf/banner` blocks to use the same underlying JS mehanism for dismissing the messages. Both now use the appropriate Bootstrap 5 dismissal JS function.
+- FIX: Removing an icon within the `acf/grid-links` block will no longer produce an invalid block markup error.
+- ADD: The `acf/grid-links` block also now uses the ACF Font Awesome icon picker in the interface.
+- ADD: The `acf/hero` and `acf/hero-video` blocks allow for a bottom margin to be set in the block styles editor. The default state of that margin is 4rem ($uds-size-8) for all new hero blocks.
+- CHANGE: Blocks immediately following a hero block will no longer have a top margin. The [adjacent sibling](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) style rule that produced this effect has been removed.
+- FIX: The supporting CSS classes for `acf/hero` and `acf/hero-video` which controlled the positioning of the button row and the content group are no longer required to be present in the advanced/additional CSS classes section of the block settings. Those classes are now added automatically anytime there is a `core/buttons` or `core/group` block within the `acf/hero` block.
+
+**Additional technical release notes**
+
+- CHANGE: Update references to ASU Unity Project to current packages located at [https://github.com/orgs/ASU/packages](https://github.com/orgs/ASU/packages).
+- CHANGE: Adopt new build process for continued development of the plugin. See [Gulp WP](https://github.com/BlackbirdDigital/gulp-wp) for additional details. Build and compilation process still begins with `npm start`.
+- FIX: Change method used to provide additional CSS rules within the block editor. Aligns with current best practice.
+- ADD: Registered new ACF save point for any ACF-JSON settings applied by this plugin.
+
 ### Version 1.6
 
 This release addresses a few issues with the `acf/hero` block due to a change in the required markup from the Unity Project.
