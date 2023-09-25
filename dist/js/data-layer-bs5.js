@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const section = 'default';
         const region = 'main-content';
         const text = document.querySelector(`a[data-bs-target="#${element.id}"]`).textContent.slice(0, 40);
-        console.log('Hide event. ' + name);
+
+        // console.log('Hide event. ' + name);
+
         pushGAEvent({
           name: name.toLowerCase(),
           event: event.toLowerCase(),
@@ -45,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const section = 'default';
         const region = 'main-content';
         const text = document.querySelector(`a[data-bs-target="#${element.id}"]`).textContent.slice(0, 40);
-        console.log('"Show yourself!" ~Elsa. ' + name);
+
+        // console.log('"Show yourself!" ~Elsa. ' + name);
+
         pushGAEvent({
           name: name.toLowerCase(),
           event: event.toLowerCase(),
@@ -60,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Sidebar menu items. Track open close events.
     document.querySelectorAll('.sidebar .card-body').forEach(element => {
-      console.log(element);
-
       // Because the sidebar menu items are nested in another expandable element,
       // We need to ignore the event emitted for showing the sidebar on mobile if it wasn't clicked directly.
       // Best way to do that is to test the element that was actually clicked.
@@ -75,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
           const section = 'sidebar-menu';
           const region = 'sidebar';
           const text = document.querySelector(`a[data-bs-target="#${element.id}"]`).textContent.slice(0, 40);
-          console.log('Sidebar menu hide. ' + name);
+
+          // console.log('Sidebar menu hide. ' + name);
+
           pushGAEvent({
             name: name.toLowerCase(),
             event: event.toLowerCase(),
@@ -94,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
           const section = 'sidebar-menu';
           const region = 'sidebar';
           const text = document.querySelector(`a[data-bs-target="#${element.id}"]`).textContent.slice(0, 40);
-          console.log('Sidebar menu show.' + name);
+
+          // console.log('Sidebar menu show.' + name);
+
           pushGAEvent({
             name: name.toLowerCase(),
             event: event.toLowerCase(),
@@ -114,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Sidebar mobile menu. Track open close events.
     document.querySelectorAll('nav.sidebar').forEach(element => {
-      console.log(element);
       element.addEventListener('hide.bs.collapse', function () {
         const name = element.getAttribute('id') || 'unknown-sidebar';
         const event = 'collapse';
@@ -123,7 +128,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const section = 'sidebar-mobile';
         const region = 'main-content';
         const text = document.querySelector(`.sidebar-toggler[data-bs-target="#${element.id}"]`).textContent;
-        console.log('Sidebar menu hide. ' + name);
+
+        // console.log('Sidebar menu hide. ' + name);
+
         pushGAEvent({
           name: name.toLowerCase(),
           event: event.toLowerCase(),
@@ -142,7 +149,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const section = 'sidebar-mobile';
         const region = 'main-content';
         const text = document.querySelector(`.sidebar-toggler[data-bs-target="#${element.id}"]`).textContent;
-        console.log('Sidebar menu show.' + name);
+
+        // console.log('Sidebar menu show.' + name);
+
         pushGAEvent({
           name: name.toLowerCase(),
           event: event.toLowerCase(),
