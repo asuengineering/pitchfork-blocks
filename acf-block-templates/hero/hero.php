@@ -10,6 +10,13 @@
 $size           = get_field( 'uds_hero_size' );
 $image          = get_field( 'uds_hero_image' );
 
+/**
+ * Additional margin/padding settings
+ * Returns a string for inclusion with style=""
+ * --------------------
+ */
+$spacing = pitchfork_blocks_acf_calculate_spacing( $block );
+
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
 if ( ! empty( $block['className'] ) ) {
@@ -71,7 +78,7 @@ $template       = array(
 
 
 // Block output.
-echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . ' has-btn-row ' . esc_html( $additional_classes ) . '">';
+echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . ' has-btn-row ' . esc_html( $additional_classes ) . '" style="' . $spacing . '">';
 echo '<div class="hero-overlay"></div>';
 if ( $image ) {
 	echo wp_get_attachment_image( $image, $size, '', array( 'class' => 'hero' ) );
