@@ -4,67 +4,39 @@
  *
  */
 
- wp.domReady( () => {
-
-    /**
-     * Register styles associated with acf/alert
-     */
-    wp.blocks.registerBlockStyle(
-        'acf/alert', [{
-            name: 'alert-warning',
-            label: 'Warning',
-            isDefault: true,
-        }]
-    );
-
-    wp.blocks.registerBlockStyle(
-        'acf/alert', [{
-            name: 'alert-success',
-            label: 'Success',
-            isDefault: false,
-        }]
-    );
-
-    wp.blocks.registerBlockStyle(
-        'acf/alert', [{
-            name: 'alert-info',
-            label: 'Information',
-            isDefault: false,
-        }]
-    );
-
-    wp.blocks.registerBlockStyle(
-        'acf/alert', [{
-            name: 'alert-error',
-            label: 'Error',
-            isDefault: false,
-        }]
-    );
+wp.domReady(() => {
 
 	/**
-     * Register styles associated with acf/profile-manual
-     */
-
+	 * Register styles associated with acf/alert
+	 */
 	wp.blocks.registerBlockStyle(
-		'acf/profile-manual', [{
-			name: 'large',
-			label: 'Large',
-			isDefault: false,
-		}]
-	);
-
-	wp.blocks.registerBlockStyle(
-		'acf/profile-manual', [{
-			name: 'small',
-			label: 'Small',
+		'acf/alert', [{
+			name: 'alert-warning',
+			label: 'Warning',
 			isDefault: true,
 		}]
 	);
 
 	wp.blocks.registerBlockStyle(
-		'acf/profile-manual', [{
-			name: 'micro',
-			label: 'Micro',
+		'acf/alert', [{
+			name: 'alert-success',
+			label: 'Success',
+			isDefault: false,
+		}]
+	);
+
+	wp.blocks.registerBlockStyle(
+		'acf/alert', [{
+			name: 'alert-info',
+			label: 'Information',
+			isDefault: false,
+		}]
+	);
+
+	wp.blocks.registerBlockStyle(
+		'acf/alert', [{
+			name: 'alert-error',
+			label: 'Error',
 			isDefault: false,
 		}]
 	);

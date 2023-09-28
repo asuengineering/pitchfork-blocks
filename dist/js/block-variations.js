@@ -33,26 +33,6 @@ wp.domReady(() => {
     label: 'Error',
     isDefault: false
   }]);
-
-  /**
-      * Register styles associated with acf/profile-manual
-      */
-
-  wp.blocks.registerBlockStyle('acf/profile-manual', [{
-    name: 'large',
-    label: 'Large',
-    isDefault: false
-  }]);
-  wp.blocks.registerBlockStyle('acf/profile-manual', [{
-    name: 'small',
-    label: 'Small',
-    isDefault: true
-  }]);
-  wp.blocks.registerBlockStyle('acf/profile-manual', [{
-    name: 'micro',
-    label: 'Micro',
-    isDefault: false
-  }]);
 });
 /******/ })()
 ;
