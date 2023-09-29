@@ -64,7 +64,8 @@ if ( $choice ) {
 		array( 'core/columns', array() ),
 	);
 
-	echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+	echo '<InnerBlocks template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+	// echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 	echo '</section>';
 }
 
