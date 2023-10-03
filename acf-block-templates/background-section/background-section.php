@@ -6,20 +6,22 @@
  */
 
 $choice     = get_field( 'uds_background_section_choice' );
+// $preset     = get_field( 'uds_background_section_preset' );
 $pattern    = get_field( 'uds_background_section_pattern' );
-$preset     = get_field( 'uds_background_section_preset' );
-$color      = get_field( 'uds_background_section_color' );
+
 $upload     = get_field( 'uds_background_section_upload_url' );
-$innercolor = get_field( 'uds_background_inner_color' );
 $repeat     = get_field( 'uds_background_image_repeat' );
 $position   = get_field( 'uds_background_image_position' );
 $size       = get_field( 'uds_background_image_size' );
+$color      = get_field( 'uds_background_section_color' );
 
 // Retrieve additional classes from the 'advanced' field in the editor.
 $additional_classes = '';
 if ( ! empty( $block['className'] ) ) {
 	$additional_classes = $block['className'];
 }
+
+do_action('qm/debug', $block);
 
 /**
  * Additional margin/padding settings
@@ -32,16 +34,17 @@ $spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 if ( $choice ) {
 
 	// Produce the correct classes for the <section> element and echo it.
-	// The $choice variable will be one of the following three values. It has a default value set by the ACF control.
-	if ( 'color' === $choice ) {
+	// The $choice variable will be one of the following three values: 'none', 'pattern', or 'upload'
+	if ( 'none' === $choice ) {
 
-		if ( 'custom' === $preset ) {
-			// We're doing a custom background color.
-			echo '<section class="uds-section alignfull bg-color ' . $additional_classes . '" style="background-color: ' . $color . ';" style="' . $spacing . '">';
-		} else {
-			// Background colors via utility BS4 classes.
-			echo '<section class="uds-section alignfull bg-color ' . $preset . ' ' . $additional_classes . '" style="' . $spacing . '">';
+		// Add the required text-color modifier to the base class array.
+		if ( ! empty( $block['backgroundColor'] ) ) {
+			$additional_classes = 'has-background has-' . $block['backgroundColor'] . '-background-color ';
 		}
+
+		// Background color defined by block settings and the bg color palette.
+		echo '<section class="uds-section alignfull ' . $additional_classes . '" style="' . $spacing . '">';
+
 	} elseif ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
@@ -49,23 +52,25 @@ if ( $choice ) {
 
 	} elseif ( 'upload' === $choice ) {
 
-		// Build the inline style rule.
-		$inline_style = 'background: url(' . $upload . ') ' . $position . ' / ' . $size . ' ' . $repeat . ';';
+		// Check to see if background image is selected then build inline style.
+		// Forcing image to be present prevents workaround for picking an arbitrary color from the picker.
+		if (! empty( $upload )) {
+			$inline_style = 'background: ' . $color . ' url(' . $upload . ') ' . $position . ' / ' . $size . ' ' . $repeat . ';';
+		} else {
+			$inline_style = '';
+		}
 
-		// Set the basic utility class + inner bg color as classes.
-
+		// Set the background CSS rule + additional classes.
 		echo '<section class="uds-section alignfull media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
 
 	}
 
 	// Sets InnerBlocks with a core/column block as default content.
-	$allowed_blocks = array( 'core/columns', 'core/html' );
-	$template       = array(
-		array( 'core/columns', array() ),
+	$template = array(
+		array( 'core/group', array() ),
 	);
 
 	echo '<InnerBlocks template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
-	// echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 	echo '</section>';
 }
 
