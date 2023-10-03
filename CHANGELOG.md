@@ -21,12 +21,18 @@ This release is being made with a concurrent release to the accompanying [Pitchf
 | `acf/card-foldable` | Within an accordion, tracks all individual open and close events. |
 | `acf/sidebar`       | Tracks all open and close events for nested menu items.           |
 
+**Background Section block `(acf/background-section)`**
+
+- CHANGE: All block types are now supported as direct children of the `acf/background-section` block. By default, the block will now include a `core/group` block as the first inner block, but this block can be freely removed as needed.
+- ADD: Add six new Unity patterns to the `acf/background-section` block.
+- CHANGE: The `acf/background-section` block now allows for all ASU gray colors as preset solid color backgrounds. (Previous options were limited to ASU Gray 1, 2 and 7.) Background color options are now available via the native WordPress color controls in the block options panel.
+- ADD: The block now allows for a background color option as an overlay for repeatable/tileable patterns. This makes it easier to use patterns from collections like [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/) and [Transparent Textures](https://www.transparenttextures.com/) without writing further CSS rules.
+
 **Additional fixes**
 
 - FIX: The `acf/card-foldable` block now allows for an end user to alter the unique ID associated with the card. Addresses a problem when duplicating an existing foldable card block to allow for more accordions in the set.
 - CHANGE: Change the `acf/alert` and `acf/banner` blocks to use the same underlying JS mehanism for dismissing the messages. Both now use the appropriate Bootstrap 5 dismissal JS function.
-- FIX: Removing an icon within the `acf/grid-links` block will no longer produce an invalid block markup error.
-- ADD: The `acf/grid-links` block also now uses the ACF Font Awesome icon picker in the interface.
+- ADD: The `acf/grid-links` block now uses the ACF Font Awesome icon picker in the interface.
 - ADD: The `acf/hero` and `acf/hero-video` blocks allow for a bottom margin to be set in the block styles editor. The default state of that margin is 4rem ($uds-size-8) for all new hero blocks.
 - CHANGE: Blocks immediately following a hero block will no longer have a top margin. The [adjacent sibling](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) style rule that produced this effect has been removed.
 - FIX: The supporting CSS classes for `acf/hero` and `acf/hero-video` which controlled the positioning of the button row and the content group are no longer required to be present in the advanced/additional CSS classes section of the block settings. Those classes are now added automatically anytime there is a `core/buttons` or `core/group` block within the `acf/hero` block.
