@@ -6,7 +6,7 @@
  * Author:          Steve Ryan (ASU Engineering)
  * Author URI:      https://engineering.asu.edu
  * Text Domain:     pitchfork-blocks
- * Version:         2.0.0
+ * Version:         2.0.1
  *
  * @package         Pitchfork_Blocks
  *

@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### Version 2.0.1
+
+- FIX: Add better support for a default layout choice for `acf/background-section` which only renders the background color of the block.
+
 ### Version 2.0
 
 This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.0 version of this plugin is being used with the 2.0 version of the theme.

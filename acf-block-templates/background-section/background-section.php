@@ -35,17 +35,9 @@ if ( $choice ) {
 
 	// Produce the correct classes for the <section> element and echo it.
 	// The $choice variable will be one of the following three values: 'none', 'pattern', or 'upload'
-	if ( 'none' === $choice ) {
+	// Treating 'none' as the default choice to accomodate blocks with an older version of the block markup.
 
-		// Add the required text-color modifier to the base class array.
-		if ( ! empty( $block['backgroundColor'] ) ) {
-			$additional_classes = 'has-background has-' . $block['backgroundColor'] . '-background-color ';
-		}
-
-		// Background color defined by block settings and the bg color palette.
-		echo '<section class="uds-section alignfull ' . $additional_classes . '" style="' . $spacing . '">';
-
-	} elseif ( 'pattern' === $choice ) {
+	if ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
 		echo '<section class="uds-section alignfull bg ' . $pattern . ' ' . $additional_classes . '" style="' . $spacing . '">';
@@ -63,6 +55,17 @@ if ( $choice ) {
 		// Set the background CSS rule + additional classes.
 		echo '<section class="uds-section alignfull media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
 
+	} else {
+
+		// Use case for 'default' or ( 'none' === $choice )
+
+		// Add the required text-color modifier to the base class array.
+		if ( ! empty( $block['backgroundColor'] ) ) {
+			$additional_classes = 'has-background has-' . $block['backgroundColor'] . '-background-color ';
+		}
+
+		// Background color defined by block settings and the bg color palette.
+		echo '<section class="uds-section alignfull ' . $additional_classes . '" style="' . $spacing . '">';
 	}
 
 	// Sets InnerBlocks with a core/column block as default content.
