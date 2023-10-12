@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+### Version 2.0.2
+
+- FIX: Addressed missing `acf/hero` and `acf/hero-video` inner block content.
+
+The issue was caused by a conflict with Pitchfork Blocks and a duplication of the `acf/blocks/wrap_frontend_innerblocks` filter. When both plugins were active the filter can be called twice and possibly fail to remove the set of inner block wrapper divs. Solution is to add a CSS rule for the hero blocks to ignore the wrapper rather than surpress it.
+
 ### Version 2.0.1
 
 - FIX: Add better support for a default layout choice for `acf/background-section` which only renders the background color of the block.
