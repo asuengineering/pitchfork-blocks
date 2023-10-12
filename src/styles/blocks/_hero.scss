@@ -1,12 +1,20 @@
 /*--------------------------------------------------------------
-# Hero - Video
+# Heroes - (Static + Video)
 # Dependent on additional styles from _hero.scss
 # Mobile styles are basically unchanged.
 
-
+0. Hero, ACF InnerBlocks Wrapper fix.
 1. Hero-Video, Tablet
 2. Hero-Video, Desktop
 --------------------------------------------------------------*/
+
+// ACF wraps all inner blocks content with .acf-innerblocks-container
+// This wrapper causes child items of the CSS grid to not display correctly.
+// Fixes the wrapper for both static and video heroes
+
+div[class^=uds-hero] .acf-innerblocks-container {
+	display: contents;
+}
 
 /*--------------------------------------------------------------
 1. Hero-Video (Mobile
