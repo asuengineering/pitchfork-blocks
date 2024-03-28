@@ -63,6 +63,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/banner',                  // UDS Banner block.
 		'/blockquote',              // UDS Blockquote, inner blocks
 		'/breadcrumb',              // UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
+		'/card-steve',				// Card v2
 		// '/card',               		// UDS Cards.
 		'/card-foldable',           // UDS Foldable card block.
 		'/content-media-overlap',   // Miscellaneous content sections.
@@ -75,6 +76,7 @@ function pitchfork_blocks_register_acf_blocks() {
 
 	// Loop through array items and register each block.
 	foreach ( $block_includes as $folder ) {
+		do_action('qm/debug', PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder);
 		register_block_type( PITCHFORK_BLOCKS_BASE_PATH . 'acf-block-templates' . $folder );
 	}
 }
