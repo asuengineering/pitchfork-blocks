@@ -33,6 +33,31 @@ wp.domReady(() => {
     label: 'Error',
     isDefault: false
   }]);
+
+  /**
+   * Register styles associated with acf/card-v2
+   */
+
+  wp.blocks.registerBlockStyle('acf/card-v2', [{
+    name: 'card-default',
+    label: 'Default card',
+    isDefault: true
+  }]);
+  wp.blocks.registerBlockStyle('acf/card-v2', [{
+    name: 'card-degree',
+    label: 'Degree card',
+    isDefault: false
+  }]);
+  wp.blocks.registerBlockStyle('acf/card-v2', [{
+    name: 'card-story',
+    label: 'Story card',
+    isDefault: false
+  }]);
+  wp.blocks.registerBlockStyle('acf/card-v2', [{
+    name: 'card-Event',
+    label: 'Event card',
+    isDefault: false
+  }]);
 });
 /******/ })()
 ;
