@@ -1,8 +1,8 @@
 <?php
 /**
- * UDS Hero
+ * UDS Blockquote
  *
- * - encoded to deliver the UDS Hero v2 (CSS Grid-based)
+ * - Delivers the UDS blockquote and the variations within the design scheme.
  *
  * @package Pitchfork_Blocks
  */
