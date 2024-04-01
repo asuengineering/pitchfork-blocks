@@ -119,10 +119,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-
-// console.log("Let's do this.");
-
-const withYourCustomBlockClass = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(BlockListBlock => {
+const addMissingHeroClassNames = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(BlockListBlock => {
   return props => {
     const {
       name,
@@ -165,8 +162,8 @@ const withYourCustomBlockClass = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_
       ...props
     });
   };
-}, 'withYourCustomBlockClass');
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'your-plugin/your-custom-class', withYourCustomBlockClass);
+}, 'addMissingHeroClassNames');
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/missing-hero-classes', addMissingHeroClassNames);
 }();
 /******/ })()
 ;

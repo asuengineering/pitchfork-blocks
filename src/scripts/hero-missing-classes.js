@@ -4,9 +4,7 @@
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
-// console.log("Let's do this.");
-
-const withYourCustomBlockClass = createHigherOrderComponent((BlockListBlock) => {
+const addMissingHeroClassNames = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
 		const { name, attributes } = props;
 		let customClass = '';
@@ -41,10 +39,10 @@ const withYourCustomBlockClass = createHigherOrderComponent((BlockListBlock) => 
 		// If there's no parent or the parent isn't in the allowed list, keep the original class
 		return <BlockListBlock {...props} />;
 	};
-}, 'withYourCustomBlockClass');
+}, 'addMissingHeroClassNames');
 
 addFilter(
 	'editor.BlockListBlock',
-	'your-plugin/your-custom-class',
-	withYourCustomBlockClass
+	'pf-blocks/missing-hero-classes',
+	addMissingHeroClassNames
 );
