@@ -41,8 +41,8 @@ if ( ! empty( $block['className'] ) ) {
 	$class_setting = explode(' ', $block['className']);
 	do_action( 'qm/debug', $class_setting);
 
+	// Remove the is-style prefix from the block style before adding to array.
 	foreach ($class_setting as $setting) {
-		do_action( 'qm/debug', $setting);
 		$prefix = "is-style-";
 		if (strpos($setting, $prefix) === 0) {
 			$alert_classes[] = substr($setting, strlen($prefix));
