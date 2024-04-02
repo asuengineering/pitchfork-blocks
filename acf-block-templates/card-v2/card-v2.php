@@ -29,37 +29,66 @@ $orientation   = get_field( 'uds_card2_orientation' );
 $spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 /**
- * Add style names from defined block styles (story/degree/event)
+ * Add block style support for story, degree and event cards.
  * Get additional class names from block advanced panel.
  */
 
-$alert_classes = array( 'wp-card-v2', 'card' );
+$card_classes = array( 'wp-card-v2', 'card' );
 
 if ( ! empty( $block['className'] ) ) {
 
-	// Assume that there is more than one thing in the field separated by a space.
+	// Assume that there is more than one class in the "roll your own CSS" field separated by a space.
 	$class_setting = explode(' ', $block['className']);
-	do_action( 'qm/debug', $class_setting);
 
 	// Remove the is-style prefix from the block style before adding to array.
 	foreach ($class_setting as $setting) {
 		$prefix = "is-style-";
 		if (strpos($setting, $prefix) === 0) {
-			$alert_classes[] = substr($setting, strlen($prefix));
+			$card_classes[] = substr($setting, strlen($prefix));
 		} else {
-			$alert_classes[] = $setting;
+			$card_classes[] = $setting;
 		}
 	}
 }
 
+
+/**
+ * Sets Inner Blocks template and allowed blocks attributes.
+ */
+$allowed_blocks = array( 'core/heading/card-header', 'core/paragraph' );
+$template       = array(
+	array(
+		'core/heading/card-header',
+		array(
+			'level'   => 3,
+			'content' => 'Card title',
+		),
+	),
+	array(
+		'core/paragraph',
+		array(
+			'content' => 'Getting closer to an actual card?',
+		),
+	),
+);
+
+/**
+ * Output the card.
+ */
+$card  = '<div class="' . implode( ' ', $card_classes ) . '" style="' . $spacing . '">';
+
+echo wp_kses_post( $card );
+echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+echo '</div>';
+
 /** Output */
-echo '<div class="' . implode( ' ', $alert_classes ) . '" style="' . $spacing . '">';
-echo '<div class="card-header"></div>
-<div class="card-body">
-	<p class="card-text">
-		Body copy goes here. Limit to 5 lines max. Lorem ipsum dolor sit
-		amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-		ut labore et dolore magna aliqua eiusmod tempo.
-	</p>
-</div>
-</div>';
+// echo '<div class="' . implode( ' ', $card_classes ) . '" style="' . $spacing . '">';
+// echo '<div class="card-header"></div>
+// <div class="card-body">
+// 	<p class="card-text">
+// 		Body copy goes here. Limit to 5 lines max. Lorem ipsum dolor sit
+// 		amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+// 		ut labore et dolore magna aliqua eiusmod tempo.
+// 	</p>
+// </div>
+// </div>';
