@@ -42,6 +42,7 @@ function pitchfork_blocks_enqueue_block_editor_scripts() {
 
 	wp_enqueue_style( 'pitchfork-block-admin-styles', plugin_dir_url( __DIR__ ) . 'dist/css/block-editor.css', array(), $plugin_version );
 	wp_enqueue_script( 'hero-missing-classes', plugin_dir_url( __DIR__ ) . 'dist/js/hero-missing-classes.js', array( 'wp-blocks', 'wp-dom' ), null, true);
+	wp_enqueue_script( 'card-block-filters', plugin_dir_url( __DIR__ ) . 'dist/js/card-block-filters.js', array( 'wp-blocks', 'wp-dom', 'wp-hooks' ), null, true);
 	wp_enqueue_script( 'uds-block-variations', plugin_dir_url( __DIR__ ) . 'dist/js/block-variations.js', array( 'wp-blocks', 'wp-dom' ), $block_variations_version, true );
 
 }
