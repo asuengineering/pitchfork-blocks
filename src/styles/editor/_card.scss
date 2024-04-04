@@ -7,18 +7,24 @@
 
 
 .acf-block-preview .card {
-    &.card-horizontal {
-        max-width:none;
-    }
+	&.card-horizontal {
+		max-width: none;
+	}
 }
 
 .acf-block-preview .card {
-    &.card-foldable {
-        max-width:none;
-        padding: 0;
+	&.card-foldable {
+		max-width: none;
+		padding: 0;
 
-        .card-header.card-header-icon .card-icon {
-            margin-bottom:0;
-        }
-    }
+		.card-header.card-header-icon .card-icon {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Card v2
+.acf-block-preview .wp-card-v2.card {
+	padding: 0px;
+	max-width: 100%;
 }

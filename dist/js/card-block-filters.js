@@ -120,13 +120,16 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Add wrapper element to heading block within acf/card-v2
  */
-const addCardHeadingWrapper = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(BlockListBlock => {
+const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(BlockListBlock => {
   return props => {
     const {
       name,
       attributes
     } = props;
-    if (name != 'core/heading') {
+    const testBlocks = ['core/heading', 'core/buttons', 'core/button', 'core/group'];
+    let customClass = '';
+    let customWrap = false;
+    if (!testBlocks.includes(name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
         ...props
       });
@@ -135,19 +138,51 @@ const addCardHeadingWrapper = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__
     // Define an array of allowed parent block names
     const allowedParentBlocks = ['acf/card-v2'];
 
-    // Get the ID of the immediate parent block.
+    // Get the ID of the immediate parent and grandparent block.
     const parentClientId = wp.data.select('core/block-editor').getBlockParents(props.clientId, true)[0];
-    console.log(parentClientId);
+    const grandParentClientId = wp.data.select('core/block-editor').getBlockParents(props.clientId, true)[1];
+    // console.log(parentClientId);
+
     if (parentClientId) {
       const parentBlock = wp.data.select('core/block-editor').getBlock(parentClientId);
+
+      // Testing for core/group, core/buttons, core/heading
       if (parentBlock && allowedParentBlocks.includes(parentBlock.name)) {
-        return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-          class: "card-header"
-        }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
-          ...props,
-          className: "card-title"
-        }));
+        if (name === 'core/heading') {
+          customClass = 'card-title';
+          customWrap = true;
+        } else if (name === 'core/group') {
+          customClass = 'card-body';
+        } else if (name === 'core/buttons') {
+          customClass = 'card-buttons';
+        }
       }
+      const grandParentBlock = wp.data.select('core/block-editor').getBlock(grandParentClientId);
+
+      // Testing for core/button as a grandchild of acf/card-v2
+      if (grandParentBlock && allowedParentBlocks.includes(grandParentBlock.name)) {
+        if (name === 'core/button') {
+          customClass = 'card-button';
+        }
+      }
+    }
+
+    // Add the custom class and custom wrap if both are set.
+    if (customClass && customWrap) {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        class: "card-header"
+      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+        ...props,
+        className: "card-title"
+      }));
+    }
+
+    // Add just custom class if it's set
+    if (customClass) {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+        ...props,
+        className: customClass
+      });
     }
 
     // If there's no parent or the parent isn't in the allowed list, keep the original class
@@ -155,8 +190,8 @@ const addCardHeadingWrapper = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__
       ...props
     });
   };
-}, 'addCardHeadingWrapper');
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/add-card-heading-wrapper', addCardHeadingWrapper);
+}, 'udsCardInnerMarkup');
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/add-card-heading-wrapper', udsCardInnerMarkup);
 }();
 /******/ })()
 ;

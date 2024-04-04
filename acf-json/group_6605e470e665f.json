@@ -161,6 +161,22 @@
             "other_choice": 0,
             "layout": "vertical",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_660de100c6953",
+            "label": "Link Field (Temp)",
+            "name": "link_field_temp",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -181,5 +197,5 @@
     "active": true,
     "description": "Fields for creating static, but customizable, versions of all UDS card types: standard, story, degree, and event.",
     "show_in_rest": 0,
-    "modified": 1711669058
+    "modified": 1712185636
 }

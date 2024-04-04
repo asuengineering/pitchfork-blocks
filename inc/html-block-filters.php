@@ -11,7 +11,7 @@
  *
  * Filters within this module:
  * 1. acf/hero and acf/hero-video
- *
+ * 2. acf/card-v2
  */
 
 /**
@@ -44,3 +44,57 @@ function pitchfork_add_missing_classes_to_hero( $block_content, $block ) {
     return $button_processor->get_updated_html();
 }
 add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
+
+/**
+ * 2. Add missing classes to child blocks of acf/card-v2
+ * Covers core/heading, core/buttons, core/button and core/group block possibilities.
+ */
+
+ function pitchfork_add_missing_classes_to_cardv2( $block_content, $block ) {
+
+	$tested_blocks = array('acf/card-v2');
+
+    if ( ! $block_content || ! in_array($block['blockName'], $tested_blocks) ) {
+        return $block_content;
+    }
+
+	// Process group block first, then button block.
+	// Two calls to the processor just in case the inner blocks happen to be out of the normal order.
+
+    $processor = new WP_HTML_Tag_Processor( $block_content );
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-heading' ) ) ) {
+		$processor->add_class( 'card-title' );
+	}
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-group' ) ) ) {
+		$processor->add_class( 'card-body' );
+	}
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-buttons' ) ) ) {
+		$processor->add_class( 'card-buttons' );
+	}
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-button' ) ) ) {
+		$processor->add_class( 'card-button' );
+	}
+
+    return $processor->get_updated_html();
+}
+add_filter( 'render_block', 'pitchfork_add_missing_classes_to_cardv2', 10, 2 );
+
+/**
+ * Remove ACF block wrapper from front end display of acf/card-v2.
+ * Removed here as a temporary measure to make it easier in JS to find and wrap
+ * the inner <h3> element inside the card.
+ *
+ * This function + the related JS can go away when the WP HTML Processor is ready and in core.
+ */
+function acf_remove_cardv2_innerblock_wrapper( $wrap, $name ) {
+    if ( $name == 'acf/card-v2' ) {
+        return false;
+    }
+    return true;
+}
+add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_remove_cardv2_innerblock_wrapper', 10, 2 );
+
