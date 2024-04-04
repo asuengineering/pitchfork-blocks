@@ -55,7 +55,7 @@ if ( ! empty( $block['className'] ) ) {
  * Sets Inner Blocks template and allowed blocks attributes.
  */
 // Children I have yet to create: acf/card-event-details, acf/card-link, acf/card-tag
-$allowed_blocks = array( 'core/card-v2-header', 'core/group', 'core/buttons', 'core/navigation-link' );
+$allowed_blocks = array( 'acf/card-v2-header', 'acf/card-v2-tags', 'acf/card-v2-links', 'core/group', 'core/buttons' );
 $template       = array(
 	array(
 		'acf/card-v2-header',

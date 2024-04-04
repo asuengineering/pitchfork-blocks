@@ -66,6 +66,9 @@ function pitchfork_blocks_register_acf_blocks() {
 		// '/card',               		// UDS Cards.
 		'/card-v2',					// Card v2
 		'/card-v2-header',			// Card v2 - Card Header
+		'/card-v2-tags',			// Card v2 - Card Tags
+		'/card-v2-badge',			// Card v2 - Card Badge
+		'/card-v2-links',			// Card v2 - Card Links
 		'/card-foldable',           // UDS Foldable card block.
 		'/content-media-overlap',   // Miscellaneous content sections.
 		'/grid-links',              // UDS Grid Links.
