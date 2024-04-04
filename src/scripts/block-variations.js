@@ -76,20 +76,5 @@ wp.domReady(() => {
 			isDefault: false,
 		}]
 	);
-
-	// Register block variation for card-header
-	wp.blocks.registerBlockVariation(
-		'core/heading',
-		{
-			name: 'card-header',
-			title: 'Card Header',
-			description: 'The header tag that show up within a card.',
-			attributes: {
-				level: 3, // Set the default heading level to H3
-				className: 'wp-card-header'
-			}
-		}
-	);
-
 });
 
