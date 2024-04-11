@@ -29,7 +29,7 @@ $template       = array(
 /**
  * Output the card.
  */
-$cardpart  = '<div class="card-heading">';
+$cardpart  = '<div class="card-header">';
 $cardpart .= '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 $cardpart .= '</div>';
 
