@@ -118,7 +118,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * Add wrapper element to heading block within acf/card-v2
+ * Checks for acf/card-v2. Direct inner blocks of the basic card wrapper.
+ * Adds missing classes to several inner blocks associated with the pattern.
  */
 const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(BlockListBlock => {
   return props => {
@@ -126,9 +127,8 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
       name,
       attributes
     } = props;
-    const testBlocks = ['core/heading', 'core/buttons', 'core/button', 'core/group'];
+    const testBlocks = ['core/buttons', 'core/button', 'core/group', 'core/post-featured-image'];
     let customClass = '';
-    let customWrap = false;
     if (!testBlocks.includes(name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
         ...props
@@ -141,20 +141,21 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
     // Get the ID of the immediate parent and grandparent block.
     const parentClientId = wp.data.select('core/block-editor').getBlockParents(props.clientId, true)[0];
     const grandParentClientId = wp.data.select('core/block-editor').getBlockParents(props.clientId, true)[1];
-    // console.log(parentClientId);
-
     if (parentClientId) {
       const parentBlock = wp.data.select('core/block-editor').getBlock(parentClientId);
 
+      // Define the class map
+      const classMap = {
+        'core/group': 'card-body',
+        'core/buttons': 'card-buttons',
+        'core/post-featured-image': 'card-img-top'
+      };
+
       // Testing for core/group, core/buttons, core/heading
       if (parentBlock && allowedParentBlocks.includes(parentBlock.name)) {
-        if (name === 'core/heading') {
-          customClass = 'card-title';
-          customWrap = true;
-        } else if (name === 'core/group') {
-          customClass = 'card-body';
-        } else if (name === 'core/buttons') {
-          customClass = 'card-buttons';
+        // Check if the name exists in the classMap
+        if (classMap.hasOwnProperty(name)) {
+          customClass = classMap[name];
         }
       }
       const grandParentBlock = wp.data.select('core/block-editor').getBlock(grandParentClientId);
@@ -165,16 +166,6 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
           customClass = 'card-button';
         }
       }
-    }
-
-    // Add the custom class and custom wrap if both are set.
-    if (customClass && customWrap) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        class: "card-header"
-      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
-        ...props,
-        className: "card-title"
-      }));
     }
 
     // Add just custom class if it's set
@@ -191,7 +182,64 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
     });
   };
 }, 'udsCardInnerMarkup');
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/add-card-heading-wrapper', udsCardInnerMarkup);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/add-v2-card-classes', udsCardInnerMarkup);
+
+/**
+ * Checks for acf/card-v2-header.
+ * Adds missing classes for core/heading, core/post-title and other inner blocks.
+ */
+const udsCardHeaderInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(BlockListBlock => {
+  return props => {
+    const {
+      name,
+      attributes
+    } = props;
+    const testBlocks = ['core/heading'];
+    let customClass = '';
+    if (!testBlocks.includes(name)) {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+        ...props
+      });
+    }
+
+    // Define an array of allowed parent block names
+    const allowedParentBlocks = ['acf/card-v2-header'];
+
+    // Get the ID of the immediate parent and grandparent block.
+    const parentClientId = wp.data.select('core/block-editor').getBlockParents(props.clientId, true)[0];
+    if (parentClientId) {
+      const parentBlock = wp.data.select('core/block-editor').getBlock(parentClientId);
+      // console.log(parentBlock);
+
+      // Define the class map
+      const classMap = {
+        'core/heading': 'card-title'
+      };
+
+      // Testing for core/group, core/buttons, core/heading
+      if (parentBlock && allowedParentBlocks.includes(parentBlock.name)) {
+        // Check if the name exists in the classMap
+        if (classMap.hasOwnProperty(name)) {
+          customClass = classMap[name];
+        }
+      }
+    }
+
+    // Add just custom class if it's set
+    if (customClass) {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+        ...props,
+        className: customClass
+      });
+    }
+
+    // If there's no parent or the parent isn't in the allowed list, keep the original class
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+      ...props
+    });
+  };
+}, 'udsCardInnerMarkup');
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/add-v2-card-header-classes', udsCardHeaderInnerMarkup);
 }();
 /******/ })()
 ;
