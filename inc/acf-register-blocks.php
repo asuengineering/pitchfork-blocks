@@ -65,6 +65,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/breadcrumb',              // UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 		// '/card',               		// UDS Cards.
 		'/card-v2',					// Card v2
+		'/card-v2-image',			// Card v2 - Card Image
 		'/card-v2-header',			// Card v2 - Card Header
 		'/card-v2-tags',			// Card v2 - Card Tags
 		'/card-v2-badge',			// Card v2 - Card Badge

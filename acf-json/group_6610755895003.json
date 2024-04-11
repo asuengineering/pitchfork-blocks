@@ -1,0 +1,50 @@
+{
+    "key": "group_6610755895003",
+    "title": "PF Blocks: Card v2, Image",
+    "fields": [
+        {
+            "key": "field_66107558d94b7",
+            "label": "Card Image",
+            "name": "uds_card2_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/card-v2-image"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner block for ACF Card v2. Generates the .card-img-top image.",
+    "show_in_rest": 0,
+    "modified": 1712354854
+}
