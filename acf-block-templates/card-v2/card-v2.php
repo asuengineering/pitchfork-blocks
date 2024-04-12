@@ -61,9 +61,6 @@ $template       = array(
 		'acf/card-v2-image',
 		array(
 			'name' => 'acf/card-v2-image',
-			'data' => array(
-				'field_66107558d94b7' => ''
-			),
 			'mode' => 'preview'
 		),
 		array()
@@ -102,6 +99,23 @@ $template       = array(
 				array()
 			),
 
+		)
+	),
+	array(
+		'acf/card-v2-links',
+		array(
+			'name' => 'acf/card-v2-links',
+			'mode' => 'preview'
+		),
+		array(
+			array(
+				'acf/card-v2-link',
+				array(
+					'name' => 'acf/card-v2-link',
+					'mode' => 'preview'
+				),
+				array()
+			),
 		)
 	),
 );
