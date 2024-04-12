@@ -70,6 +70,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/card-v2-tags',			// Card v2 - Card Tags
 		'/card-v2-badge',			// Card v2 - Card Badge
 		'/card-v2-links',			// Card v2 - Card Links
+		'/card-v2-link',			// Card v2 - Card Link
 		'/card-foldable',           // UDS Foldable card block.
 		'/content-media-overlap',   // Miscellaneous content sections.
 		'/grid-links',              // UDS Grid Links.

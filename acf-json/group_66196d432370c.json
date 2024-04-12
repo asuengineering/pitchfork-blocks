@@ -1,0 +1,41 @@
+{
+    "key": "group_66196d432370c",
+    "title": "PF Blocks: Card v2, Link",
+    "fields": [
+        {
+            "key": "field_66196d5510128",
+            "label": "Card Link",
+            "name": "uds_card2_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/card-v2-link"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner block for ACF Card v2. Generates the .card-img-top image.",
+    "show_in_rest": 0,
+    "modified": 1712942472
+}
