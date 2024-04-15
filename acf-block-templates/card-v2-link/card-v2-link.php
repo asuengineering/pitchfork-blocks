@@ -16,8 +16,6 @@ $link_url = '';
 $link_title = '';
 $link_target = '';
 
-do_action('qm/debug', $link);
-
 if ( $link ) {
     $link_url = $link['url'];
     $link_title = $link['title'];

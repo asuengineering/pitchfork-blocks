@@ -1,0 +1,142 @@
+{
+    "key": "group_661d8dcf74644",
+    "title": "PF Blocks: Card v2, Event Date",
+    "fields": [
+        {
+            "key": "field_661d8efb2c39a",
+            "label": "Event Date",
+            "name": "uds_card2_event_date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "l, F j, Y",
+            "return_format": "l, F j, Y",
+            "first_day": 0
+        },
+        {
+            "key": "field_661d90402c39b",
+            "label": "Start Time",
+            "name": "uds_card2_event_start",
+            "aria-label": "",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a"
+        },
+        {
+            "key": "field_661d90ac2c39c",
+            "label": "End Time",
+            "name": "uds_card2_event_end",
+            "aria-label": "",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a"
+        },
+        {
+            "key": "field_661d8dcf76955",
+            "label": "Date\/Time as Text",
+            "name": "uds_card2_event_override",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter an arbitrary date and time. Be sure to format your date using the <a href=\"https:\/\/links.asu.edu\/FSEguide\" target=\"_blank\">latest style guide<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_661d91ef87e6a",
+            "label": "Location",
+            "name": "uds_card2_event_location",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Add a location",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_661d929d87e6b",
+            "label": "Layout options",
+            "name": "uds_card2_event_layout",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "compact": "Side-by-side",
+                "newline": "Date and location on separate lines"
+            },
+            "default_value": "compact",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/card-v2-event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner block for ACF Card v2. Generates the .card-img-top image.",
+    "show_in_rest": 0,
+    "modified": 1713216816
+}

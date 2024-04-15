@@ -65,12 +65,13 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/breadcrumb',              // UDS Breadcrumbs, via Hybrid Breadcrumbs (composer)
 		// '/card',               		// UDS Cards.
 		'/card-v2',					// Card v2
+		'/card-v2-event',			// Card v2 - Card Event
 		'/card-v2-image',			// Card v2 - Card Image
 		'/card-v2-header',			// Card v2 - Card Header
-		'/card-v2-tags',			// Card v2 - Card Tags
 		'/card-v2-tag',				// Card v2 - Card Tag
-		'/card-v2-links',			// Card v2 - Card Links
+		'/card-v2-tags',			// Card v2 - Card Tags
 		'/card-v2-link',			// Card v2 - Card Link
+		'/card-v2-links',			// Card v2 - Card Links
 		'/card-foldable',           // UDS Foldable card block.
 		'/content-media-overlap',   // Miscellaneous content sections.
 		'/grid-links',              // UDS Grid Links.
