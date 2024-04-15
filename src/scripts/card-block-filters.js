@@ -120,3 +120,4 @@ addFilter(
 	'pf-blocks/add-v2-card-header-classes',
 	udsCardHeaderInnerMarkup
 );
+

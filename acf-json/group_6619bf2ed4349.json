@@ -1,0 +1,45 @@
+{
+    "key": "group_6619bf2ed4349",
+    "title": "PF Blocks: Card v2, Tag",
+    "fields": [
+        {
+            "key": "field_6619bf4552e03",
+            "label": "Card Tag Text",
+            "name": "uds_card2_tag_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "card tag",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/card-v2-tag"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Inner block for ACF Card v2. Generates the .card-img-top image.",
+    "show_in_rest": 0,
+    "modified": 1713203803
+}

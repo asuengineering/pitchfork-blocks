@@ -15,23 +15,37 @@
  * Sets Inner Blocks template and allowed blocks attributes.
  */
 
-$allowed_blocks = array( 'core/card-badge', 'core/categories', 'core/tags' );
-// $template       = array(
-// 	array(
-// 		'core/heading',
-// 		array(
-// 			'level'   => 3,
-// 			'placeholder' => 'Card title'
-// 		),
-// 	)
-// );
+$allowed_blocks = array( 'core/post-terms', 'acf/card-v2-tag' );
+$template       = array(
+	array(
+		'acf/card-v2-tag',
+		array(
+			'name' => 'acf/card-v2-tag',
+			'data' => array(
+				'uds_card2_tag_text' => 'card tag',
+			),
+			'mode' => 'preview'
+		),
+		array()
+	),
+	array(
+		'acf/card-v2-tag',
+		array(
+			'name' => 'acf/card-v2-tag',
+			'data' => array(
+				'uds_card2_tag_text' => 'second tag',
+			),
+			'mode' => 'preview'
+		),
+		array()
+	),
+);
 
 /**
  * Output the card.
  */
 $cardpart  = '<div class="card-tags">';
-$cardpart .= '<p class="badge text-bg-gray-2">test badge</p><p class="badge text-bg-gray-7">second badge</p>';
-// $cardpart .= '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+$cardpart .= '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" orientation="horizontal" />';
 $cardpart .= '</div>';
 
 echo $cardpart;

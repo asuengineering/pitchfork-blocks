@@ -23,8 +23,17 @@
 	}
 }
 
+/*--------------------------------------------------------------
+# UDS Cards v2
+--------------------------------------------------------------*/
+
 // Card v2
 .acf-block-preview .wp-card-v2.card {
 	padding: 0px;
 	max-width: 100%;
+}
+
+// Card tags, inner blocks should be in a row.
+.wp-block-acf-card-v2-tags .acf-innerblocks-container {
+	display: flex
 }
