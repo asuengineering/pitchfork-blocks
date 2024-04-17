@@ -33,6 +33,31 @@
 	max-width: 100%;
 }
 
+// Horizontal card layout within editor.
+.acf-block-preview.wp-block-acf-card-v2 .card-horizontal {
+
+	.acf-innerblocks-container {
+		display: contents;
+	}
+
+	.wp-block-acf-card-v2-image {
+		grid-column: 1;
+		grid-row: 1 / span 6;
+		height: 100%;
+		width: 100%;
+		max-width: none;
+		max-height: none;
+		aspect-ratio: auto;
+	}
+
+	.wp-block-acf-card-v2-header,
+	.wp-block-acf-card-v2-event,
+	.wp-block-acf-card-v2-links {
+		grid-column: 2;
+	}
+
+}
+
 // Card tags, inner blocks should be in a row.
 .wp-block-acf-card-v2-tags .acf-innerblocks-container {
 	display: flex

@@ -54,7 +54,7 @@ wp.domReady(() => {
     isDefault: false
   }]);
   wp.blocks.registerBlockStyle('acf/card-v2', [{
-    name: 'card-Event',
+    name: 'card-event',
     label: 'Event card',
     isDefault: false
   }]);

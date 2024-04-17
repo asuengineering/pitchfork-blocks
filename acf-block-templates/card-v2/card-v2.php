@@ -13,26 +13,22 @@
  *
  */
 
-$header_style   = get_field( 'uds_card2_header_style' );
-$header_image = get_field( 'uds_card2_image' );
-$header_icon  = get_field( 'uds_card2_icon' );
-$orientation   = get_field( 'uds_card2_orientation' );
-
-// do_action('qm/debug', $block);
+$orientation  = get_field( 'uds_card2_orientation' );
 
 /**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
- * --------------------
  */
 $spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
 /**
  * Add block style support for story, degree and event cards.
+ * Add horizontal/vertical class modifier.
  * Get additional class names from block advanced panel.
  */
 
 $card_classes = array( 'wp-card-v2', 'card' );
+$card_classes[] = "card-" . $orientation;
 
 if ( ! empty( $block['className'] ) ) {
 

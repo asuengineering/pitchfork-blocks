@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+# UDS Card v2 + related inner blocks
+
+- Horizontal card orientation requires CSS grid not flexbox.
+-------------------------------------------------------------- */
+
+.wp-card-v2.card-horizontal {
+	display: grid;
+	grid-template-columns: 40% auto;
+	grid-template-rows: repeat(6, auto);
+
+	.card-img-top {
+		grid-column: 1;
+		grid-row: 1 / span 6;
+		height: 100%;
+		width: 100%;
+		max-width: none;
+		max-height: none;
+		aspect-ratio: auto;
+	}
+
+	.card-header,
+	.card-body,
+	.card-event-details,
+	.card-buttons,
+	.card-link,
+	.card-tags {
+		grid-column: 2
+	}
+}

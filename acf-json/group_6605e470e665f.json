@@ -3,141 +3,6 @@
     "title": "PF Blocks: Card v2",
     "fields": [
         {
-            "key": "field_6605e470e79cf",
-            "label": "Image, Icon and Style",
-            "name": "",
-            "aria-label": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 1,
-            "endpoint": 0
-        },
-        {
-            "key": "field_6605e470e79d1",
-            "label": "Card Style",
-            "name": "uds_card2_card_style",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "basic": "Basic",
-                "degree": "Degree",
-                "event": "Event",
-                "story": "Story"
-            },
-            "default_value": "",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_6605e470e79d4",
-            "label": "Header Style",
-            "name": "uds_card2_header_style",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "none": "Basic",
-                "icon": "Icon",
-                "image": "Image"
-            },
-            "default_value": "none",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_6605e470e79d7",
-            "label": "Image",
-            "name": "uds_card2_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6605e470e79d4",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "thumbnail"
-        },
-        {
-            "key": "field_6605e783c68b3",
-            "label": "Icon",
-            "name": "uds_card2_icon",
-            "aria-label": "",
-            "type": "font-awesome",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "icon_sets": [
-                "solid",
-                "regular",
-                "light",
-                "thin",
-                "duotone",
-                "brands"
-            ],
-            "custom_icon_set": "",
-            "default_label": "",
-            "default_value": "",
-            "save_format": "element",
-            "allow_null": 0,
-            "show_preview": 1,
-            "enqueue_fa": 0,
-            "fa_live_preview": "",
-            "choices": []
-        },
-        {
             "key": "field_6605e470e79dc",
             "label": "Orientation",
             "name": "uds_card2_orientation",
@@ -161,22 +26,6 @@
             "other_choice": 0,
             "layout": "vertical",
             "save_other_choice": 0
-        },
-        {
-            "key": "field_660de100c6953",
-            "label": "Link Field (Temp)",
-            "name": "link_field_temp",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
         }
     ],
     "location": [
@@ -197,5 +46,5 @@
     "active": true,
     "description": "Fields for creating static, but customizable, versions of all UDS card types: standard, story, degree, and event.",
     "show_in_rest": 0,
-    "modified": 1712185636
+    "modified": 1713375255
 }
