@@ -4,6 +4,16 @@
 - Horizontal card orientation requires CSS grid not flexbox.
 - Horizontal card orientation only applies > medium breakpoint.
 -------------------------------------------------------------- */
+.wp-card-v2 {
+	&.card-story {
+
+		.card-buttons,
+		.card-event-details {
+			margin: 0 $uds-size-spacing-2;
+		}
+	}
+}
+
 @include media-breakpoint-up($md) {
 	.wp-card-v2.card-horizontal {
 		display: grid;
@@ -12,7 +22,7 @@
 
 		.card-img-top {
 			grid-column: 1;
-			grid-row: 1 / span 6;
+			grid-row: 1 / span 20;
 			height: 100%;
 			width: 100%;
 			max-width: none;
@@ -70,10 +80,12 @@
 
 			.card-event-details {
 				grid-row: 4;
+				margin: 0;
 			}
 
 			.card-buttons {
 				grid-row: 5;
+				margin: 0;
 			}
 
 			.card-link {
