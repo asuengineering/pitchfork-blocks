@@ -2,29 +2,87 @@
 # UDS Card v2 + related inner blocks
 
 - Horizontal card orientation requires CSS grid not flexbox.
+- Horizontal card orientation only applies > medium breakpoint.
 -------------------------------------------------------------- */
+@include media-breakpoint-up($md) {
+	.wp-card-v2.card-horizontal {
+		display: grid;
+		grid-template-columns: 40% auto;
+		grid-template-rows: repeat(6, auto);
 
-.wp-card-v2.card-horizontal {
-	display: grid;
-	grid-template-columns: 40% auto;
-	grid-template-rows: repeat(6, auto);
+		.card-img-top {
+			grid-column: 1;
+			grid-row: 1 / span 6;
+			height: 100%;
+			width: 100%;
+			max-width: none;
+			max-height: none;
+			aspect-ratio: auto;
+		}
 
-	.card-img-top {
-		grid-column: 1;
-		grid-row: 1 / span 6;
-		height: 100%;
-		width: 100%;
-		max-width: none;
-		max-height: none;
-		aspect-ratio: auto;
-	}
+		.card-header,
+		.card-body,
+		.card-event-details,
+		.card-buttons,
+		.card-link,
+		.card-tags {
+			grid-column: 2
+		}
 
-	.card-header,
-	.card-body,
-	.card-event-details,
-	.card-buttons,
-	.card-link,
-	.card-tags {
-		grid-column: 2
+		&.card-event {
+			.card-img-top {
+				border-right: solid $uds-size-spacing-1 $uds-color-base-gold;
+			}
+		}
+
+		&.card-story {
+			grid-template-columns: calc(40% - 2em) $uds-size-spacing-4 auto;
+			grid-template-rows: $uds-size-spacing-4 repeat(6, auto) $uds-size-spacing-4;
+
+			>* {
+				position: relative;
+			}
+
+			.card-img-top {
+				grid-column: 1 / span 2;
+				grid-row: 1 / span 8;
+				z-index: 10
+			}
+
+			.card-header,
+			.card-body,
+			.card-event-details,
+			.card-buttons,
+			.card-link,
+			.card-tags {
+				grid-column: 2 / span 2;
+				background-color: $uds-color-base-white;
+				z-index: 20;
+			}
+
+			.card-header {
+				grid-row: 2;
+			}
+
+			.card-body {
+				grid-row: 3;
+			}
+
+			.card-event-details {
+				grid-row: 4;
+			}
+
+			.card-buttons {
+				grid-row: 5;
+			}
+
+			.card-link {
+				grid-row: 6;
+			}
+
+			.card-tags {
+				grid-row: 7;
+			}
+		}
 	}
 }

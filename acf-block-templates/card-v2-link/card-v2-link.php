@@ -27,6 +27,9 @@ if ( $link ) {
  * UDS Data attributes added during content render via HTML Tag Processer API.
  * See:
  */
+
+$cardpart = '';
+
 if ( $link ) {
 	$cardpart = '<a href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
 } else {
