@@ -1,13 +1,13 @@
 {
     "key": "group_6610755895003",
-    "title": "PF Blocks: Card v2, Image",
+    "title": "PF Blocks: Card v2, Icon",
     "fields": [
         {
-            "key": "field_66107558d94b7",
-            "label": "Card Image",
-            "name": "uds_card2_image",
+            "key": "field_6605e783c68b3",
+            "label": "Card Icon",
+            "name": "uds_card2_icon",
             "aria-label": "",
-            "type": "image",
+            "type": "font-awesome",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,16 +16,23 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "icon_sets": [
+                "solid",
+                "regular",
+                "light",
+                "thin",
+                "duotone",
+                "brands"
+            ],
+            "custom_icon_set": "",
+            "default_label": "",
+            "default_value": "",
+            "save_format": "object",
+            "allow_null": 1,
+            "show_preview": 1,
+            "enqueue_fa": 0,
+            "fa_live_preview": "",
+            "choices": []
         }
     ],
     "location": [
@@ -33,7 +40,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/card-v2-image"
+                "value": "acf\/card-v2-icon"
             }
         ]
     ],
@@ -46,5 +53,5 @@
     "active": true,
     "description": "Inner block for ACF Card v2. Generates the .card-img-top image.",
     "show_in_rest": 0,
-    "modified": 1712354854
+    "modified": 1713396730
 }
