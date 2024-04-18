@@ -12,6 +12,10 @@
 			margin: 0 $uds-size-spacing-2;
 		}
 	}
+
+	figure {
+		margin-bottom: 0;
+	}
 }
 
 @include media-breakpoint-up($md) {

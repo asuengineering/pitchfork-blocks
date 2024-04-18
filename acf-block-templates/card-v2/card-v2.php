@@ -54,19 +54,44 @@ if ( ! empty( $block['className'] ) ) {
 $allowed_blocks = array( 'core/image', 'acf/card-v2-header', 'acf/card-v2-tags', 'acf/card-v2-links', 'acf/card-v2-icon', 'core/post-featured-image', 'core/group', 'core/buttons' );
 $template       = array(
 	array(
-		'acf/card-v2-icon',
+		'core/image',
 		array(
-			'name' => 'acf/card-v2-icon',
-			'mode' => 'preview'
+			'lock' => array(
+				'move' => true,
+				'remove' => false
+			)
 		),
 		array()
 	),
 	array(
 		'acf/card-v2-header',
+		array(
+			'name' => 'acf/card-v2-header',
+			'mode' => 'preview',
+			'lock' => array(
+				'move' => true,
+				'remove' => true
+			)
+		),
+		array(
+			array(
+				'core/heading',
+				array(
+					'level' => 3,
+					'placeholder' => 'Card title'
+				),
+				array()
+			),
+
+		)
 	),
 	array(
 		'core/group',
 		array(
+			'lock' => array(
+				'move' => true,
+				'remove' => true
+			),
 			'metadata' => array(
 				'name' => 'Card Content'
 			)
@@ -90,28 +115,11 @@ $template       = array(
 				'core/button',
 				array(
 					'backgroundColor' => 'asu-maroon',
-					'className' => 'is-style-uds-md'
+					'className' => 'is-style-'
 				),
 				array()
 			),
 
-		)
-	),
-	array(
-		'acf/card-v2-links',
-		array(
-			'name' => 'acf/card-v2-links',
-			'mode' => 'preview'
-		),
-		array(
-			array(
-				'acf/card-v2-link',
-				array(
-					'name' => 'acf/card-v2-link',
-					'mode' => 'preview'
-				),
-				array()
-			),
 		)
 	),
 );
@@ -119,20 +127,11 @@ $template       = array(
 /**
  * Output the card.
  */
-$card  = '<div class="' . implode( ' ', $card_classes ) . '" style="' . $spacing . '">';
+echo '<div class="' . implode( ' ', $card_classes ) . '" style="' . $spacing . '">';
 
-echo wp_kses_post( $card );
-echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) .
+     '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+
 echo '</div>';
 
-/** Output */
-// echo '<div class="' . implode( ' ', $card_classes ) . '" style="' . $spacing . '">';
-// echo '<div class="card-header"></div>
-// <div class="card-body">
-// 	<p class="card-text">
-// 		Body copy goes here. Limit to 5 lines max. Lorem ipsum dolor sit
-// 		amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-// 		ut labore et dolore magna aliqua eiusmod tempo.
-// 	</p>
-// </div>
-// </div>';
+

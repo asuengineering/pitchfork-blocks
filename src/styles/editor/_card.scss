@@ -99,3 +99,9 @@
 .acf-block-preview.wp-block-acf-card-v2-tags .card-tags .acf-innerblocks-container {
 	display: flex;
 }
+
+.acf-block-preview.wp-block-acf-card-v2 .card-img-top.wp-block-image {
+	height: unset;
+}
+
+//
