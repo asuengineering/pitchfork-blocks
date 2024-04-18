@@ -8,7 +8,7 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 const udsCardInnerMarkup = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
 		const { name, attributes } = props;
-		const testBlocks = ['core/buttons', 'core/button', 'core/group', 'core/post-featured-image'];
+		const testBlocks = ['core/buttons', 'core/button', 'core/group', 'core/post-featured-image', 'core/image'];
 		let customClass = '';
 
 		if (!testBlocks.includes(name)) {
@@ -29,6 +29,7 @@ const udsCardInnerMarkup = createHigherOrderComponent((BlockListBlock) => {
 			const classMap = {
 				'core/group': 'card-body',
 				'core/buttons': 'card-buttons',
+				'core/image': 'card-img-top',
 				'core/post-featured-image': 'card-img-top',
 			};
 

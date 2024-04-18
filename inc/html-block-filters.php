@@ -58,26 +58,41 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
         return $block_content;
     }
 
-	// Process group block first, then button block.
-	// Two calls to the processor just in case the inner blocks happen to be out of the normal order.
+	// Process all possible class insertions needed.
+	// Reset to block start after each check to deal with missing elements.
 
     $processor = new WP_HTML_Tag_Processor( $block_content );
+	$processor->set_bookmark( 'block-start' );
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-image' ) ) ) {
+		$processor->add_class( 'card-img-top' );
+	}
+
+	$processor->seek('block-start');
 
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-heading' ) ) ) {
 		$processor->add_class( 'card-title' );
 	}
 
+	$processor->seek('block-start');
+
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-group' ) ) ) {
 		$processor->add_class( 'card-body' );
 	}
+
+	$processor->seek('block-start');
 
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-buttons' ) ) ) {
 		$processor->add_class( 'card-buttons' );
 	}
 
+	$processor->seek('block-start');
+
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-button' ) ) ) {
 		$processor->add_class( 'card-button' );
 	}
+
+	$processor->seek('block-start');
 
     return $processor->get_updated_html();
 }
