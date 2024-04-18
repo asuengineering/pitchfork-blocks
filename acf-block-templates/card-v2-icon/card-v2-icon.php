@@ -1,12 +1,12 @@
 <?php
 /**
- * PF Blocks - Card v2 - Card Image
+ * PF Blocks - Card v2 - Card Icon
  *
  * @package Pitchfork Blocks
  * @author Steve Ryan
  *
- * An inner block for creating the card-image wrapper.
- * Uses a single ACF field to defin the image.
+ * An inner block for adding a card icon at the top of the card.
+ * Uses a single ACF field (FA icon picker) to define the icon.
  *
  */
 
