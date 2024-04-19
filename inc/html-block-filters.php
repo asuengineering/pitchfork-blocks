@@ -84,12 +84,14 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
 
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-buttons' ) ) ) {
 		$processor->add_class( 'card-buttons' );
-	}
 
-	$processor->seek('block-start');
+		// Check for up to 5 single buttons immediately following the buttons parent block.
+		for ($i = 1; $i <= 5; $i++) {
+			if ( $processor->next_tag( array( 'class_name' => 'wp-block-button' ) ) ) {
+				$processor->add_class( 'card-button' );
+			}
+		}
 
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-button' ) ) ) {
-		$processor->add_class( 'card-button' );
 	}
 
 	$processor->seek('block-start');

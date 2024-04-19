@@ -16,6 +16,10 @@
 	figure {
 		margin-bottom: 0;
 	}
+
+	.wp-block-buttons.is-layout-flex {
+		gap: 0;
+	}
 }
 
 @include media-breakpoint-up($md) {
