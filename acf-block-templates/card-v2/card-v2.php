@@ -60,6 +60,7 @@ $allowed_blocks = array(
 	'core/post-featured-image',
 	'core/group',
 	'core/buttons',
+	'core/post-terms'
 );
 
 $template = array(

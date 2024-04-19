@@ -15,7 +15,7 @@
  * Sets Inner Blocks template and allowed blocks attributes.
  */
 
-$allowed_blocks = array( 'core/post-terms', 'acf/card-v2-tag' );
+$allowed_blocks = array( 'acf/card-v2-tag' );
 $template       = array(
 	array(
 		'acf/card-v2-tag',

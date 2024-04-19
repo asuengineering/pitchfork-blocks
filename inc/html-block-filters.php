@@ -96,7 +96,34 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
 
 	$processor->seek('block-start');
 
-    return $processor->get_updated_html();
+	if ( $processor->next_tag( array( 'class_name' => 'taxonomy-category' ) ) ) {
+		$processor->add_class( 'card-tags' );
+
+		// Check for any following links and give them button classes.
+		while ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
+			$rel_check = $processor->get_attribute('rel');
+			if ( $rel_check === 'tag' ) {
+				$processor->add_class( 'btn btn-tag btn-tag-alt-white' );
+			}
+		}
+	}
+
+	$processor->seek('block-start');
+
+	if ( $processor->next_tag( array( 'class_name' => 'taxonomy-post_tag' ) ) ) {
+		$processor->add_class( 'card-tags' );
+
+		// Check for any following links and give them button classes.
+		while ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
+			$rel_check = $processor->get_attribute('rel');
+			if ( $rel_check === 'tag' ) {
+				$processor->add_class( 'btn btn-tag btn-tag-alt-white' );
+			}
+		}
+	}
+
+	return $processor->get_updated_html();
+
 }
 add_filter( 'render_block', 'pitchfork_add_missing_classes_to_cardv2', 10, 2 );
 

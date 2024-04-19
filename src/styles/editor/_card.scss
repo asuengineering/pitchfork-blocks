@@ -100,8 +100,14 @@
 	display: flex;
 }
 
-.acf-block-preview.wp-block-acf-card-v2 .card-img-top.wp-block-image {
-	height: unset;
+.acf-block-preview.wp-block-acf-card-v2 {
+	.card-img-top.wp-block-image {
+		height: unset;
+	}
+
+	.wp-block-post-terms span.wp-block-post-terms__separator {
+		display: inline;
+	}
 }
 
 //

@@ -127,7 +127,7 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
       name,
       attributes
     } = props;
-    const testBlocks = ['core/buttons', 'core/button', 'core/group', 'core/post-featured-image', 'core/image'];
+    const testBlocks = ['core/buttons', 'core/button', 'core/group', 'core/post-featured-image', 'core/post-terms'];
     let customClass = '';
     if (!testBlocks.includes(name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
@@ -148,13 +148,12 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
       const classMap = {
         'core/group': 'card-body',
         'core/buttons': 'card-buttons',
-        'core/image': 'card-img-top',
-        'core/post-featured-image': 'card-img-top'
+        'core/post-featured-image': 'card-img-top',
+        'core/post-terms': 'card-tags'
       };
 
-      // Testing for core/group, core/buttons, core/heading
+      // Apply classMap classes according to the encountered block type.
       if (parentBlock && allowedParentBlocks.includes(parentBlock.name)) {
-        // Check if the name exists in the classMap
         if (classMap.hasOwnProperty(name)) {
           customClass = classMap[name];
         }

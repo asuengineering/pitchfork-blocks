@@ -20,6 +20,17 @@
 	.wp-block-buttons.is-layout-flex {
 		gap: 0;
 	}
+
+	.wp-block-post-terms {
+
+		a.btn::first-letter {
+			text-transform: none;
+		}
+
+		.wp-block-post-terms__separator {
+			display: none;
+		}
+	}
 }
 
 @include media-breakpoint-up($md) {
