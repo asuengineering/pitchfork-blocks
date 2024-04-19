@@ -67,6 +67,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/card-v2',					// Card v2
 		'/card-v2-event',			// Card v2 - Card Event
 		'/card-v2-icon',			// Card v2 - Card Icon
+		'/card-v2-image',			// Card v2 - Card Image
 		'/card-v2-header',			// Card v2 - Card Header
 		'/card-v2-tag',				// Card v2 - Card Tag
 		'/card-v2-tags',			// Card v2 - Card Tags

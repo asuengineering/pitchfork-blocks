@@ -43,7 +43,8 @@ add_filter( 'acf/settings/load_json', 'pitchfork_blocks_acf_json_load_point' );
  * - UDS Fieldset: Button - group_601db250e6c94
  * - UDS Block: Card v2 - group_6605e470e665f
  * - UDS Block: Card v2, Event Date - group_661d8dcf74644
- * - UDS Block: Card v2, Image - group_6610755895003
+ * - UDS Block: Card v2, Icon - group_6610755895003
+ * - UDS Block: Card v2, Image - group_6622a98c98ca0
  * - UDS Block: Card v2, Link - group_66196d432370c
  * - UDS Block: Card v2, Tag - group_6619bf2ed4349
  *
@@ -72,5 +73,6 @@ add_filter( 'acf/settings/save_json/key=group_601db250e6c94', 'pitchfork_blocks_
 add_filter( 'acf/settings/save_json/key=group_6605e470e665f', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_661d8dcf74644', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_6610755895003', 'pitchfork_blocks_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_6622a98c98ca0', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_66196d432370c', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_6619bf2ed4349', 'pitchfork_blocks_field_groups' );
