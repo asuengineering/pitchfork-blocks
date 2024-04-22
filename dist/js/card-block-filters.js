@@ -194,7 +194,7 @@ const udsCardHeaderInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_
       name,
       attributes
     } = props;
-    const testBlocks = ['core/heading'];
+    const testBlocks = ['core/heading', 'core/post-title'];
     let customClass = '';
     if (!testBlocks.includes(name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
@@ -213,7 +213,8 @@ const udsCardHeaderInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_
 
       // Define the class map
       const classMap = {
-        'core/heading': 'card-title'
+        'core/heading': 'card-title',
+        'core/post-title': 'card-title'
       };
 
       // Testing for core/group, core/buttons, core/heading

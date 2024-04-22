@@ -79,7 +79,7 @@ addFilter(
 const udsCardHeaderInnerMarkup = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
 		const { name, attributes } = props;
-		const testBlocks = ['core/heading'];
+		const testBlocks = ['core/heading', 'core/post-title'];
 		let customClass = '';
 
 		if (!testBlocks.includes(name)) {
@@ -99,6 +99,7 @@ const udsCardHeaderInnerMarkup = createHigherOrderComponent((BlockListBlock) => 
 			// Define the class map
 			const classMap = {
 				'core/heading': 'card-title',
+				'core/post-title': 'card-title'
 			};
 
 			// Testing for core/group, core/buttons, core/heading

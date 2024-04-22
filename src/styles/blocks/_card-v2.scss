@@ -21,6 +21,7 @@
 		gap: 0;
 	}
 
+	// Additional markup to clean up query loop story cards.
 	.wp-block-post-terms {
 
 		a.btn::first-letter {
@@ -30,6 +31,19 @@
 		.wp-block-post-terms__separator {
 			display: none;
 		}
+	}
+
+	.wp-block-post-featured-image {
+		z-index: 10;
+	}
+
+	.card-header {
+		z-index: 20;
+	}
+
+	.wp-block-post-title {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 

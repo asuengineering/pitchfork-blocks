@@ -70,7 +70,19 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
 
 	$processor->seek('block-start');
 
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-post-featured-image' ) ) ) {
+		$processor->add_class( 'card-img-top' );
+	}
+
+	$processor->seek('block-start');
+
 	if ( $processor->next_tag( array( 'class_name' => 'wp-block-heading' ) ) ) {
+		$processor->add_class( 'card-title' );
+	}
+
+	$processor->seek('block-start');
+
+	if ( $processor->next_tag( array( 'class_name' => 'wp-block-post-title' ) ) ) {
 		$processor->add_class( 'card-title' );
 	}
 
