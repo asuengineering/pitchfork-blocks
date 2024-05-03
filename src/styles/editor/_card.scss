@@ -5,23 +5,11 @@
   of "card" in various places.
 --------------------------------------------------------------*/
 
-
-.acf-block-preview .card {
-	&.card-horizontal {
-		max-width: none;
-	}
+.acf-block-preview .card.card-v1 {
+	background-color: rgba(231, 73, 115, 0.25); // ASU Pink, 10% opacity.
+	border: 3px solid rgba(231, 73, 115, 1.0);
 }
 
-.acf-block-preview .card {
-	&.card-foldable {
-		max-width: none;
-		padding: 0;
-
-		.card-header.card-header-icon .card-icon {
-			margin-bottom: 0;
-		}
-	}
-}
 
 /*--------------------------------------------------------------
 # UDS Cards v2
@@ -30,7 +18,7 @@
 // Card v2
 .acf-block-preview .wp-card-v2.card {
 	padding: 0px;
-	max-width: 100%;
+	max-width: none;
 }
 
 /**

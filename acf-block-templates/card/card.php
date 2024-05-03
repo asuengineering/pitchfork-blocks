@@ -88,7 +88,7 @@ if ( ! empty( $image_data ) ) {
 }
 ?>
 
-<div class="card <?php echo $style_class; ?> <?php echo $orientation_class; ?> <?php echo $additional_classes; ?> <?php echo $hover_class; ?>" style="<?php echo $spacing; ?>">
+<div class="card card-v1 <?php echo $style_class; ?> <?php echo $orientation_class; ?> <?php echo $additional_classes; ?> <?php echo $hover_class; ?>" style="<?php echo $spacing; ?>">
 	<?php if ( 'image' == $header_style ) : ?>
 		<img class="card-img-top" src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
 	<?php endif; ?>
