@@ -138,22 +138,3 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
 
 }
 add_filter( 'render_block', 'pitchfork_add_missing_classes_to_cardv2', 10, 2 );
-
-/**
- * Remove ACF block wrapper from front end display of blocks associated with acf/card-v2.
- */
-function acf_remove_cardv2_innerblock_wrapper( $wrap, $name ) {
-	$acf_wrap_removal = array(
-		'acf/card-v2',
-		'acf/card-v2-header',
-		'acf/card-v2-links'
-	);
-
-    if ( in_array( $name, $acf_wrap_removal )) {
-        return false;
-    };
-
-    return true;
-}
-add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_remove_cardv2_innerblock_wrapper', 10, 2 );
-

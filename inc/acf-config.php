@@ -76,3 +76,24 @@ add_filter( 'acf/settings/save_json/key=group_6610755895003', 'pitchfork_blocks_
 add_filter( 'acf/settings/save_json/key=group_6622a98c98ca0', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_66196d432370c', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_6619bf2ed4349', 'pitchfork_blocks_field_groups' );
+
+
+/**
+ * Remove ACF block wrapper from front end display of blocks associated with acf/card-v2.
+ * Filter given priority 30 to not conflict with PF People filter for the same thing (priority 10).
+ */
+function acf_remove_cardv2_innerblock_wrapper( $wrap, $name ) {
+	$acf_wrap_removal = array(
+		'acf/card-v2',
+		'acf/card-v2-header',
+		'acf/card-v2-links'
+	);
+
+    if ( in_array( $name, $acf_wrap_removal )) {
+        return false;
+    };
+
+    return true;
+}
+add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_remove_cardv2_innerblock_wrapper', 30, 2 );
+
