@@ -38,6 +38,7 @@ add_filter( 'acf/settings/load_json', 'pitchfork_blocks_acf_json_load_point' );
  * - UDS Block: Grid Links - group_60bf99d0b5ceb
  * - UDS Block: Hero - group_6114252e73759
  * - UDS Block: Hero (Video) - group_62ead7abbe15f
+ * - UDS Block: Hero, Post - group_663958fe2ef32
  * - UDS Block: Sidebar - group_62689708eb27e
  * - UDS Block: Subtitle - group_6250abdba7d2c
  * - UDS Fieldset: Button - group_601db250e6c94
@@ -67,6 +68,7 @@ add_filter( 'acf/settings/save_json/key=group_613fc14daf233', 'pitchfork_blocks_
 add_filter( 'acf/settings/save_json/key=group_60bf99d0b5ceb', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_6114252e73759', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_62ead7abbe15f', 'pitchfork_blocks_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_663958fe2ef32', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_62689708eb27e', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_6250abdba7d2c', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_601db250e6c94', 'pitchfork_blocks_field_groups' );
@@ -76,6 +78,7 @@ add_filter( 'acf/settings/save_json/key=group_6610755895003', 'pitchfork_blocks_
 add_filter( 'acf/settings/save_json/key=group_6622a98c98ca0', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_66196d432370c', 'pitchfork_blocks_field_groups' );
 add_filter( 'acf/settings/save_json/key=group_6619bf2ed4349', 'pitchfork_blocks_field_groups' );
+add_filter( 'acf/settings/save_json/key=group_66196d432370c', 'pitchfork_blocks_field_groups' );
 
 
 /**

@@ -77,6 +77,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/content-media-overlap',   // Miscellaneous content sections.
 		'/grid-links',              // UDS Grid Links.
 		'/hero',                    // UDS Hero block, v2
+		'/hero-post',				// UDS Hero, powered by info from a WP Query
 		'/hero-video',              // UDS Video hero
 		'/sidebar',                 // UDS Sidebar, powered by a custom ACF field to choose the menu object.
 		'/subtitle',                // Subtitle block, for use within the hero.
