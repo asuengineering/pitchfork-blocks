@@ -8,8 +8,8 @@
             "name": "uds_hero_post_size",
             "aria-label": "",
             "type": "select",
-            "instructions": "Choose",
-            "required": 0,
+            "instructions": "Sizes limited to medium and large. Small hero can't contain text.",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -20,13 +20,253 @@
                 "uds-hero-md": "Medium (1920x512)",
                 "uds-hero-lg": "Large (1920x684)"
             },
-            "default_value": "medium",
+            "default_value": "uds-hero-md",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_66395cafe2b41",
+            "label": "Query Source",
+            "name": "uds_hero_post_source",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "latest": "Latest post",
+                "direct": "Selected post",
+                "category": "Limit by category",
+                "post_tag": "Limit by tag"
+            },
+            "default_value": "latest",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_66395e1de2b42",
+            "label": "Post selection",
+            "name": "uds_hero_post_single",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66395cafe2b41",
+                        "operator": "==",
+                        "value": "direct"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_66395eb8e2b43",
+            "label": "Which category?",
+            "name": "uds_hero_post_category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66395cafe2b41",
+                        "operator": "==",
+                        "value": "category"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_66395fc6e2b44",
+            "label": "Which tag?",
+            "name": "uds_hero_post_tag",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66395cafe2b41",
+                        "operator": "==",
+                        "value": "post_tag"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_66396068daa58",
+            "label": "Offset results?",
+            "name": "uds_hero_post_offset",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Offset the query results by this number of posts.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66395cafe2b41",
+                        "operator": "!=",
+                        "value": "direct"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": 0,
+            "max": 10,
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66396dec4226d",
+            "label": "Button options",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66396e124226e",
+            "label": "What color?",
+            "name": "uds_hero_post_btn_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "maroon": "Maroon",
+                "gold": "Gold",
+                "gray": "Gray",
+                "dark": "Black"
+            },
+            "default_value": "maroon",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_66396ebf4226f",
+            "label": "Button text",
+            "name": "uds_hero_post_btn_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read more",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66396f30e44f1",
+            "label": "Need more buttons?",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This block supports the <code>core\/button<\/code> block as an InnerBlock for additional flexibility.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -47,5 +287,5 @@
     "active": true,
     "description": "The beloved topper of nearly every page you'll build.",
     "show_in_rest": 0,
-    "modified": 1715034983
+    "modified": 1715642129
 }
