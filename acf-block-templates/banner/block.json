@@ -1,14 +1,18 @@
 {
-    "name": "acf/banner",
-    "title": "UDS Banner",
-    "description": "Banner style message. Full-width. Use with repeatable blocks. Uses Inner Blocks for content.",
-    "category": "pitchfork-blocks",
-    "icon": "star-filled",
-    "keywords": ["banner", "dismiss", "message"],
-    "acf": {
-        "mode": "preview",
-        "renderTemplate": "banner.php"
-    },
+	"name": "acf/banner",
+	"title": "UDS Banner",
+	"description": "Banner style message. Full-width. Use with repeatable blocks. Uses Inner Blocks for content.",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"banner",
+		"dismiss",
+		"message"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "banner.php"
+	},
 	"attributes": {
 		"align": {
 			"type": "string",
@@ -16,13 +20,19 @@
 		}
 	},
 	"supports": {
+		"anchor": true,
 		"spacing": {
-			"margin": ["top", "bottom"],
+			"margin": [
+				"top",
+				"bottom"
+			],
 			"padding": false
 		},
 		"multiple": false,
 		"classname": false,
-		"align": ["full"],
+		"align": [
+			"full"
+		],
 		"color": {
 			"background": true,
 			"text": false,

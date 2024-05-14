@@ -1,17 +1,24 @@
 {
-    "name": "acf/accordion",
-    "title": "UDS Accordion",
-    "description": "An accordion with optional independent expansion/contraction of inner cards.",
-    "category": "pitchfork-blocks",
-    "icon": "star-filled",
-    "keywords": ["accordion", "foldable", "expand"],
-    "acf": {
-        "mode": "edit",
-        "renderTemplate": "accordion.php"
-    },
+	"name": "acf/accordion",
+	"title": "UDS Accordion",
+	"description": "An accordion with optional independent expansion/contraction of inner cards.",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"accordion",
+		"foldable",
+		"expand"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "accordion.php"
+	},
 	"supports": {
 		"spacing": {
-			"margin": ["top", "bottom"],
+			"margin": [
+				"top",
+				"bottom"
+			],
 			"padding": true
 		},
 		"classname": false,
@@ -22,5 +29,7 @@
 			"link": false
 		}
 	},
-	"providesContext": {"acf/parentFields": "data"}
+	"providesContext": {
+		"acf/parentFields": "data"
+	}
 }

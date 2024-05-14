@@ -1,17 +1,24 @@
 {
-    "name": "acf/grid-links",
-    "title": "UDS Grid Links",
-    "description": "A series of formatted links arranged in a grid.",
-    "category": "pitchfork-blocks",
-    "icon": "grid-view",
-    "keywords": ["grid", "links"],
-    "acf": {
-        "mode": "preview",
-        "renderTemplate": "grid-links.php"
-    },
+	"name": "acf/grid-links",
+	"title": "UDS Grid Links",
+	"description": "A series of formatted links arranged in a grid.",
+	"category": "pitchfork-blocks",
+	"icon": "grid-view",
+	"keywords": [
+		"grid",
+		"links"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "grid-links.php"
+	},
 	"supports": {
+		"anchor": true,
 		"spacing": {
-			"margin": ["top", "bottom"],
+			"margin": [
+				"top",
+				"bottom"
+			],
 			"padding": true
 		},
 		"classname": false,

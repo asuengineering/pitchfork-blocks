@@ -1,17 +1,25 @@
 {
-    "name": "acf/blockquote",
-    "title": "UDS Blockquote",
-    "description": "Blockquote with a dozen formats. Uses inner blocks for content.",
-    "category": "pitchfork-blocks",
-    "icon": "star-filled",
-    "keywords": ["blockquote", "quote", "testimonial"],
-    "acf": {
-        "mode": "edit",
-        "renderTemplate": "blockquote.php"
-    },
+	"name": "acf/blockquote",
+	"title": "UDS Blockquote",
+	"description": "Blockquote with a dozen formats. Uses inner blocks for content.",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"blockquote",
+		"quote",
+		"testimonial"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "blockquote.php"
+	},
 	"supports": {
+		"anchor": true,
 		"spacing": {
-			"margin": ["top", "bottom"],
+			"margin": [
+				"top",
+				"bottom"
+			],
 			"padding": false
 		},
 		"classname": false,
