@@ -14,9 +14,17 @@ $spacing     = pitchfork_blocks_acf_calculate_spacing( $block );
 // Add optional classes for dismissal.
 $alert_classes = array( 'wp-block-alert', 'alert' );
 
-
+// Add user defined class name to block
 if ( ! empty( $block['className'] ) ) {
 	$alert_classes[] = $block['className'];
+}
+
+/**
+ * Create block.json support for HTML anchor.
+ */
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$anchor = 'id="' . $block['anchor'] . '"';
 }
 
 if ( $dismissable ) {
@@ -29,7 +37,7 @@ if ( $dismissable ) {
 	$close = '';
 }
 
-$wrapper = '<div class="' . implode( ' ', $alert_classes ) . '" style="' . $spacing . '">';
+$wrapper = '<div ' . $anchor . ' class="' . implode( ' ', $alert_classes ) . '" style="' . $spacing . '">';
 
 // Set the icon depending on the alert type.
 $icon = '<div class="alert-icon">';

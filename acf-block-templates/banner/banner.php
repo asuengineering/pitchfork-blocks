@@ -37,6 +37,14 @@ if ( isset( $block['className'] ) && ! empty( $block['className'] ) ) {
 }
 
 /**
+ * Create block.json support for HTML anchor.
+ */
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$anchor = 'id="' . $block['anchor'] . '"';
+}
+
+/**
  * Buttons are part of an ACF form group, so we get the group first, then use
  * standard PHP array notation to get the sub-fields of the group
  */
@@ -120,7 +128,7 @@ $template       = array(
 );
 ?>
 
-<section class="<?php echo implode( ' ', $block_classes ); ?>" style="<?php echo $spacing; ?>">
+<section <?php echo $anchor; ?> class="<?php echo implode( ' ', $block_classes ); ?>" style="<?php echo $spacing; ?>">
 	<div class="banner alert" role="banner">
 		<?php echo $banner_icon; ?>
 		<div class="banner-content">

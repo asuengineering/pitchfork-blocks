@@ -31,6 +31,15 @@ if ( 'left' === $orientation ) {
 
 $classes .= $additional_classes;
 
+/**
+ * Create block.json support for HTML anchor.
+ */
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$anchor = 'id="' . $block['anchor'] . '"';
+}
+
+
 // Set up a list of allowed blocks inside inner content.
 $allowed_blocks = array(
 	'core/heading',
@@ -70,7 +79,7 @@ $template = array(
 );
 
 // Echo the block.
-echo '<div class="' . $classes . '" style="' . $spacing . '">';
+echo '<div ' . $anchor . ' class="' . $classes . '" style="' . $spacing . '">';
 echo '<img class="img-fluid ' . $image_class . '" src="' . $background['url'] . '" alt="' . $background['alt'] . '" />';
 echo '<div class="content-wrapper">';
 echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
