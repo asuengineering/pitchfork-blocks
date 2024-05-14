@@ -21,7 +21,13 @@ if ( ! empty( $block['className'] ) ) {
 	$additional_classes = $block['className'];
 }
 
-do_action('qm/debug', $block);
+/**
+ * Create block.json support for HTML anchor.
+ */
+$anchor = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$anchor = 'id="' . $block['anchor'] . '"';
+}
 
 /**
  * Additional margin/padding settings
@@ -40,7 +46,7 @@ if ( $choice ) {
 	if ( 'pattern' === $choice ) {
 
 		// UDS Background patterns.
-		echo '<section class="uds-section alignfull bg ' . $pattern . ' ' . $additional_classes . '" style="' . $spacing . '">';
+		echo '<section ' . $anchor . ' class="uds-section alignfull bg ' . $pattern . ' ' . $additional_classes . '" style="' . $spacing . '">';
 
 	} elseif ( 'upload' === $choice ) {
 
@@ -53,7 +59,7 @@ if ( $choice ) {
 		}
 
 		// Set the background CSS rule + additional classes.
-		echo '<section class="uds-section alignfull media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
+		echo '<section ' . $anchor . ' class="uds-section alignfull media-file ' . $additional_classes . '" style="' . $inline_style . $spacing . '" >';
 
 	} else {
 
@@ -65,7 +71,7 @@ if ( $choice ) {
 		}
 
 		// Background color defined by block settings and the bg color palette.
-		echo '<section class="uds-section alignfull ' . $additional_classes . '" style="' . $spacing . '">';
+		echo '<section ' . $anchor . ' class="uds-section alignfull ' . $additional_classes . '" style="' . $spacing . '">';
 	}
 
 	// Sets InnerBlocks with a core/column block as default content.
