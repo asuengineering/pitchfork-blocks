@@ -44,6 +44,7 @@ $template       = array(
 		array(
 			'level'   => 1,
 			'content' => 'Your Hero Headline',
+			'textColor' => 'white'
 		),
 	),
 	array(
@@ -56,6 +57,7 @@ $template       = array(
 				'core/paragraph',
 				array(
 					'content' => 'Example hero paragraph text.',
+					'textColor' => 'white'
 				),
 			),
 		),
@@ -69,8 +71,12 @@ $template       = array(
 			array(
 				'core/button',
 				array(
-					'className' => 'is-style-',
+					'backgroundColor' => 'asu-maroon',
+					'metadata' => array(
+						'name' => 'CTA: Hero'
+					),
 				),
+				array()
 			),
 		),
 	),
