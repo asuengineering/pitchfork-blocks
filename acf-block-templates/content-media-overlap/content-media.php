@@ -72,6 +72,9 @@ $template = array(
 				array(
 					'className'       => 'is-style-uds-md',
 					'backgroundColor' => 'asu-maroon',
+					'metadata' => array(
+						'name' => 'CTA: Content Overlap'
+					),
 				),
 			),
 		),
