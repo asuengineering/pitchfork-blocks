@@ -5,17 +5,71 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-### Version 2.0.2
+## Version 2.1
+
+This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.1 version of this plugin is being used with the 2.2 version of the theme.
+
+**UDS Card Block**
+
+ADD: A new version of the UDS Card block is available within the block editor.
+
+The new `acf/card-v2` version of the card component from our design kit relies on existing core blocks to improve the editing experience for content creators. The newer card also relies heavily on the presence of `<InnerBlocks>` to add or configure card options.
+
+The following blocks were developed as a part of the new `card-v2` package.
+| New block | Purpose |
+|---|---|
+| `card-v2` | Wrapper block for cards. Options for orientation and supported card variations are found here. |
+| `card-v2-event` | Adds event date and time fields plus a location field for event cards. |
+| `card-v2-header` | A wrapper block for the card heading text. Uses the `core/heading` block within. |
+| `card-v2-icon` | Include an icon from the included Font Awesome 6 library at the top of your card. |
+| `card-v2-image` | Include an image at the top of your card. |
+| `card-v2-links` | A wrapper block for card links. Users can create a plain text link or use the dedicated `card-v2-link` block. |
+| `card-v2-link` | Add a link to a page within your website or an arbitrary URL using this inner block. |
+| `card-v2-tags` | A wrapper block that contains the series of individual `card-v2-tag` blocks. |
+| `card-v2-tag` | Configure a series of individual tags at the bottom of your card to help users classify and scan the content. |
+
+In addition, the new `acf/card-v2` can be used inside of a `core/query-loop` block to allow for card layouts consisting of information from elsewhere in the site. Support for the following core blocks is also available by using the new `card-v2` block.
+
+| Core block       | Support provided                                                                                                                                                           |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `post-title`     | Use within `card-v2-header` as a replacement for the card title.                                                                                                           |
+| `featured-image` | Use within `card-v2` directly. Replaces the need for a card image.                                                                                                         |
+| `excerpt`        | Used within `card-v2-content` as a replacement for manually entered content. Provides a configurable read more link.                                                       |
+| `content`        | Also replaces manually entered content within the `card-v2-content` block. The excerpt length is an available field within this core block.                                |
+| `post-terms`     | Use within `card-v2` directly. Produces a list of card tags which are linked to the archive page for the term. Choose from categories, tags or any other related taxonomy. |
+
+**UDS Hero Post Block**
+
+ADD: A new block called the `acf/hero-post` block was created to allow users to create a standard page hero based on content from a selected post.
+
+Options are available within the block to:
+
+- Use the latest post by taxonomy term (category, tag or unfiltered).
+- Offset the requested post by an arbitrary number.
+- Select a specific post from a list.
+
+**Additional Changes**
+
+DEPRECATED: The older `acf/card` blocks are now officially deprecated and may become unsupported by a future release of the plugin.
+
+- Within the block editor, older card blocks can be easily identified by an added pink overlay.
+- Older versions of the card block will still display correctly, but they are not available for insertion via the block picker.
+
+CHANGE: The following blocks within this plugin now support the HTML anchor attribute.
+
+- `acf/alert`, `acf/background-section`, `acf/banner`, `acf/blockquote`, `acf/content-media-overlap`, `acf/grid-links`
+
+## Version 2.0.2
 
 - FIX: Addressed missing `acf/hero` and `acf/hero-video` inner block content.
 
 The issue was caused by a conflict with Pitchfork Blocks and a duplication of the `acf/blocks/wrap_frontend_innerblocks` filter. When both plugins were active the filter can be called twice and possibly fail to remove the set of inner block wrapper divs. Solution is to add a CSS rule for the hero blocks to ignore the wrapper rather than surpress it.
 
-### Version 2.0.1
+## Version 2.0.1
 
 - FIX: Add better support for a default layout choice for `acf/background-section` which only renders the background color of the block.
 
-### Version 2.0
+## Version 2.0
 
 This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.0 version of this plugin is being used with the 2.0 version of the theme.
 
@@ -54,7 +108,7 @@ This release is being made with a concurrent release to the accompanying [Pitchf
 - FIX: Change method used to provide additional CSS rules within the block editor. Aligns with current best practice.
 - ADD: Registered new ACF save point for any ACF-JSON settings applied by this plugin.
 
-### Version 1.6
+## Version 1.6
 
 This release addresses a few issues with the `acf/hero` block due to a change in the required markup from the Unity Project.
 
@@ -63,7 +117,7 @@ Please also note that a concurrent update to the Pitchfork People plugin will al
 - FIX: Layout issues with buttons and subtitles within the `acf/hero` block were fixed.
 - REMOVED: The option to retain the content within the hero block as visible text on mobile has been removed from the component at the Unity level. The corresponding control within the block editor was also removed.
 
-### Version 1.5 (Pitchfork People)
+## Version 1.5 (Pitchfork People)
 
 This minor release corresponds with the launch of [Pitchfork People](https://github.com/asuengineering/pitchfork-people) and represents the relocation of blocks and processes related to building directory pages within the Pitchfork system.
 
@@ -73,7 +127,7 @@ This minor release corresponds with the launch of [Pitchfork People](https://git
 
 Neither of the above blocks were changed other than the relocation to a different plugin. If you have page content that features these blocks, simply activate the Pitchfork People plugin in your environment to restore the page to its original form.
 
-### Version 1.4.1 (Bug Fixes)
+## Version 1.4.1 (Bug Fixes)
 
 A regression of the ACF hero blocks prevented the image overlay from appearing within `acf/hero` or `acf/hero-video`. The cause was a downstream effect of the update to Pitchfork v1.9 which updated the Bootstrap 4 library from the Unity project.
 
@@ -83,7 +137,7 @@ Single links within the sidebar element `(.sidebar>.nav-link-container)` contain
 
 - FIX: Added temporary CSS rule to force sidebar single links to be `background-color: white;`
 
-### Version 1.4
+## Version 1.4
 
 - ADD: Created two new blocks called `acf/profiles` and `acf/profile-manual` to aid with the creation of directory pages in Pitchfork.
 - CHANGE: Recategorized all blocks in this plugin into their own category in the block inserter.
@@ -95,7 +149,7 @@ Single links within the sidebar element `(.sidebar>.nav-link-container)` contain
 - ADD: https://wordpress.asu.edu/pitchfork/docs/profile-block-manual/
 - ADD: https://wordpress.asu.edu/pitchfork/docs/block-patterns/
 
-### Version 1.3
+## Version 1.3
 
 This release contains several bigger refactoring efforts for performance and best practices.
 
@@ -132,19 +186,19 @@ Additional small adjustments to individual blocks include:
 
 - FIX: No longer produces markup of any kind if the block is unused.
 
-### Version 1.2
+## Version 1.2
 
 - NEW: Initial deployment of the `acf/hero-video` block.
 - IMPROVE: Options within the `acf/accordion` block failed when the block was nested within other blocks. Fixed so that the block can exist anyplace on the page.
 - FIX: Adjusted SASS for `acf/background-section` to add padding/margin on a mobile device. Content no longer stretches from edge to edge.
 - FIX: `.gitignore` excluded a required file fror the acf/breadcrumb block without a prior `composer install`. The plugin will now safely work "out of the box" again without further install steps.
 
-### Version 1.1
+## Version 1.1
 
 - Added `content-media-overlap` block to the party.
 - Added additional contributors to this README from ASU Knowledge Enterprise.
 
-### Version 1.0
+## Version 1.0
 
 - Initial deployment of the plugin. v1.0.
 - Includes working versions of the following blocks:
