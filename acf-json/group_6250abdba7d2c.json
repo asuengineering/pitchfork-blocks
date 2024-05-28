@@ -6,9 +6,10 @@
             "key": "field_6250abe44b020",
             "label": "Subtitle text",
             "name": "uds_subtitle_text",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -16,15 +17,16 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": 50,
             "placeholder": "Subtitle text. 50 character max.",
             "prepend": "",
-            "append": "",
-            "maxlength": 50
+            "append": ""
         },
         {
             "key": "field_6250ac5e4b021",
             "label": "Highlight color?",
             "name": "uds_subtitle_highlight_color",
+            "aria-label": "",
             "type": "select",
             "instructions": "ASU brand standards call for the entire text of the subtitle to be highlighted if a highlight is present.",
             "required": 0,
@@ -67,5 +69,5 @@
     "active": true,
     "description": "The subtitle block is used exclusively within the hero block.",
     "show_in_rest": 0,
-    "modified": 1649712679
+    "modified": 1716930314
 }
