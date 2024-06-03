@@ -25,7 +25,7 @@
             "aria-label": "",
             "type": "true_false",
             "instructions": "By default, the title of the menu object will be produced above the <code>nav<\/code>.<\/br>\r\nToggle this off if you want to omit this title. Replace with an <code>h3<\/code> if desired.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -34,9 +34,9 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "Remove",
-            "ui_off_text": "Keep"
+            "ui_off_text": "Keep",
+            "ui": 1
         },
         {
             "key": "field_626c18ef137c1",
@@ -45,7 +45,7 @@
             "aria-label": "",
             "type": "text",
             "instructions": "What text should we include in the select box on mobile?",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -77,5 +77,5 @@
     "active": true,
     "description": "Produces a sidebar based on the traditional output from <a href=\"nav-menus.php\">nav-menus.php<\/a>",
     "show_in_rest": 0,
-    "modified": 1694712360
+    "modified": 1717454557
 }
