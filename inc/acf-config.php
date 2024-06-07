@@ -96,7 +96,9 @@ function acf_remove_cardv2_innerblock_wrapper( $wrap, $name ) {
         return false;
     };
 
-    return true;
+    // If not located, leave the results untouched.
+	// NOTE: return true; here can potentialy undo other plugins attempting to filter this setting.
+	return;
 }
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_remove_cardv2_innerblock_wrapper', 30, 2 );
 
