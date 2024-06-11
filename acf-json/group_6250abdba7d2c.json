@@ -17,7 +17,7 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": 50,
+            "maxlength": 70,
             "placeholder": "Subtitle text. 50 character max.",
             "prepend": "",
             "append": ""
@@ -69,5 +69,5 @@
     "active": true,
     "description": "The subtitle block is used exclusively within the hero block.",
     "show_in_rest": 0,
-    "modified": 1716930314
+    "modified": 1718149620
 }
