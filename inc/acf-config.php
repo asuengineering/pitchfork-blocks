@@ -82,8 +82,8 @@ add_filter( 'acf/settings/save_json/key=group_66196d432370c', 'pitchfork_blocks_
 
 
 /**
- * Remove ACF block wrapper from front end display of blocks associated with acf/card-v2.
- * Filter given priority 30 to not conflict with PF People filter for the same thing (priority 10).
+ * Remove ACF InnerBlock wrapper from given elements. Works only on front end display.
+ * June 2024: Removed for blocks associated with acf/card-v2.
  */
 function acf_remove_cardv2_innerblock_wrapper( $wrap, $name ) {
 	$acf_wrap_removal = array(
@@ -96,9 +96,7 @@ function acf_remove_cardv2_innerblock_wrapper( $wrap, $name ) {
         return false;
     };
 
-    // If not located, leave the results untouched.
-	// NOTE: return true; here can potentialy undo other plugins attempting to filter this setting.
-	return;
+	return true;
 }
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_remove_cardv2_innerblock_wrapper', 30, 2 );
 
