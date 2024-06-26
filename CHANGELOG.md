@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Version 2.1.1
+
+This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.1.1 version of this plugin is being used with the 2.2.1 version of the theme.
+
+This minor release contains the following bug fixes and code cleanup activities.
+
+- FIX: Remove the requirement for the `subtitle_text` field in the `subtitle` block to contain a value. This should prevent hero blocks that contain blank subtitles from triggering an ACF block validatation error.
+- CHANGE: Adjust `subtitle` block max length to 70 characters.
+- FIX: Remove required fields for `sidebar` block. Prevents field validation errors when block first deployed within editor.
+- CHANGE: Two custom field definitions for ACF were moved from this plugin to the Pitchfork theme. This allows the fields to be reused in multiple plugins without needing to be redefined in each application. The fields that moved are the menu selection control used within the `sidebar` block and the unique ID field used within the `foldable-card` block.
+
 ## Version 2.1
 
 This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.1 version of this plugin is being used with the 2.2 version of the theme.
