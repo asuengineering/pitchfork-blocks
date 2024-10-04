@@ -31,3 +31,14 @@ One-off fixes, tempoorary issues.
 .editor-styles-wrapper .uds-blockquote img {
 	max-width: none;
 }
+
+/**
+ * 04 Oct 2024 - Field Settings fix
+ * Temporary fix for ACF field settings that don't display correctly in the sidebar (preview mode).
+ * Inline styles applied to block width/height are not counter-acted when block in preview mode.
+ * .acf-block-panel describes the settings panel when in preview mode (right sidebar)
+ */
+.acf-block-component.acf-block-panel .acf-field {
+	width: 100% !important;
+	min-height: auto !important;
+}
