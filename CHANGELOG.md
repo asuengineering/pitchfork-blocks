@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Version 2.1.2
+
+FIX: Add CSS rule for block editor to fix layout of ACF fields for blocks in preview mode.
+
 ## Version 2.1.1
 
 This release is being made with a concurrent release to the accompanying [Pitchfork theme](https://github.com/asuengineering/pitchfork). Please ensure that the 2.1.1 version of this plugin is being used with the 2.2.1 version of the theme.
