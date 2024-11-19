@@ -58,83 +58,63 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
         return $block_content;
     }
 
-	// Process all possible class insertions needed.
-	// Reset to block start after each check to deal with missing elements.
+	$processor = new WP_HTML_Tag_Processor( $block_content );
 
-    $processor = new WP_HTML_Tag_Processor( $block_content );
-	$processor->set_bookmark( 'block-start' );
+	// Iterate through all tags in the block content
+    while ( $processor->next_tag() ) {
+        // Check for wp-block-image and add 'card-img-top'
+        if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-image' ) ) {
+            $processor->add_class( 'card-img-top' );
+        }
 
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-image' ) ) ) {
-		$processor->add_class( 'card-img-top' );
-	}
+        // Check for wp-block-post-featured-image and add 'card-img-top'
+        if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-post-featured-image' ) ) {
+            $processor->add_class( 'card-img-top' );
+        }
 
-	$processor->seek('block-start');
+        // Check for wp-block-heading and add 'card-title'
+        if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-heading' ) ) {
+            $processor->add_class( 'card-title' );
+        }
 
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-post-featured-image' ) ) ) {
-		$processor->add_class( 'card-img-top' );
-	}
-
-	$processor->seek('block-start');
-
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-heading' ) ) ) {
-		$processor->add_class( 'card-title' );
-	}
-
-	$processor->seek('block-start');
-
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-post-title' ) ) ) {
-		$processor->add_class( 'card-title' );
-	}
-
-	$processor->seek('block-start');
-
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-group' ) ) ) {
-		$processor->add_class( 'card-body' );
-	}
-
-	$processor->seek('block-start');
-
-	if ( $processor->next_tag( array( 'class_name' => 'wp-block-buttons' ) ) ) {
-		$processor->add_class( 'card-buttons' );
-
-		// Check for up to 5 single buttons immediately following the buttons parent block.
-		for ($i = 1; $i <= 5; $i++) {
-			if ( $processor->next_tag( array( 'class_name' => 'wp-block-button' ) ) ) {
-				$processor->add_class( 'card-button' );
-			}
+		// Check for wp-block-post-title and add 'card-title'
+		if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-post-title' ) ) {
+			$processor->add_class( 'card-title' );
 		}
 
-	}
-
-	$processor->seek('block-start');
-
-	if ( $processor->next_tag( array( 'class_name' => 'taxonomy-category' ) ) ) {
-		$processor->add_class( 'card-tags' );
-
-		// Check for any following links and give them button classes.
-		while ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
-			$rel_check = $processor->get_attribute('rel');
-			if ( $rel_check === 'tag' ) {
-				$processor->add_class( 'btn btn-tag btn-tag-alt-white' );
-			}
+		// Check for wp-block-group and add 'card-body'
+		if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-group' ) ) {
+			$processor->add_class( 'card-body' );
 		}
-	}
 
-	$processor->seek('block-start');
-
-	if ( $processor->next_tag( array( 'class_name' => 'taxonomy-post_tag' ) ) ) {
-		$processor->add_class( 'card-tags' );
-
-		// Check for any following links and give them button classes.
-		while ( $processor->next_tag( array( 'tag_name' => 'a' ) ) ) {
-			$rel_check = $processor->get_attribute('rel');
-			if ( $rel_check === 'tag' ) {
-				$processor->add_class( 'btn btn-tag btn-tag-alt-white' );
-			}
+		// Check for wp-block-buttons and add 'card-buttons'
+		if ( $processor->get_attribute( 'class' ) && preg_match( '/\bwp-block-buttons\b/', $processor->get_attribute( 'class' ) ) ) {
+			$processor->add_class( 'card-buttons' );
 		}
-	}
 
-	return $processor->get_updated_html();
+		// Check for wp-block-button and add 'card-button'
+		if ( $processor->get_attribute( 'class' ) && preg_match( '/\bwp-block-button\b/', $processor->get_attribute( 'class' ) ) ) {
+			$processor->add_class( 'card-button' );
+		}
+
+		// Check for taxonomy-category and add 'card-tags'
+		if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'taxonomy-category' ) ) {
+			$processor->add_class( 'card-tags' );
+		}
+
+		// Check for taxonomy-post_tag and add 'card-tags'
+		if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'taxonomy-post_tag' ) ) {
+			$processor->add_class( 'card-tags' );
+		}
+
+		// Check for an anchor element with rel="tag" and add 'btn btn-tag btn-tag-alt-white'
+		if ( $processor->get_tag('A') && $processor->get_attribute('rel') && str_contains( $processor->get_attribute('rel'), 'tag' ) ) {
+			$processor->add_class( 'btn btn-tag btn-tag-alt-white' );
+		}
+
+    }
+
+    return $processor->get_updated_html();
 
 }
 add_filter( 'render_block', 'pitchfork_add_missing_classes_to_cardv2', 10, 2 );
