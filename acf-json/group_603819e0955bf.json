@@ -39,10 +39,11 @@
                 "pattern": "UDS background pattern",
                 "upload": "Upload a background pattern"
             },
-            "default_value": "none",
+            "default_value": "pattern",
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
+            "allow_in_bindings": 1,
             "layout": "vertical",
             "save_other_choice": 0
         },
@@ -82,10 +83,11 @@
                 "arrows-light": "Arrows - Light",
                 "arrows-dark": "Arrows - Dark"
             },
-            "default_value": "topo-white",
+            "default_value": "morse-code-white",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -266,5 +268,5 @@
     "active": true,
     "description": "Field for creating a background <section> as a wrapper for other elements.",
     "show_in_rest": 0,
-    "modified": 1696023776
+    "modified": 1732127182
 }
