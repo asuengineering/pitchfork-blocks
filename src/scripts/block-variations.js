@@ -76,4 +76,24 @@ wp.domReady(() => {
 			isDefault: false,
 		}]
 	);
+
+	/**
+	* Register styles associated with acf/breadcrumb
+	*/
+
+	wp.blocks.registerBlockStyle(
+		'acf/breadcrumb', [{
+			name: 'crumb-default',
+			label: 'Light mode',
+			isDefault: true,
+		}]
+	);
+
+	wp.blocks.registerBlockStyle(
+		'acf/breadcrumb', [{
+			name: 'crumb-dark',
+			label: 'Dark mode',
+			isDefault: false,
+		}]
+	);
 });

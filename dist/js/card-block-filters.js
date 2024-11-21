@@ -1,24 +1,24 @@
-/******/ (function() { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
 
 /***/ "@wordpress/compose":
 /*!*********************************!*\
   !*** external ["wp","compose"] ***!
   \*********************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 module.exports = window["wp"]["compose"];
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["element"];
 
 /***/ }),
 
@@ -26,7 +26,7 @@ module.exports = window["wp"]["element"];
 /*!*******************************!*\
   !*** external ["wp","hooks"] ***!
   \*******************************/
-/***/ (function(module) {
+/***/ ((module) => {
 
 module.exports = window["wp"]["hooks"];
 
@@ -60,55 +60,55 @@ module.exports = window["wp"]["hooks"];
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
+/******/ 		__webpack_require__.n = (module) => {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 		__webpack_require__.d = (exports, definition) => {
 /******/ 			for(var key in definition) {
 /******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
+/******/ 	(() => {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
+/******/ 		__webpack_require__.r = (exports) => {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	}();
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-!function() {
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
 /*!*******************************************!*\
   !*** ./src/scripts/card-block-filters.js ***!
   \*******************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
 /* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
@@ -130,7 +130,7 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
     const testBlocks = ['core/buttons', 'core/button', 'core/group', 'core/post-featured-image', 'core/post-terms'];
     let customClass = '';
     if (!testBlocks.includes(name)) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
         ...props
       });
     }
@@ -170,14 +170,14 @@ const udsCardInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.cr
 
     // Add just custom class if it's set
     if (customClass) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
         ...props,
         className: customClass
       });
     }
 
     // If there's no parent or the parent isn't in the allowed list, keep the original class
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
       ...props
     });
   };
@@ -197,7 +197,7 @@ const udsCardHeaderInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_
     const testBlocks = ['core/heading', 'core/post-title'];
     let customClass = '';
     if (!testBlocks.includes(name)) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
         ...props
       });
     }
@@ -228,20 +228,21 @@ const udsCardHeaderInnerMarkup = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_
 
     // Add just custom class if it's set
     if (customClass) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
         ...props,
         className: customClass
       });
     }
 
     // If there's no parent or the parent isn't in the allowed list, keep the original class
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockListBlock, {
       ...props
     });
   };
 }, 'udsCardInnerMarkup');
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)('editor.BlockListBlock', 'pf-blocks/add-v2-card-header-classes', udsCardHeaderInnerMarkup);
-}();
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=card-block-filters.js.map

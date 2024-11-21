@@ -1,5 +1,4 @@
-/******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
+/******/ (() => { // webpackBootstrap
 /*!*****************************************!*\
   !*** ./src/scripts/block-variations.js ***!
   \*****************************************/
@@ -56,6 +55,21 @@ wp.domReady(() => {
   wp.blocks.registerBlockStyle('acf/card-v2', [{
     name: 'card-event',
     label: 'Event card',
+    isDefault: false
+  }]);
+
+  /**
+  * Register styles associated with acf/breadcrumb
+  */
+
+  wp.blocks.registerBlockStyle('acf/breadcrumb', [{
+    name: 'crumb-default',
+    label: 'Light mode',
+    isDefault: true
+  }]);
+  wp.blocks.registerBlockStyle('acf/breadcrumb', [{
+    name: 'crumb-dark',
+    label: 'Dark mode',
     isDefault: false
   }]);
 });

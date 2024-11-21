@@ -1,5 +1,4 @@
-/******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
+/******/ (() => { // webpackBootstrap
 /*!***********************************!*\
   !*** ./src/scripts/hero-video.js ***!
   \***********************************/

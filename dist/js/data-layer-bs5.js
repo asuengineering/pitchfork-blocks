@@ -1,5 +1,4 @@
-/******/ (function() { // webpackBootstrap
-var __webpack_exports__ = {};
+/******/ (() => { // webpackBootstrap
 /*!***************************************!*\
   !*** ./src/scripts/data-layer-bs5.js ***!
   \***************************************/
