@@ -41,3 +41,17 @@ One-off fixes, tempoorary issues.
 	width: 100% !important;
 	min-height: auto !important;
 }
+
+/**
+ * Styles defined a little differently for breadcrumb block dark mode
+ * In block editor, block style added to a wrapper that's not there in the regular markup.
+ */
+.wp-block-acf-breadcrumb.is-style-crumb-dark {
+	.breadcrumb-item {
+		color: $uds-color-base-white;
+
+		a {
+			color: $uds-color-base-gold;
+		}
+	}
+}

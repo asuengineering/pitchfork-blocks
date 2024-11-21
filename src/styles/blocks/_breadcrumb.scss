@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+# UDS Breadcrumb
+
+- Add light mode / dark mode toggle as block style.
+-------------------------------------------------------------- */
+
+// .breadcrumbs.is-style-crumb-default {}
+
+.breadcrumbs.is-style-crumb-dark {
+	.breadcrumb-item {
+		color: $uds-color-base-white;
+
+		a {
+			color: $uds-color-base-gold;
+		}
+	}
+}

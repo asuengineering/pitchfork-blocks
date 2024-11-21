@@ -21,9 +21,6 @@ $crumbs = array(
 	'container_class' => 'breadcrumbs ' . $block_classes
 );
 
-
-
-
 // Display a fake breadcrumb on preview since class is not loaded in admin.
 // Display the real crumb when not in preview mode.
 // See: https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/
@@ -31,7 +28,7 @@ $crumbs = array(
 if ( $is_preview ) {
 
 	?>
-	<ol class="breadcrumb bg-white">
+	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Home</a></li>
 		<li class="breadcrumb-item active" aria-current="page">Current Page</li>
 	</ol>
