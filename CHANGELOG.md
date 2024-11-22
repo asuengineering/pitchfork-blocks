@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Version 2.2.0
+
+This release contains a critical fix to address a PHP error that can occur when updating to WordPress core v6.7.0.
+
+This plugin update should be applied concurrently with the [Pitchfork theme](https://github.com/asuengineering/pitchfork) v2.3.0 release before attempting to update to WP core files to the latest version.
+
+- FIX: Rewrite HTML Tag processor function that applied missing CSS classes to acf/card-v2 blocks. Reorganized code to avoid the problematic `set_bookmark` method included in the class.
+- FIX: Adjust default block settings for `acf/background-section` so that placing a new block on the page no longer appears like a malfunction. The former default settings were "no pattern, white background" which was a confusing user experience. The block will now default to one of the UDS patterns in the library.
+- FIX: Adjust `acf/breadcrumb` block so that the preview of the block always appears within the editor.
+- ADD: Add additional block style to `acf/breadcrumb` to allow for "dark mode." The new block style will automatically switch the display to white text with gold links for use against a dark background color or texture.
+
 ## Version 2.1.2
 
 FIX: Add CSS rule for block editor to fix layout of ACF fields for blocks in preview mode.
