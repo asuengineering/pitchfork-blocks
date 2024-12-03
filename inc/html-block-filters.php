@@ -107,6 +107,11 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
 			$processor->add_class( 'card-tags' );
 		}
 
+		// Check for wp-block-post-terms and add 'card-tags'
+		if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-post-terms' ) ) {
+			$processor->add_class( 'card-tags' );
+		}
+
 		// Check for an anchor element with rel="tag" and add 'btn btn-tag btn-tag-alt-white'
 		if ( $processor->get_tag('A') && $processor->get_attribute('rel') && str_contains( $processor->get_attribute('rel'), 'tag' ) ) {
 			$processor->add_class( 'btn btn-tag btn-tag-alt-white' );
