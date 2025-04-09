@@ -88,7 +88,7 @@ if ( ! $collapsed ) {
 	$card_head_link_attr[] = 'class=""';
 }
 
-$card_head_link = '<a ' . implode( ' ', $card_head_link_attr ) . '>';
+$card_head_link = '<button ' . implode( ' ', $card_head_link_attr ) . '>';
 
 /**
  * Card body w/classes
@@ -133,7 +133,7 @@ $template       = array(
 
 // Build the card.
 $card  = '';
-$card .= $card_wrap . $card_head . '<h4>' . $card_head_link . $card_title . '</a></h4></div>' . $card_body;
+$card .= $card_wrap . $card_head . '<h4>' . $card_head_link . $card_title . '</button></h4></div>' . $card_body;
 
 echo wp_kses_post( $card );
 echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
