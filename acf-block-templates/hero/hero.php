@@ -37,6 +37,10 @@ $template       = array(
 		array(
 			'uds_subtitle_text'            => 'Example subtitle',
 			'uds_subtitle_highlight_color' => 'highlight-black',
+			'lock' => array(
+					'move' => true,
+					'remove' => false
+				)
 		),
 	),
 	array(
@@ -44,13 +48,21 @@ $template       = array(
 		array(
 			'level'   => 1,
 			'content' => 'Your Hero Headline',
-			'textColor' => 'white'
+			'textColor' => 'white',
+			'lock' => array(
+				'move' => true,
+				'remove' => false
+			)
 		),
 	),
 	array(
 		'core/group',
 		array(
 			'className' => 'content',
+			'lock' => array(
+				'move' => true,
+				'remove' => false
+			)
 		),
 		array(
 			array(
@@ -66,6 +78,10 @@ $template       = array(
 		'core/buttons',
 		array(
 			'className' => 'btn-row',
+			'lock' => array(
+				'move' => true,
+				'remove' => false
+			)
 		),
 		array(
 			array(
