@@ -1,0 +1,33 @@
+{
+	"name": "acf/block-template",
+	"title": "Block template",
+	"description": "Change this before actually implementing the block",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"keyword",
+		"keyword",
+		"keyword"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "template.php"
+	},
+	"supports": {
+		"anchor": true,
+		"spacing": {
+			"margin": [
+				"top",
+				"bottom"
+			],
+			"padding": false
+		},
+		"classname": true,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	}
+}
