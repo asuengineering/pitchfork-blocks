@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Version 2.3.0
+
+**New block**
+
+- ADD: Implemented new `image-based-card` blocks from Unity Design System.
+
+**Card tags, card buttons**
+
+- FIX: Add missing class for manual card tag block.
+- FIX: Enable use of `post-terms` block within a card. Format this block as a button tag when placed inside of a card block. Remove HREF element to prevent tag from being a link to an archive page.
+- FIX: Align buttons within cards to the left on mobile.
+
+**Accessibility improvements**
+
+- FIX: Change markup witihn `card-foldable` that triggers the expand/collapse functionality from a link to a button. ([WCMMA-402](https://asudev.jira.com/browse/WCMAA-402))
+- FIX: Deter users from altering the order of the inner blocks within all `hero` blocks by including block locking within the default template. ([WCMMA-405](https://asudev.jira.com/browse/WCMAA-405))
+
+**Other**
+
+- Created a generic ACF block template as an easy to replicate starting point for new blocks.
+
 ## Version 2.2.0
 
 This release contains a critical fix to address a PHP error that can occur when updating to WordPress core v6.7.0.

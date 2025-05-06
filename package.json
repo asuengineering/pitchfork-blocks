@@ -1,7 +1,7 @@
 {
   "name": "pitchfork-blocks",
   "description": "A collection of blocks for use with the ASU Pitchfork theme for WordPress. Leverages ACF and the unity-bootstrap package from ASU.",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "repository": "https://github.com/asuengineering/pitchfork-blocks",
   "license": "MIT",
   "dependencies": {
