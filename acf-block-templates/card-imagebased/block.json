@@ -1,0 +1,30 @@
+{
+	"name": "acf/card-imagebased",
+	"title": "Image based card",
+	"description": "Image based cards can create added visual interest and break up a page with a lot of content.",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"card",
+		"image",
+		"based"
+	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "card-imagebased.php"
+	},
+	"supports": {
+		"anchor": true,
+		"spacing": {
+			"margin": true,
+			"padding": false
+		},
+		"classname": true,
+		"align": false,
+		"color": {
+			"background": false,
+			"text": false,
+			"link": false
+		}
+	}
+}

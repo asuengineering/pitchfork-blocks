@@ -74,6 +74,7 @@ function pitchfork_blocks_register_acf_blocks() {
 		'/card-v2-link',			// Card v2 - Card Link
 		'/card-v2-links',			// Card v2 - Card Links
 		'/card-foldable',           // UDS Foldable card block.
+		'/card-imagebased',			// UDS Image based cards
 		'/content-media-overlap',   // Miscellaneous content sections.
 		'/grid-links',              // UDS Grid Links.
 		'/hero',                    // UDS Hero block, v2
