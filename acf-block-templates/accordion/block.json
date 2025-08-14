@@ -29,7 +29,13 @@
 			"link": false
 		}
 	},
+	"attributes": {
+		"accordion_id": {
+			"type": "string"
+		}
+	},
 	"providesContext": {
-		"acf/parentFields": "data"
+		"pitchfork/accordionId": "accordion_id",
+		"acf/fields": "data"
 	}
 }

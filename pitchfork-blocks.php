@@ -47,3 +47,30 @@ require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/acf-register-blocks.php';
 
 // Block filters using HTML API
 require_once PITCHFORK_BLOCKS_BASE_PATH . 'inc/html-block-filters.php';
+
+
+/**
+ * Generating a unique ID for block elements. Used in:
+ * - acf/accordion and child blocks
+ */
+add_filter( 'render_block_data', 'pitchfork_add_accordion_id_to_context', 10, 2 );
+
+function pitchfork_add_accordion_id_to_context( $parsed_block, $source_block ) {
+	if ( $parsed_block['blockName'] === 'acf/accordion' ) {
+
+		// Only generate ID if one doesn't exist
+		if ( empty( $parsed_block['attrs']['accordion_id'] ) ) {
+			$unique_id = 'accordion-' . uniqid();
+			$parsed_block['attrs']['accordion_id'] = $unique_id;
+		}
+
+		// Merge into context without overwriting other values
+		$parsed_block['context']['pitchfork/accordionId'] = $parsed_block['attrs']['accordion_id'];
+
+		// Optional: log to Query Monitor
+		// do_action( 'qm/debug', 'accordion_id set in context: ' . $parsed_block['attrs']['accordion_id'] );
+	}
+
+	return $parsed_block;
+}
+

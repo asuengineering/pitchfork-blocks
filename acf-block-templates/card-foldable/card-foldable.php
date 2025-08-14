@@ -9,14 +9,14 @@ $fc_title  = get_field( 'uds_foldcard_title' );
 $fc_icon   = get_field( 'uds_foldcard_icon' );
 $collapsed = get_field( 'uds_foldcard_collapsed' );
 $disabled  = get_field( 'uds_foldcard_disabled' );
-$blockID   = get_field( 'uds_foldcard_id' );
 
-// do_action('qm/debug', $fc_icon);
+$blockID = $block['id'] ?? uniqid();
 
-// Gather field data from parent block. Passed via block context and the $context variable.
-$parentData        = $context['acf/parentFields'];
-$accordionID       = $parentData['uds_accordion_id'];
-$accordionBehavior = $parentData['uds_accordion_behavior'];
+
+// Gather data from parent block. Passed via block context and the $context variable.
+$accordionBehavior	= $context['acf/fields']['uds_accordion_behavior'];
+$accordion_id		= $context['pitchfork/accordionId'] ?? null;
+
 
 /**
  * Additional margin/padding settings
@@ -99,9 +99,8 @@ $card_body_attr[] = 'id="fCardBody-' . $blockID . '"';
 $card_body_attr[] = 'aria-labelledby="fCard-' . $blockID . '"';
 
 // If the parent accordion allows for synchronized behavior...
-
-if ( $accordionBehavior ) {
-	$card_body_attr[] = 'data-bs-parent="#Accordion-' . $accordionID . '"';
+if ( $accordionBehavior && $accordion_id ) {
+	$card_body_attr[] = 'data-bs-parent="#' . esc_attr( $accordion_id ) . '"';
 }
 
 if ( ! $collapsed ) {

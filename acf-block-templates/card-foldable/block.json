@@ -1,23 +1,27 @@
 {
-    "name": "acf/card-foldable",
-    "title": "UDS Foldable Card",
-    "description": "A singlular foldable card. Uses Inner Blocks for content.",
-    "category": "pitchfork-blocks",
-    "icon": "star-filled",
-    "keywords": ["foldable", "card", "accordion"],
+	"name": "acf/card-foldable",
+	"title": "UDS Foldable Card",
+	"description": "A singlular foldable card. Uses Inner Blocks for content.",
+	"category": "pitchfork-blocks",
+	"icon": "star-filled",
+	"keywords": [
+		"foldable",
+		"card",
+		"accordion"
+	],
 	"parent": [
 		"acf/accordion"
 	],
-    "acf": {
-        "mode": "preview",
-        "renderTemplate": "card-foldable.php"
-    },
-	"usesContext": [
-		"acf/parentFields"
-	],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "card-foldable.php"
+	},
 	"supports": {
 		"spacing": {
-			"margin": ["top", "bottom"],
+			"margin": [
+				"top",
+				"bottom"
+			],
 			"padding": false
 		},
 		"classname": false,
@@ -27,5 +31,9 @@
 			"text": false,
 			"link": false
 		}
-	}
+	},
+	"usesContext": [
+		"pitchfork/accordionId",
+		"acf/fields"
+	]
 }

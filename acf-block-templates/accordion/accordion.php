@@ -7,14 +7,17 @@
  * @package Pitchfork_Blocks
  */
 
-$enable_sync = get_field( 'uds_accordion_behavior' );
-$blockID     = get_field( 'uds_accordion_id' );
+// Get fields and block data.
+$enable_sync  = get_field( 'uds_accordion_behavior' );
+$accordion_id = $block['accordion_id'] ?? 'accordion-missing';
 
+// Calculate spacing
 $spacing = pitchfork_blocks_acf_calculate_spacing( $block );
 
-$wrap = '<div class="accordion" id="Accordion-' . $blockID . '" style="' . $spacing . '">';
+// Block wrapper opening
+$wrap = '<div class="accordion" id="' . esc_attr( $accordion_id ) . '" style="' . esc_attr( $spacing ) . '">';
 
-// Sets InnerBlocks with a pair of foldable cards both containing an H4 and a paragraph.
+// Optional: Define initial inner blocks if no content exists
 $allowed_blocks = array( 'acf/card-foldable' );
 $template       = array(
 	array(
@@ -61,9 +64,7 @@ $template       = array(
 	),
 );
 
-// Build the accordion.
+// Build the accordion markup
 echo wp_kses_post( $wrap );
 echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 echo '</div>';
-
-

@@ -18,24 +18,10 @@
             },
             "message": "",
             "default_value": 1,
-            "ui": 1,
+            "allow_in_bindings": 1,
             "ui_on_text": "N'Sync",
-            "ui_off_text": "Miss Independent"
-        },
-        {
-            "key": "field_6387c3d0fd823",
-            "label": "Accordion Unique ID",
-            "name": "uds_accordion_id",
-            "aria-label": "",
-            "type": "unique_id",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "acf-hidden",
-                "id": ""
-            }
+            "ui_off_text": "Independent",
+            "ui": 1
         }
     ],
     "location": [
@@ -56,5 +42,5 @@
     "active": true,
     "description": "Starting point for accordions. Wrapper block for card-foldable.",
     "show_in_rest": 0,
-    "modified": 1669916111
+    "modified": 1755211951
 }
