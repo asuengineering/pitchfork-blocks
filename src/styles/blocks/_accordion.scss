@@ -1,11 +1,34 @@
 /*--------------------------------------------------------------
 # UDS Accordion Items
 
+- Add default spacing between card-foldable elements
 - Add default spacing for icon within title.
 -------------------------------------------------------------- */
+
+.accordion {
+	margin: $uds-size-spacing-3 0;
+}
+
+.accordion .accordion-item {
+	margin-bottom: $uds-size-spacing-3;
+}
 
 .accordion-header.accordion-header-icon .accordion-icon {
 	svg {
 		margin-right: $uds-size-spacing-2;
 	}
+}
+
+// Assign different margin controls to paragraphs in accordion-body
+.accordion-body>.acf-innerblocks-container>p:first-child {
+	margin-top: $uds-size-spacing-2;
+}
+
+.accordion-body>.acf-innerblocks-container>p:last-child {
+	margin-bottom: 0;
+}
+
+// Editor style includes .wp-block-acf-card-foldable as direct child of accordion wrapper.
+.accordion>.wp-block-acf-card-foldable {
+	margin-bottom: $uds-size-spacing-3;
 }
