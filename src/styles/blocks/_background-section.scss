@@ -14,7 +14,7 @@
 }
 
 // Inner block columns don't come with an option to set a width.
-.uds-section .acf-innerblocks-container {
+.uds-section>.acf-innerblocks-container {
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
