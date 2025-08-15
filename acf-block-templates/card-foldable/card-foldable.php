@@ -113,7 +113,7 @@ $card_body = '<div ' . implode( ' ', $card_body_attr ) . '>';
 
 
 // Sets InnerBlocks with an H4 and a paragraph as default content.
-$allowed_blocks = array( 'core/html', 'core/heading', 'core/paragraph', 'core/image', 'core/list' );
+$allowed_blocks = array( 'core/html', 'core/heading', 'core/paragraph', 'core/image', 'core/list', 'core/button', 'core/group' );
 $template       = array(
 	array(
 		'core/heading',
