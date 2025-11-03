@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+# Pitchfork Block Patterns
+
+- Add mobile styles for pattern "inset card on image"
+-------------------------------------------------------------- */
+
+/**
+ * Inset card on image
+ * - Removes constrained width at medium breakpoint
+ * - NOTE: Pitchfork class names added to pattern markup by default.
+ */
+@include media-breakpoint-down($md) {
+	.uds-section.pitchfork-inset-card-pattern .pitchfork-inset-card-width .card {
+		max-width: 100%;
+	}
+}

@@ -14,6 +14,9 @@
 @import 'blocks/card-v2';
 @import 'blocks/breadcrumb';
 
+// Support for patterns delivered by the Pitchfork theme using these blocks.
+@import 'patterns';
+
 /*--------------------------------------------------------------
 # Temporary fixes, should be addressed by future iteration of BS4.
 --------------------------------------------------------------*/

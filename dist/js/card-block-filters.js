@@ -2,6 +2,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
+
 /***/ "@wordpress/compose":
 /*!*********************************!*\
   !*** external ["wp","compose"] ***!
@@ -19,16 +29,6 @@ module.exports = window["wp"]["compose"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["hooks"];
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ ((module) => {
-
-module.exports = window["React"];
 
 /***/ })
 
