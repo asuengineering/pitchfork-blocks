@@ -44,11 +44,6 @@ if ( ! empty( $block['className'] ) ) {
 	$base_class[] = $block['className'];
 }
 
-// Add disable fold class and create wrapper.
-$base_class[] = $disabled;
-$card_wrap    = '<div class="' . implode( ' ', $base_class ) . '" style="' . $spacing . '">';
-
-
 /**
  * Card header, title and icon state.
  * Note: Markup for icon needs to be either a placeholder or the actual icon.
@@ -56,14 +51,19 @@ $card_wrap    = '<div class="' . implode( ' ', $base_class ) . '" style="' . $sp
  * --------------------
  */
 
+$card_head      = '<div class="accordion-header">';
 
 if ( ! empty( $fc_icon ) ) {
 	$fc_icon_markup = $fc_icon->element;
-	$card_head      = '<div class="accordion-header accordion-header-icon">';
+	$base_class[] = 'accordion-header-icon';
 } else {
 	$fc_icon_markup = '<i class="fa-placeholder"></i>';
-	$card_head      = '<div class="accordion-header">';
 }
+
+// Add disable fold class and create wrapper.
+$base_class[] = $disabled;
+$card_wrap    = '<div class="' . implode( ' ', $base_class ) . '" style="' . $spacing . '">';
+
 
 $card_title  = '<span class="accordion-icon">' . $fc_icon_markup . $fc_title . '</span>';
 $card_title .= '<span class="fas fa-chevron-up"></span>';
