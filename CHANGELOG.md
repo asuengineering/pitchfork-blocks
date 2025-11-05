@@ -7,14 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Version 2.4.0
 
-This is a concurrent release.
-
 - FIX: Remove unique ID field from accordions. End users no longer need to set independent ids for the block to work correctly.
 - FIX: Allow `core/group` and `core/button` elements within `acf/card-foldable` as inner blocks.
 - FIX: Add better default styling for `acf/accordion` elements including margins between each foldable card container.
 - FIX: Fix incorrect margin for certain elements when inserted as nested content within an `acf/background-section`.
-
-**New block**
 
 ## Version 2.3.0
 
