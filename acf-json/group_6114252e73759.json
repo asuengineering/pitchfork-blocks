@@ -27,7 +27,9 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_6114269916b0f",
@@ -36,7 +38,7 @@
             "aria-label": "",
             "type": "image",
             "instructions": "Large images can be cropped using the <a href=\"https:\/\/wordpress.org\/support\/article\/edit-media\/\" target=\"_blank\">edit media<\/a> screen within the Media Library.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -44,7 +46,6 @@
                 "id": ""
             },
             "return_format": "id",
-            "preview_size": "medium_large",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -52,7 +53,9 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "medium_large"
         }
     ],
     "location": [
@@ -73,5 +76,6 @@
     "active": true,
     "description": "The beloved topper of nearly every page you'll build.",
     "show_in_rest": 0,
-    "modified": 1685486005
+    "display_title": "",
+    "modified": 1774568565
 }
