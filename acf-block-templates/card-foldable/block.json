@@ -14,6 +14,7 @@
 	],
 	"acf": {
 		"mode": "preview",
+		"blockVersion": 3,
 		"renderTemplate": "card-foldable.php"
 	},
 	"supports": {

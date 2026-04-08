@@ -11,6 +11,7 @@
 	],
 	"acf": {
 		"mode": "preview",
+		"blockVersion": 3,
 		"renderTemplate": "hero-post.php"
 	},
 	"supports": {

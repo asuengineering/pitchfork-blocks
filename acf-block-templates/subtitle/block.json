@@ -7,6 +7,7 @@
     "keywords": ["hero", "title", "subtitle"],
     "acf": {
         "mode": "preview",
+        "blockVersion": 3,
         "renderTemplate": "subtitle.php"
     },
 	"parent": [ "acf/hero" ],

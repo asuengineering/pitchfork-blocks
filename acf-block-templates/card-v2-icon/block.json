@@ -10,6 +10,7 @@
 	],
 	"acf": {
 		"mode": "preview",
+		"blockVersion": 3,
 		"renderTemplate": "card-v2-icon.php"
 	},
 	"parent": [
