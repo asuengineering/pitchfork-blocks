@@ -32,8 +32,12 @@ $template       = array(
 	array(
 		'acf/subtitle',
 		array(
-			'uds_subtitle_text'            => 'Example subtitle',
-			'uds_subtitle_highlight_color' => 'highlight-black',
+			'name' => 'acf/subtitle',
+			'mode' => 'preview',
+			'data' => array(
+				'uds_subtitle_text'            => 'Example subtitle',
+				'uds_subtitle_highlight_color' => 'highlight-black',
+			),
 		),
 	),
 	array(

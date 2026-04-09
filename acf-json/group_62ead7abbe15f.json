@@ -21,13 +21,16 @@
                 "uds-hero-md": "Medium (1920x512)",
                 "uds-hero-lg": "Large (1920x684)"
             },
-            "default_value": "medium",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
+            "default_value": "uds-hero-md",
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_62ead7abc40db",
@@ -93,5 +96,8 @@
     "active": true,
     "description": "Yo dawg, I heard you like video in your hero? Dig this here.",
     "show_in_rest": 0,
-    "modified": 1685485993
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1775758958
 }

@@ -10,6 +10,9 @@
 $size           = get_field( 'uds_hero_size' );
 $image          = get_field( 'uds_hero_image' );
 
+// Get placeholder image URL for when no hero image is set
+$placeholder_url = plugins_url( 'src/images/placeholders/hero-placeholder.png', PITCHFORK_BLOCKS_BASE_PATH . 'pitchfork-blocks.php' );
+
 /**
  * Additional margin/padding settings
  * Returns a string for inclusion with style=""
@@ -35,12 +38,16 @@ $template       = array(
 	array(
 		'acf/subtitle',
 		array(
-			'uds_subtitle_text'            => 'Example subtitle',
-			'uds_subtitle_highlight_color' => 'highlight-black',
+			'name' => 'acf/subtitle',
+			'mode' => 'preview',
+			'data' => array(
+				'uds_subtitle_text'            => 'Example subtitle',
+				'uds_subtitle_highlight_color' => 'highlight-black',
+			),
 			'lock' => array(
-					'move' => true,
-					'remove' => false
-				)
+				'move' => true,
+				'remove' => false
+			)
 		),
 	),
 	array(
@@ -104,6 +111,8 @@ echo '<div class="' . esc_html( $size ) . esc_html( $alignment ) . ' has-btn-row
 echo '<div class="hero-overlay"></div>';
 if ( $image ) {
 	echo wp_get_attachment_image( $image, $size, '', array( 'class' => 'hero' ) );
+} else {
+	echo '<img src="' . esc_url( $placeholder_url ) . '" class="hero" alt="Placeholder hero image" />';
 }
 echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 echo '</div>';

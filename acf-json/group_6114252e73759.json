@@ -21,11 +21,12 @@
                 "uds-hero-md": "Medium (1920x512)",
                 "uds-hero-lg": "Large (1920x684)"
             },
-            "default_value": "medium",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
+            "default_value": "uds-hero-md",
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
@@ -77,5 +78,7 @@
     "description": "The beloved topper of nearly every page you'll build.",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774568565
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1775757856
 }
