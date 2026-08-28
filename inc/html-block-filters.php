@@ -67,8 +67,8 @@ add_filter( 'render_block', 'pitchfork_add_missing_classes_to_hero', 10, 2 );
             $processor->add_class( 'card-img-top' );
         }
 
-        // Check for wp-block-post-featured-image and add 'card-img-top'
-        if ( $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-block-post-featured-image' ) ) {
+        // Check for the nested image in wp-block-post-featured-image and add 'card-img-top'
+        if ( $processor->get_tag() === 'IMG' && $processor->get_attribute( 'class' ) && str_contains( $processor->get_attribute( 'class' ), 'wp-post-image' ) ) {
             $processor->add_class( 'card-img-top' );
         }
 
